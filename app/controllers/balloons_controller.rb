@@ -1,0 +1,2 @@
+class BalloonsController < ApplicationController
+end
