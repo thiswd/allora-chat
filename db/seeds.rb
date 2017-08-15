@@ -12,13 +12,22 @@
 
 # usuário: carolinameira, senha 123456, email: meira.carolina@gmail.com
 
+
+
 user = User.create!(first_name: 'carolina', last_name: 'meira', username: 'carolinameira', influencer: true , category:Faker::Job.title , user_photo: Faker::Avatar.image, email: 'meira.carolina@gmail.com' , password: '123456' )
 
-edition = Edition.create!(date: Faker::Date.backward(14), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: Faker::LoremPixel.image, farewell_img: Faker::LoremPixel.image, user_id: user.id)
+3.times do
 
-post = Post.create!(headline: Faker::FamilyGuy.quote, option_more: 'more' ,option_next: 'next', post_img: Faker::LoremPixel.image , edition_id: edition.id)
+  edition = Edition.create!(date: Faker::Date.backward(14), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: Faker::LoremPixel.image, farewell_img: Faker::LoremPixel.image, user: user)
 
-balloon = Balloon.create!(content: Faker::Lorem.characters(200) , link: Faker::Internet.url, balloon_img: Faker::LoremPixel.image, post_id: post.id)
+  2.times do
+    post = Post.create!(headline: Faker::FamilyGuy.quote, option_more: 'more' ,option_next: 'next', post_img: Faker::LoremPixel.image , edition: edition)
+    4.times do
+      Balloon.create!(content: Faker::Lorem.characters(200) , link: Faker::Internet.url, balloon_img: Faker::LoremPixel.image, post: post)
+    end
+  end
+end
+
 
 
 # usuário: luanaperin, senha 123456, email: luanakperin@gmail.com
@@ -26,22 +35,31 @@ balloon = Balloon.create!(content: Faker::Lorem.characters(200) , link: Faker::I
 
 user_1 = User.create!(first_name: 'luana', last_name: 'perin', username: 'luanaperin', influencer: true , category:Faker::Job.title , user_photo: Faker::Avatar.image, email: 'luanakperin@gmail.com' , password: '123456' )
 
-edition_1 = Edition.create!(date: Faker::Date.backward(14), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: Faker::LoremPixel.image, farewell_img: Faker::LoremPixel.image, user_id: user_1.id)
+2.times do
 
-post_1 = Post.create!(headline: Faker::FamilyGuy.quote, option_more: 'more' ,option_next: 'next', post_img: Faker::LoremPixel.image , edition_id: edition_1.id)
+  edition = Edition.create!(date: Faker::Date.backward(14), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: Faker::LoremPixel.image, farewell_img: Faker::LoremPixel.image, user: user_1)
 
-balloon_1 = Balloon.create!(content: Faker::Lorem.characters(200) , link: Faker::Internet.url, balloon_img: Faker::LoremPixel.image, post_id: post_1.id)
-
+  3.times do
+    post = Post.create!(headline: Faker::FamilyGuy.quote, option_more: 'more' ,option_next: 'next', post_img: Faker::LoremPixel.image , edition: edition)
+    4.times do
+      Balloon.create!(content: Faker::Lorem.characters(200) , link: Faker::Internet.url, balloon_img: Faker::LoremPixel.image, post: post)
+    end
+  end
+end
 
 # usuário: thiagosawada, senha 123456, email: tms.sawada@gmail.com
 
 
-
 user_2 = User.create!(first_name: 'thiago', last_name: 'sawada', username: 'thiagosawada', influencer: true , category:Faker::Job.title , user_photo: Faker::Avatar.image, email: 'tms.sawada@gmail.com' , password: '123456' )
 
-edition_2 = Edition.create!(date: Faker::Date.backward(14), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: Faker::LoremPixel.image, farewell_img: Faker::LoremPixel.image, user_id: user_2.id)
+2.times do
 
-post_2 = Post.create!(headline: Faker::FamilyGuy.quote, option_more: 'more' ,option_next: 'next', post_img: Faker::LoremPixel.image , edition_id: edition_2.id)
+  edition = Edition.create!(date: Faker::Date.backward(14), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: Faker::LoremPixel.image, farewell_img: Faker::LoremPixel.image, user: user_2)
 
-balloon_2 = Balloon.create!(content: Faker::Lorem.characters(200) , link: Faker::Internet.url, balloon_img: Faker::LoremPixel.image, post_id: post_2.id)
-
+  3.times do
+    post = Post.create!(headline: Faker::FamilyGuy.quote, option_more: 'more' ,option_next: 'next', post_img: Faker::LoremPixel.image , edition: edition)
+    3.times do
+      Balloon.create!(content: Faker::Lorem.characters(200) , link: Faker::Internet.url, balloon_img: Faker::LoremPixel.image, post: post)
+    end
+  end
+end
