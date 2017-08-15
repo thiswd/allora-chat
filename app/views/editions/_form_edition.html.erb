@@ -2,16 +2,10 @@
   <%= f.input :date, label: "Data da edição" %>
   <%= f.input :greeting, label: "Saudação" %>
   <%= f.input :greeting_img, label: "Imagem ou GIF da saudação" %>
+  <%= f.input :greeting_img_cache, as: :hidden %>
+  <%= f.input :remote_greeting_img_url %>
   <%= f.input :farewell, label: "Despedida" %>
   <%= f.input :farewell_img, label: "Imagem ou GIF da despedida" %>
-  <h3>Título</h3>
-  <div id="posts">
-    <%= f.simple_fields_for :posts do |post| %>
-      <%= render 'post_fields', f: post %>
-    <% end %>
-    <div class="links">
-      <%= link_to_add_association 'Adicionar título', f, :posts %>
-    </div>
-  </div>
-  <%= f.submit %>
+  <%= f.input :farewell_img_cache, as: :hidden %>
+  <%= f.input :remote_farewell_img_url %>
 <% end %>
