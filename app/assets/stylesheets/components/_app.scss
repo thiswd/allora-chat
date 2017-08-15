@@ -1,44 +1,69 @@
-#chatbox {
+#app {
   height: calc(100vh - 40px);
   width: 100%;
-  overflow-y: scroll;
   padding: 20px 100px 20px 100px;
-  vertical-align: bottom;
+  overflow-y: scroll;
+}
 
-  .options {
-    margin: 20px 0;
+.click-more {
+  background: #FF8008;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin: 5px 0;
+}
+
+.click-next {
+  background: #FF8008;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin: 5px 0;
+}
+
+.new-click-more {
+  background: #FF8008;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin: 5px 0;
+}
+
+.new-click-next {
+  background: #FF8008;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin: 5px 0;
+  text-decoration: none;
+}
+
+.btn-margin {
+  margin: 20px 0;
+}
+
+.pic-border {
+  border-radius: 4px 20px 20px 20px;
+}
+
+.balloon {
+  background: #EBEBEB;
+  border-radius: 4px 20px 20px 20px;
+  padding: 15px;
+  text-decoration: none;
+
+  &-image {
+    background: #EBEBEB;
+    border-radius: 4px 20px 20px 20px;
+    padding: 5px;
+    margin-bottom: 12px;
   }
 
-  .option {
-    background: #FF8008;
+  &-right {
+    background: #FFC837;
     color: white;
-    border-radius: 20px;
+    border-radius: 20px 4px 20px 20px;
     padding: 10px 15px;
     margin: 5px 0;
   }
-
-  .balloon {
-    background: #EBEBEB;
-    border-radius: 4px 20px 20px 20px;
-    padding: 15px;
-    // position: absolute;
-    left: -400px;
-
-    &-image {
-      padding: 5px;
-      margin-bottom: 12px;
-      background: #EBEBEB;
-      border-radius: 4px 20px 20px 20px;
-    }
-
-    &-right {
-      border-radius: 20px 4px 20px 20px;
-      background: #FFC837;
-      color: white;
-      text-decoration: none;
-      padding: 10px 15px;
-      margin: 5px 0;
-    }
-  }
-
 }
