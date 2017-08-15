@@ -18,7 +18,7 @@ user = User.create!(first_name: 'carolina', last_name: 'meira', username: 'carol
 
 3.times do
 
-  edition = Edition.create!(date: Faker::Date.backward(14), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: Faker::LoremPixel.image, farewell_img: Faker::LoremPixel.image, user: user)
+  edition = Edition.create!(date: Faker::Date.backward(1), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: Faker::LoremPixel.image, farewell_img: Faker::LoremPixel.image, user: user)
 
   2.times do
     post = Post.create!(headline: Faker::FamilyGuy.quote, option_more: 'more' ,option_next: 'next', post_img: Faker::LoremPixel.image , edition: edition)
@@ -37,7 +37,7 @@ user_1 = User.create!(first_name: 'luana', last_name: 'perin', username: 'luanap
 
 2.times do
 
-  edition = Edition.create!(date: Faker::Date.backward(14), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: Faker::LoremPixel.image, farewell_img: Faker::LoremPixel.image, user: user_1)
+  edition = Edition.create!(date: Faker::Date.backward(3), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: Faker::LoremPixel.image, farewell_img: Faker::LoremPixel.image, user: user_1)
 
   3.times do
     post = Post.create!(headline: Faker::FamilyGuy.quote, option_more: 'more' ,option_next: 'next', post_img: Faker::LoremPixel.image , edition: edition)
@@ -54,7 +54,7 @@ user_2 = User.create!(first_name: 'thiago', last_name: 'sawada', username: 'thia
 
 2.times do
 
-  edition = Edition.create!(date: Faker::Date.backward(14), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: Faker::LoremPixel.image, farewell_img: Faker::LoremPixel.image, user: user_2)
+  edition = Edition.create!(date: Faker::Date.backward(5), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: Faker::LoremPixel.image, farewell_img: Faker::LoremPixel.image, user: user_2)
 
   3.times do
     post = Post.create!(headline: Faker::FamilyGuy.quote, option_more: 'more' ,option_next: 'next', post_img: Faker::LoremPixel.image , edition: edition)
