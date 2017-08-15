@@ -10,6 +10,7 @@ gem 'puma'
 gem 'rails', '5.1.3'
 gem 'redis'
 gem 'faker'
+gem "letter_opener", group: :development
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
