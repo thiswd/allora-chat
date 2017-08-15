@@ -6,8 +6,11 @@ class EditionsController < ApplicationController
   def create
     @edition = Edition.new(edition_params)
     @edition.user = current_user
-    @edition.save
-
+    if @edition.save
+      redirect_to user_path(current_user)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -24,7 +27,7 @@ class EditionsController < ApplicationController
   private
 
   def edition_params
-    params.require(:edition).permit(:date, :greeting, :greeting_img, :farewell, :farewell_img, :user_id, posts_attributes: [:id, :headline, :option_more, :option_next, :post_img, :edition_id, :_destroy])
+    params.require(:edition).permit(:date, :greeting, :greeting_img, :remote_greeting_img_url, :greeting_img_cache, :farewell, :farewell_img, :user_id)
   end
 
 end
