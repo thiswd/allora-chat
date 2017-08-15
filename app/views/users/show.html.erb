@@ -1,2 +1,90 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="row no-gutter">
+  <div class="col-xs-12 col-sm-6 l-side" style="background-image: linear-gradient(-225deg, rgba(255,128,8,0.6) 0%, rgba(255,200,55,0.6) 50%), url('https://static.pexels.com/photos/9634/pink-hair-selfie-bun.jpg');">
+    <h1>allora</h1>
+    <p>[v20170807]</p>
+  </div>
+
+  <div class="col-xs-12 col-sm-6 r-side">
+    <%= render partial: "shared/navbar" %>
+
+
+    <div id="chatbox">
+
+      <% @posts.each_with_index do |post, index| %>
+
+        <% if index == 0 %>
+
+            <p class="headline balloon" id="headline<%= index %>"><%= post.headline %></p>
+
+          <div class="text-center options">
+            <a class="more btn btn-xs option" data-target="#screen<%= index %>">Tell me more</a>
+            <a class="next btn btn-xs option" data-target="#headline<%= index + 1 %>">Next</a>
+          </div>
+
+          <div class="screen" id="screen<%= index %>">
+            <p class="balloon hidden">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies.</p>
+            <p class="balloon hidden">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo</p>
+            <div class="text-center options hidden">
+              <a class="next btn btn-xs option" data-target="#screen2<%= index %>">Next</a>
+            </div>
+          </div>
+
+          <div class="screen" id="screen2<%= index %>">
+            <p class="balloon hidden">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies.</p>
+            <p class="balloon hidden">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo</p>
+
+            <div class="text-center options hidden">
+              <a class="next btn btn-xs option" data-target="#headline<%= index + 1 %>">Next</a>
+            </div>
+          </div>
+
+        <% elsif index + 1 == @posts.count %>
+
+          <div class="headline" id="headline<%= index %>">
+          <p class="balloon hidden">Headline: <%= post.headline %></p>
+
+            <div class="text-center options">
+              <a class="more btn btn-xs option hidden" data-target="#screen<%= index %>">More</a>
+              <a class="next btn btn-xs option hidden" data-target="#end<%= index + 1 %>">Next</a>
+            </div>
+          </div>
+
+          <div class="screen" id="screen<%= index %>">
+            <p class="balloon hidden"><%= post.box1 %></p>
+            <p class="balloon hidden"><%= post.box2 %></p>
+            <div class="text-center options hidden">
+              <a class="next btn btn-xs option" data-target="#end<%= index + 1 %>">Anything else?</a>
+            </div>
+          </div>
+
+        <% else %>
+
+          <div class="headline" id="headline<%= index %>">
+            <p class="balloon hidden"><%= post.headline %></p>
+            <div class="text-center options hidden">
+              <a class="more btn btn-xs option" data-target="#screen<%= index %>">More</a>
+              <a class="next btn btn-xs option" data-target="#headline<%= index + 1 %>">Next</a>
+            </div>
+          </div>
+
+          <div class="screen" id="screen<%= index %>">
+            <p class="balloon hidden"><%= post.box1 %></p>
+            <p class="balloon hidden"><%= post.box2 %></p>
+            <div class="text-center options hidden">
+              <a class="next btn btn-xs option" data-target="#headline<%= index + 1 %>">Next</a>
+            </div>
+          </div>
+
+        <% end %>
+
+      <% end %>
+
+      <div class="screen hidden" id="end<%= @posts.count %>">
+
+        <p class="balloon">You're all caught up! Check back later</p>
+        <%= cl_image_tag("giphy_1_jscgvl.gif", :height=>150, :crop=>"scale", class: "balloon-image") %>
+
+      </div>
+
+  </div>
+</div>
