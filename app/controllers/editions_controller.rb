@@ -4,7 +4,7 @@ class EditionsController < ApplicationController
   end
 
   def create
-    @edition = Edition.save(edition_params)
+    @edition = Edition.new(edition_params)
     @edition.user = current_user
     @edition.save
 
@@ -26,4 +26,5 @@ class EditionsController < ApplicationController
   def edition_params
     params.require(:edition).permit(:date, :greeting, :greeting_img, :farewell, :farewell_img, :user_id, posts_attributes: [:id, :headline, :option_more, :option_next, :post_img, :edition_id, :_destroy])
   end
+
 end
