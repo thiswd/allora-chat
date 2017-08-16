@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :edit, :update, :show, :destroy]
 
   resources :editions, only: [:new, :create, :edit, :update, :destroy] do
-    resources :posts, only: [:create] do
-      resources :balloons, only: [:create]
+    resources :posts, only: [:new, :create] do
+      resources :balloons, only: [:new, :create]
     end
   end
 

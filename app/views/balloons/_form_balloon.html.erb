@@ -1,7 +1,10 @@
-<%= simple_form_for @balloon do |f| %>
-  <%= f.input :content %>
-  <%= f.input :link %>
-  <%= f.file_field :balloon_img, label: "Imagem ou GIF" %>
+<%= simple_form_for [@edition, @post, @balloon], remote: true, method: :post do |f| %>
+
+    <%= f.input :type, label: false, as: :radio_buttons, collection: ["Texto", "Imagem/GIF"], item_wrapper_class: 'inline', class: "btn btn-primary" %>
+  <%= f.input :content, label: false, placeholder: "Texto" %>
+  <%= f.input :balloon_img, label: "Imagem ou GIF" %>
   <%= f.input :balloon_img_cache, as: :hidden %>
-  <%= f.input :remote_balloon_img_url %>
+  <%= f.input :link, label: false, placeholder: "URL para texto ou imagem" %>
+  <%#= f.input :remote_balloon_img_url %>
+  <%= f.submit 'Criar um balão', class: "btn btn-primary" %>
 <% end %>
