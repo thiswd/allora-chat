@@ -1,5 +1,5 @@
 class Edition < ApplicationRecord
-  after_create :send_release_email
+  # after_create :send_release_email
 
   belongs_to :user
   has_many :posts, inverse_of: :edition, dependent: :destroy
@@ -9,9 +9,9 @@ class Edition < ApplicationRecord
 
   private
 
-  def send_release_email
-    UserMailer.new_edition(self).deliver_now
-  end
+  # def send_release_email
+  #   UserMailer.new_edition(self).deliver_now
+  # end
 
 end
 
