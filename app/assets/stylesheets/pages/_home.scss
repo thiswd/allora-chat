@@ -1,1 +1,23 @@
 // Specific CSS for your home-page
+
+.home-vertical {
+  .h2 {
+    font-style: "cursive";
+  }
+
+}
+
+.slide-right {
+  height: 700px;
+  background-size: cover;
+  background: white;
+}
+
+.slide-left {
+  height: 700px;
+  background-size: cover;
+
+  .h1 {
+    font-size: 72px;
+  }
+}
