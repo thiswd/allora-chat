@@ -1,0 +1,9 @@
+<% if @balloon.errors.any? %>
+  // Render new review form with errors
+  $('#form-balloon').html("<%= j render 'form_balloon' %>");
+<% else %>
+
+  $('#modal-balloon').modal("show")
+  // Reset the form
+  $('#form-balloon').html("<%= j render 'form_balloon' %>");
+<% end %>
