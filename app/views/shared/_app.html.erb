@@ -1,0 +1,47 @@
+<div id="app">
+
+<div class="post">
+  <div class="screen1">
+    <p class="balloon">Hi there! Shall we start?</p>
+    <div class="text-center btn-margin">
+      <a class="btn btn-xs new-click-next">YEAAAH!</a>
+    </div>
+  </div>
+</div>
+
+<% @posts.each do |post| %>
+
+<div class="post">
+
+  <!-- SCREEN 1 -->
+  <div class="screen1">
+    <p class="balloon hidden"><%= post.headline %></p>
+    <img class="pic-border hidden" src="http://via.placeholder.com/250x150" alt="">
+    <div class="text-center btn-margin hidden">
+      <a class="btn btn-xs new-click-more">Tell me more</a>
+      <a class="btn btn-xs new-click-next">Next post</a>
+    </div>
+  </div>
+
+  <!-- SCREEN 2 -->
+  <div class="screen2">
+    <p class="balloon hidden"><%= post.box1 %></p>
+    <p class="balloon hidden"><%= post.box2 %></p>
+    <div class="text-center btn-margin hidden">
+      <a class="btn btn-xs new-click-more">Continue...</a>
+    </div>
+  </div>
+
+  <!-- SCREEN 3 -->
+  <div class="screen3">
+    <p class="balloon hidden"><%= post.box3 %></p>
+    <p class="balloon hidden"><%= post.box4 %></p>
+    <div class="text-center btn-margin hidden">
+      <a class="btn btn-xs new-click-next">Next post</a>
+    </div>
+  </div>
+</div>
+
+<% end %>
+
+</div>
