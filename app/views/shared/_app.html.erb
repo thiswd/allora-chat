@@ -9,38 +9,78 @@
   </div>
 </div>
 
-<% @posts.each do |post| %>
+<% @user.editions.last.posts.each do |post| %>
 
-<div class="post">
+  <div class="post">
 
-  <!-- SCREEN 1 -->
-  <div class="screen1">
-    <p class="balloon hidden"><%= post.headline %></p>
-    <img class="pic-border hidden" src="http://via.placeholder.com/250x150" alt="">
-    <div class="text-center btn-margin hidden">
-      <a class="btn btn-xs new-click-more">Tell me more</a>
-      <a class="btn btn-xs new-click-next">Next post</a>
+    <!-- SCREEN 1 -->
+    <div class="screen1">
+      <p class="balloon hidden"><%= post.headline %></p>
+      <img class="pic-border hidden" src="http://via.placeholder.com/250x150" alt="">
+      <div class="text-center btn-margin hidden">
+        <a class="btn btn-xs new-click-more">Tell me more</a>
+        <a class="btn btn-xs new-click-next">Next post</a>
+      </div>
     </div>
-  </div>
 
   <!-- SCREEN 2 -->
-  <div class="screen2">
-    <p class="balloon hidden"><%= post.box1 %></p>
-    <p class="balloon hidden"><%= post.box2 %></p>
-    <div class="text-center btn-margin hidden">
-      <a class="btn btn-xs new-click-more">Continue...</a>
-    </div>
-  </div>
 
-  <!-- SCREEN 3 -->
-  <div class="screen3">
-    <p class="balloon hidden"><%= post.box3 %></p>
-    <p class="balloon hidden"><%= post.box4 %></p>
-    <div class="text-center btn-margin hidden">
-      <a class="btn btn-xs new-click-next">Next post</a>
+    <% post.balloons.each_slice(2) do |balloon|%>
+    <% n = 1 %>
+    <div class="screen<%= n + 1 %>">
+      <% if balloon[0].link.blank? %>
+        <p class="balloon hidden">
+          <% if balloon[0].balloon_img.blank? %>
+            <%= balloon[0].content %>
+          <% else %>
+            <%= balloon[0].balloon_img %>
+          <% end %>
+        </p>
+      <% else %>
+        <p class="balloon hidden" style="cursor:pointer" onclick="location.href='<%= balloon[0].link %>'">
+          <% if balloon[0].balloon_img.blank? %>
+            <%= balloon[0].content %>
+          <% else %>
+            <%= balloon[0].balloon_img %>
+          <% end %>
+        </p>
+        <p class="hidden">
+          <%= link_to "#{balloon[0].link}", balloon[0].link %>
+        </p>
+      <% end %>
+      <% unless balloon[1].nil? %>
+        <% if balloon[1].link.blank? %>
+          <p class="balloon hidden">
+            <% if balloon[1].balloon_img.blank? %>
+              <%= balloon[1].content %>
+            <% else %>
+              <%= balloon[1].balloon_img %>
+            <% end %>
+          </p>
+        <% else %>
+          <p class="balloon hidden" style="cursor:pointer" onclick="location.href='<%= balloon[1].link %>'">
+            <% if balloon[1].balloon_img.blank? %>
+              <%= balloon[1].content %>
+            <% else %>
+              <%= balloon[1].balloon_img %>
+            <% end %>
+          </p>
+          <p class="hidden">
+            <%= link_to "#{balloon[1].link}", balloon[1].link %>
+          </p>
+        <% end %>
+      <% end %>
+        <div class="text-center btn-margin hidden">
+          <% unless balloon[1] == post.balloons.last || balloon[0] == post.balloons[-1] %>
+            <a class="btn btn-xs new-click-more">Continue...</a>
+          <% end %>
+          <a class="btn btn-xs new-click-next">Next post</a>
+        </div>
+      <% n += 1 %>
     </div>
+    <% end %>
+
   </div>
-</div>
 
 <% end %>
 
