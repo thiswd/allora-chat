@@ -1,15 +1,15 @@
-<div class="navbar-wagon">
+<div class="navbar-wagon navbar-fixed-top">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502904603/chat_infmqn.jpg" %>
   <% end %>
 
   <% if current_page?(root_path) %>
-    <div class="btn-position">
-      <%= link_to "Conheça o nosso chat", '#one', class: "btn btn-small btn-navbar" %>
-      <%= link_to "Como funciona", '#two', class: "btn btn-small btn-navbar" %>
-      <%= link_to "Saiba mais", '#three', class: "btn btn-small btn-navbar" %>
-      <%= link_to "Get Started", '#four', class: "btn btn-small btn-navbar" %>
+    <div class="nav-link-position">
+      <%= link_to "Conheça o nosso chat" , '#one' %>
+      <%= link_to "Como funciona", '#two'%>
+      <%= link_to "Saiba mais", '#three'%>
+      <%= link_to "Get Started", '#four' %>
     </div>
   <% end %>
 
@@ -70,15 +70,15 @@
   </div>
 </div>
 
-<script type="text/javascript">
-$(window).scroll(function(){
-        var top = $(window).scrollTop();
-        $timeout(function() {
-            if(top > 0){
-                $(".menu_fixo").addClass('fundo_preto');
-            }else{
-                $(".menu_fixo").removeClass('fundo_preto');
-            }
-        });
-    });
-</script>
+  <script type="text/javascript">
+  $(window).scroll(function(){
+          var top = $(window).scrollTop();
+          $timeout(function() {
+              if(top > 0){
+                  $(".menu_fixo").addClass('fundo_preto');
+              }else{
+                  $(".menu_fixo").removeClass('fundo_preto');
+              }
+          });
+      });
+  </script>
