@@ -14,6 +14,7 @@
 
 
 
+
 user = User.create!(first_name: 'carolina', last_name: 'meira', username: 'carolinameira', influencer: true , category:Faker::Job.title , user_photo: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg", email: 'meira.carolina@gmail.com' , password: 'AbC123' )
 
 3.times do
@@ -33,6 +34,7 @@ end
 # usuário: luanaperin, senha AbC123, email: luanakperin@gmail.com
 
 
+
 user_1 = User.create!(first_name: 'luana', last_name: 'perin', username: 'luanaperin', influencer: true , category:Faker::Job.title , user_photo: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg", email: 'luanakperin@gmail.com' , password: 'AbC123' )
 
 2.times do
@@ -48,6 +50,7 @@ user_1 = User.create!(first_name: 'luana', last_name: 'perin', username: 'luanap
 end
 
 # usuário: thiagosawada, senha AbC123, email: tms.sawada@gmail.com
+
 
 
 user_2 = User.create!(first_name: 'thiago', last_name: 'sawada', username: 'thiagosawada', influencer: true , category:Faker::Job.title , user_photo: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg", email: 'tms.sawada@gmail.com' , password: 'AbC123' )
