@@ -10,20 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814224225) do
+ActiveRecord::Schema.define(version: 20170816032714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "balloons", force: :cascade do |t|
-    t.string "content"
-    t.string "link"
-    t.string "balloon_img"
-    t.bigint "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_balloons_on_post_id"
-  end
 
   create_table "editions", force: :cascade do |t|
     t.datetime "date"
@@ -38,13 +28,25 @@ ActiveRecord::Schema.define(version: 20170814224225) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "headline"
+    t.text "headline"
     t.string "option_more"
     t.string "option_next"
     t.string "post_img"
     t.bigint "edition_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "content1"
+    t.string "link1"
+    t.string "img1"
+    t.text "content2"
+    t.string "link2"
+    t.string "img2"
+    t.text "content3"
+    t.string "link3"
+    t.string "img3"
+    t.text "content4"
+    t.string "link4"
+    t.string "img4"
     t.index ["edition_id"], name: "index_posts_on_edition_id"
   end
 
@@ -80,7 +82,6 @@ ActiveRecord::Schema.define(version: 20170814224225) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "balloons", "posts"
   add_foreign_key "editions", "users"
   add_foreign_key "posts", "editions"
   add_foreign_key "read_posts", "posts"

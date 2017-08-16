@@ -1,7 +1,7 @@
 class CreatePosts < ActiveRecord::Migration[5.1]
   def change
     create_table :posts do |t|
-      t.string :headline
+      t.text :headline
       t.string :option_more
       t.string :option_next
       t.string :post_img

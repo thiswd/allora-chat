@@ -1,9 +1,51 @@
 <%= simple_form_for [@edition, @post] do |f| %>
-  <%= f.input :headline, label: "Título" %>
-  <%= f.input :post_img, label: "Imagem ou GIF" %>
-  <%= f.input :post_img_cache, as: :hidden %>
-  <%= f.input :remote_post_img_url %>
-  <%= f.input :option_more, label: "Opção para mais informações" %>
-  <%= f.input :option_next, label: "Opção para o próximo assunto" %>
+  <div class="titulo">
+    <h4 class="text-center">Título</h4>
+    <%= f.input :headline, label: false, placeholder: "Texto" %>
+    <%= f.input :post_img, label: "Imagem ou GIF" %>
+    <%= f.input :post_img_cache, as: :hidden %>
+    <%= f.input :remote_post_img_url, label: false, placeholder: "URL da imagem" %>
+  </div>
+
+  <div class="respostas">
+    <h4 class="text-center">Customizar respostas</h4>
+    <%= f.input :option_more, label: false, placeholder: "Mais informações" %>
+    <%= f.input :option_next, label: false, placeholder: "Próximo post" %>
+  </div>
+
+  <div class="infos">
+    <div class="info">
+      <h4 class="text-center">Primeira informação</h4>
+      <%= f.input :content1, label: false, placeholder: "Texto" %>
+      <%= f.input :img1, label: "Imagem ou GIF" %>
+      <%= f.input :link1, label: false, placeholder: "Link do texto ou da imagem" %>
+    </div>
+
+    <div class="info hidden">
+      <h4 class="text-center">Segunda informação</h4>
+      <%= f.input :content2, label: false, placeholder: "Texto" %>
+      <%= f.input :img2, label: "Imagem ou GIF" %>
+      <%= f.input :link2, label: false, placeholder: "Link do texto ou da imagem" %>
+    </div>
+
+    <div class="info hidden">
+      <h4 class="text-center">Terceira informação</h4>
+      <%= f.input :content3, label: false, placeholder: "Texto" %>
+      <%= f.input :img3, label: "Imagem ou GIF" %>
+      <%= f.input :link3, label: false, placeholder: "Link do texto ou da imagem" %>
+    </div>
+
+    <div class="info hidden">
+      <h4 class="text-center">Quarta informação</h4>
+      <%= f.input :content4, label: false, placeholder: "Texto" %>
+      <%= f.input :img4, label: "Imagem ou GIF" %>
+      <%= f.input :link4, label: false, placeholder: "Link do texto ou da imagem" %>
+    </div>
+
+    <div class="text-center">
+      <%= link_to "Adicionar mais um campo" %>
+    </div>
+
+  </div>
   <%= f.submit 'Criar um balão', class: "btn btn-primary" %>
 <% end %>
