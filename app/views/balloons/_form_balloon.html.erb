@@ -1,7 +1,8 @@
-<%= simple_form_for @balloon do |f| %>
+<%= simple_form_for [@edition, @post, @balloon] do |f| %>
   <%= f.input :content %>
   <%= f.input :link %>
   <%= f.file_field :balloon_img, label: "Imagem ou GIF" %>
   <%= f.input :balloon_img_cache, as: :hidden %>
   <%= f.input :remote_balloon_img_url %>
+  <%= f.submit 'Criar um balão', class: "btn btn-primary" %>
 <% end %>
