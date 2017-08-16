@@ -14,16 +14,17 @@
 
 
 
-user = User.create!(first_name: 'carolina', last_name: 'meira', username: 'carolinameira', influencer: true , category:Faker::Job.title , user_photo: Faker::Avatar.image, email: 'meira.carolina@gmail.com' , password: 'AbC123' )
+
+user = User.create!(first_name: 'carolina', last_name: 'meira', username: 'carolinameira', influencer: true , category:Faker::Job.title , user_photo: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg", email: 'meira.carolina@gmail.com' , password: 'AbC123' )
 
 3.times do
 
-  edition = Edition.create!(date: Faker::Date.backward(1), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: "http://res.cloudinary.com/chanquete23/image/upload/v1502208390/dzc0ngspkdw0ohfawjyg.jpg", farewell_img: Faker::LoremPixel.image, user: user)
+  edition = Edition.create!(date: Faker::Date.backward(1), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg", farewell_img: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg", user: user)
 
   2.times do
-    post = Post.create!(headline: Faker::FamilyGuy.quote, option_more: 'more' ,option_next: 'next', post_img: "http://res.cloudinary.com/chanquete23/image/upload/v1502208390/dzc0ngspkdw0ohfawjyg.jpg" , edition: edition)
+    post = Post.create!(headline: Faker::FamilyGuy.quote, option_more: 'more' ,option_next: 'next', post_img: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg" , edition: edition)
     4.times do
-      Balloon.create!(content: Faker::Lorem.words(40) , link: Faker::Internet.url, balloon_img: "http://res.cloudinary.com/chanquete23/image/upload/v1502208390/dzc0ngspkdw0ohfawjyg.jpg", post: post)
+      Balloon.create!(content: Faker::Lorem.characters(200) , link: Faker::Internet.url, balloon_img: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg", post: post)
     end
   end
 end
@@ -33,16 +34,17 @@ end
 # usuário: luanaperin, senha AbC123, email: luanakperin@gmail.com
 
 
-user_1 = User.create!(first_name: 'luana', last_name: 'perin', username: 'luanaperin', influencer: true , category:Faker::Job.title , user_photo: Faker::Avatar.image, email: 'luanakperin@gmail.com' , password: 'AbC123' )
+
+user_1 = User.create!(first_name: 'luana', last_name: 'perin', username: 'luanaperin', influencer: true , category:Faker::Job.title , user_photo: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg", email: 'luanakperin@gmail.com' , password: 'AbC123' )
 
 2.times do
 
-  edition = Edition.create!(date: Faker::Date.backward(3), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: "http://res.cloudinary.com/chanquete23/image/upload/v1502208390/dzc0ngspkdw0ohfawjyg.jpg", farewell_img: Faker::LoremPixel.image, user: user_1)
+  edition = Edition.create!(date: Faker::Date.backward(3), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg", farewell_img: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg", user: user_1)
 
   3.times do
-    post = Post.create!(headline: Faker::FamilyGuy.quote, option_more: 'more' ,option_next: 'next', post_img: "http://res.cloudinary.com/chanquete23/image/upload/v1502208390/dzc0ngspkdw0ohfawjyg.jpg", edition: edition)
+    post = Post.create!(headline: Faker::FamilyGuy.quote, option_more: 'more' ,option_next: 'next', post_img: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg" , edition: edition)
     4.times do
-      Balloon.create!(content: Faker::Lorem.words(40) , link: Faker::Internet.url, balloon_img: "http://res.cloudinary.com/chanquete23/image/upload/v1502208390/dzc0ngspkdw0ohfawjyg.jpg", post: post)
+      Balloon.create!(content: Faker::Lorem.characters(200) , link: Faker::Internet.url, balloon_img: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg", post: post)
     end
   end
 end
@@ -50,16 +52,17 @@ end
 # usuário: thiagosawada, senha AbC123, email: tms.sawada@gmail.com
 
 
-user_2 = User.create!(first_name: 'thiago', last_name: 'sawada', username: 'thiagosawada', influencer: true , category:Faker::Job.title , user_photo: Faker::Avatar.image, email: 'tms.sawada@gmail.com' , password: 'AbC123' )
+
+user_2 = User.create!(first_name: 'thiago', last_name: 'sawada', username: 'thiagosawada', influencer: true , category:Faker::Job.title , user_photo: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg", email: 'tms.sawada@gmail.com' , password: 'AbC123' )
 
 2.times do
 
-  edition = Edition.create!(date: Faker::Date.backward(5), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: "http://res.cloudinary.com/chanquete23/image/upload/v1502208390/dzc0ngspkdw0ohfawjyg.jpg", farewell_img: Faker::LoremPixel.image, user: user_2)
+  edition = Edition.create!(date: Faker::Date.backward(5), greeting: Faker::Friends.quote, farewell: Faker::HarryPotter.quote, greeting_img: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg", farewell_img: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg", user: user_2)
 
   3.times do
-    post = Post.create!(headline: Faker::FamilyGuy.quote, option_more: 'more' ,option_next: 'next', post_img: "http://res.cloudinary.com/chanquete23/image/upload/v1502208390/dzc0ngspkdw0ohfawjyg.jpg" , edition: edition)
+    post = Post.create!(headline: Faker::FamilyGuy.quote, option_more: 'more' ,option_next: 'next', post_img: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg" , edition: edition)
     3.times do
-      Balloon.create!(content: Faker::Lorem.words(40) , link: Faker::Internet.url, balloon_img: "http://res.cloudinary.com/chanquete23/image/upload/v1502208390/dzc0ngspkdw0ohfawjyg.jpg", post: post)
+      Balloon.create!(content: Faker::Lorem.characters(200) , link: Faker::Internet.url, balloon_img: "http://res.cloudinary.com/dpg1ipkol/image/upload/v1502836611/liify7lz49rwn2agal4h.jpg", post: post)
     end
   end
 end

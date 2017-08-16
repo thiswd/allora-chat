@@ -7,12 +7,15 @@ class Edition < ApplicationRecord
   mount_uploader :greeting_img, PhotoUploader
   mount_uploader :farewell_img, PhotoUploader
 
+  private
+
 
 #   private
 
-#  def send_release_email
-#    UserMailer.new_edition(self).deliver_now
-#  end
+
+  # def send_release_email
+  #   UserMailer.new_edition(self).deliver_now
+  # end
 
 end
 
