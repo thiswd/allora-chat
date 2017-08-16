@@ -9,11 +9,17 @@ class BalloonsController < ApplicationController
   def create
     @balloon = Balloon.new(balloon_params)
     @balloon.post = @post
-    @post.balloons.count
+
     if @balloon.save
-      redirect_to new_edition_post_balloon_path(@post)
+      respond_to do |format|
+        format.html { redirect_to new_edition_post_balloon_path(@edition, @post) }
+        format.js { @balloon = Balloon.new } # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js  # <-- idem
+      end
     end
   end
 

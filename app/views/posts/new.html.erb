@@ -3,6 +3,8 @@
     <div class="col-md-7">
       <h1>Criar um novo post</h1>
       <%= render 'form_post' %>
+      <br>
+      <%= link_to 'Concluir e publicar', user_path(current_user), class: "btn btn-primary" %>
     </div>
     <div class="col-md-5">
       <div id="chatbox">
