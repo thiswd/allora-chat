@@ -1,13 +1,14 @@
 <%= simple_form_for [@edition, @post, @balloon], remote: true, method: :post do |f| %>
   <div class="btn-group radio-options" data-toggle="buttons">
-    <label class="btn btn-default active text">
+    <label class="btn btn-default btn-xs active text">
       <%= f.radio_button("type", "Texto", checked: "checked") %> Texto
     </label>
-    <label class="btn btn-default img">
+    <label class="btn btn-default btn-xs img">
       <%= f.radio_button("type", "Imagem/GIF") %> Imagem/GIF
     </label>
   </div>
-  <%= f.input :content, label: false, placeholder: "Texto" %>
+  <br>
+  <%= f.input :content, label: false, placeholder: "Texto", wrapper_html: { class: "emoji-picker-container" }, input_html: { data: { emojiable: true } } %>
   <%= f.input :balloon_img, label: false %>
   <%= f.input :balloon_img_cache, as: :hidden %>
   <%= f.input :link, label: false, placeholder: "URL para texto ou imagem" %>
@@ -21,13 +22,13 @@
     $("#balloon_balloon_img").hide();
 
     $('.text').on("click", function(){
-      $("#balloon_content").show();
+      $(".emoji-picker-container").show();
       $("#balloon_balloon_img").hide();
     });
 
     $('.img').on("click", function(){
       $("#balloon_balloon_img").show();
-      $("#balloon_content").hide();
+      $(".emoji-picker-container").hide();
     });
 
   </script>
