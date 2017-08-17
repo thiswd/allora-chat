@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-6">
       <h1>Criar um novo post</h1>
       <%= render 'form_post' %>
       <br>
       <%= link_to 'Concluir e publicar', user_path(current_user), class: "btn btn-primary" %>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-6">
       <div id="chatbox">
-
+        <%= render 'shared/preview' %>
       </div>
     </div>
   </div>
