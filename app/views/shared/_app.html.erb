@@ -47,6 +47,7 @@
   <!-- SCREEN 2 -->
 
     <% post.balloons.each_slice(2) do |balloon|%>
+
     <% n = 1 %>
     <div class="screen<%= n + 1 %>">
       <% if balloon[0].link.blank? %>
@@ -69,13 +70,14 @@
           <%= link_to "#{balloon[0].link}", balloon[0].link %>
         </p>
       <% end %>
+
       <% unless balloon[1].nil? %>
         <% if balloon[1].link.blank? %>
           <p class="balloon hidden">
             <% if balloon[1].balloon_img.blank? %>
               <%= balloon[1].content %>
             <% else %>
-              <%= cl_image_tag balloon[1].balloon_img %>
+              <%= balloon[1].balloon_img %>
             <% end %>
           </p>
         <% else %>
@@ -83,24 +85,24 @@
             <% if balloon[1].balloon_img.blank? %>
               <%= balloon[1].content %>
             <% else %>
-              <%= cl_image_tag balloon[1].balloon_img %>
+              <%= balloon[1].balloon_img %>
             <% end %>
           </p>
           <p class="hidden">
-            <%= link_to "#{balloon[1].link}", balloon[1].link %>
+            <%= link_to "#{balloon[1].short_link}", balloon[1].link %>
           </p>
         <% end %>
       <% end %>
-        <div class="text-center btn-margin hidden">
-          <% unless balloon[1] == post.balloons.last || balloon[0] == post.balloons[-1] %>
-            <a class="btn btn-xs new-click-more"><%= post.option_more %></a>
-          <% end %>
-          <% unless post.id == @user.editions.last.posts.last.id %>
-            <a class="btn btn-xs new-click-next"><%= post.option_next %></a>
-          <% else %>
-            Botão para index
-          <% end %>
-        </div>
+      <div class="text-center btn-margin hidden">
+        <% unless balloon[1] == post.balloons.last || balloon[0] == post.balloons[-1] %>
+          <a class="btn btn-xs new-click-more"><%= post.option_more %></a>
+        <% end %>
+        <% unless post.id == @user.editions.last.posts.last.id %>
+          <a class="btn btn-xs new-click-next"><%= post.option_next %></a>
+        <% else %>
+          Botão para index
+        <% end %>
+      </div>
       <% n += 1 %>
     </div>
     <% end %>
