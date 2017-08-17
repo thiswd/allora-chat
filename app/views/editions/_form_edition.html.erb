@@ -1,7 +1,7 @@
 <%= simple_form_for @edition do |f| %>
   <div class="date">
     <h4>Data de publicação</h4>
-    <%= f.input :date, label: false %>
+    <%= f.input :date, label: false, as: :date %>
   </div>
   <div class="greeting">
     <h4>Definir saudação</h4>
