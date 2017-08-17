@@ -33,6 +33,7 @@ $(function(){
     var next_post = $(this).parent().parent().parent().next();
     $(next_post).children(".screen1").children().each(function(index, element){
       setTimeout(function() {
+        console.log($(element))
         $(element).removeClass("hidden") }, index * 1250 + Math.random() * 750);
     });
 
