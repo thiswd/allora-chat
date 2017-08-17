@@ -6,10 +6,10 @@
 
   <% if current_page?(root_path) %>
     <div class="btn-position">
-      <%= link_to "Conheça o nosso chat", '#one', class: "btn btn-small btn-navbar" %>
-      <%= link_to "Como funciona", '#two', class: "btn btn-small btn-navbar" %>
-      <%= link_to "Saiba mais", '#three', class: "btn btn-small btn-navbar" %>
-      <%= link_to "Get Started", '#four', class: "btn btn-small btn-navbar" %>
+      <%= link_to "Conheça o nosso chat", '#one', class: "navbar-wagon-item  navbar-wagon-link" %>
+      <%= link_to "Como funciona", '#two', class: "navbar-wagon-item  navbar-wagon-link" %>
+      <%= link_to "Saiba mais", '#three', class: "navbar-wagon-item  navbar-wagon-link" %>
+      <%= link_to "Get Started", '#four', class: "navbar-wagon-item  navbar-wagon-link" %>
     </div>
   <% end %>
 
@@ -52,6 +52,7 @@
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
       <%= link_to t(".sign_up", default: "Cadastre-se"), new_user_registration_path,
       class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
