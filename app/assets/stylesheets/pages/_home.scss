@@ -15,7 +15,6 @@
 
 }
 
-
 .slide-right {
   height: 700px;
   background-size: cover;
@@ -30,13 +29,6 @@
     font-size: 72px;
   }
 }
-
-
-
-.btn btn-warning {
-
-}
-
 
 .btn-position {
   background: white;
@@ -127,3 +119,13 @@
 .banner-content {
   height: 1px;
 }
+
+.vertical-align {
+    position: relative;
+}
+
+.vertical-align > div {
+    position: absolute;
+    top: 50%;
+}
+
