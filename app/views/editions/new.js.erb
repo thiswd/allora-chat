@@ -1,0 +1,10 @@
+<%
+  image_gifs = ""
+  @giphys.each do |gif|
+    image_gifs << image_tag(gif.fixed_height_downsampled_image.url, width: '200')
+  end
+%>
+
+// $("<%= escape_javascript(image_gifs) %>").appendTo(".modal-body .giphys");
+
+$(".modal-body .giphys").html('<%= image_gifs.html_safe %>')
