@@ -1,118 +1,74 @@
 <div id="chatbox">
-  <% if params[:id].nil? %>
+  <% if params[:edition_id].nil? %>
     <div id="app">
     ola
     </div>
   <% else %>
-    <% @edition.posts.each_with_index do |post, index| %>
+    <div id="app">
 
-      <div id="app">
-
-<div class="post">
-  <div class="screen1">
-    <% if @user.editions.last.greeting_img.blank? %>
-      <p class="balloon"><%= @user.editions.last.greeting %></p>
-    <% else %>
-      <p class="balloon"><%= cl_image_tag @user.editions.last.greeting_img %></p>
-    <% end %>
-  </div>
-</div>
-
-<% @user.editions.last.posts.each do |post| %>
-
-  <div class="post">
-
-
-    <!-- SCREEN 1 -->
-    <% if @user.editions.last.posts.first == post %>
-      <div class="screen1">
-        <p class="balloon"><%= post.headline %></p>
-        <img class="pic-border" src="http://via.placeholder.com/250x150" alt="">
-        <div class="text-center btn-margin">
-            <a class="btn btn-xs new-click-more"><%= post.option_more %></a>
-          <% if post.id == @user.editions.last.posts.last.id %>
-            botao index
-          <% else %>
-            <a class="btn btn-xs new-click-next"><%= post.option_next %></a>
+      <div class="post">
+        <div class="screen1">
+          <p class="balloon"><%= @edition.greeting %></p>
+          <% if @edition.greeting_img.present? %>
+            <p class="balloon"><%= cl_image_tag @edition.greeting_img %></p>
           <% end %>
         </div>
       </div>
+      <% if @edition.posts.present? %>
+        <% @edition.posts.each do |post| %>
+          <div class="post">
 
-    <% else %>
-      <div class="screen1">
-        <p class="balloon hidden"><%= post.headline %></p>
-        <img class="pic-border hidden" src="http://via.placeholder.com/250x150" alt="">
-        <div class="text-center btn-margin hidden">
-          <a class="btn btn-xs new-click-more"><%= post.option_more %></a>
-          <% if post.id == @user.editions.last.posts.last.id %>
-            botao index
-          <% else %>
-            <a class="btn btn-xs new-click-next"><%= post.option_next %></a>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  <!-- SCREEN 2 -->
+          <!-- SCREEN 1 -->
 
-    <% post.balloons.each_slice(2) do |balloon|%>
-    <% n = 1 %>
-    <div class="screen<%= n + 1 %>">
-      <% if balloon[0].link.blank? %>
-        <p class="balloon hidden">
-          <% if balloon[0].balloon_img.blank? %>
-            <%= balloon[0].content %>
-          <% else %>
-            <%= cl_image_tag balloon[0].balloon_img %>
-          <% end %>
-        </p>
-      <% else %>
-        <p class="balloon hidden" style="cursor:pointer" onclick="location.href='<%= balloon[0].link %>'">
-          <% if balloon[0].balloon_img.blank? %>
-            <%= balloon[0].content %>
-          <% else %>
-            <%= cl_image_tag balloon[0].balloon_img %>
-          <% end %>
-        </p>
-        <p class="hidden">
-          <%= link_to "#{balloon[0].link}", balloon[0].link %>
-        </p>
-      <% end %>
-      <% unless balloon[1].nil? %>
-        <% if balloon[1].link.blank? %>
-          <p class="balloon hidden">
-            <% if balloon[1].balloon_img.blank? %>
-              <%= balloon[1].content %>
-            <% else %>
-              <%= cl_image_tag balloon[1].balloon_img %>
+            <div class="screen1">
+              <% if post.post_img.blank? %>
+                <p class="balloon"><%= post.headline %></p>
+              <% else %>
+                <%= cl_image_tag post.headline %>
+              <% end %>
+              <div class="text-center btn-margin">
+                <a class="btn btn-xs click-more"><%= post.option_more %></a>
+                <% if post.id != @edition.posts.last.id %>
+                  <a class="btn btn-xs click-next"><%= post.option_next %></a>
+                <% end %>
+              </div>
+            </div>
+
+          <!-- SCREEN 2 -->
+
+            <% post.balloons.each do |balloon|%>
+              <% n = 1 %>
+
+              <div class="screen<%= n + 1 %>">
+                <% if balloon.link.blank? %>
+                  <p class="balloon">
+                  <% if balloon.balloon_img.blank? %>
+                    <%= balloon.content %>
+                  <% else %>
+                    <%= cl_image_tag balloon.balloon_img %>
+                  <% end %>
+                  </p>
+                <% else %>
+                  <p class="balloon " style="cursor:pointer" onclick="location.href='<%= balloon.link %>'">
+                    <% if balloon.balloon_img.blank? %>
+                      <%= balloon.content %>
+                    <% else %>
+                      <%= cl_image_tag balloon.balloon_img %>
+                    <% end %>
+                  </p>
+                  <p>
+                    <%= link_to "#{balloon.link}", balloon.link %>
+                  </p>
+                <% end %>
+              </div>
+              <% n += 1 %>
             <% end %>
-          </p>
-        <% else %>
-          <p class="balloon hidden" style="cursor:pointer" onclick="location.href='<%= balloon[1].link %>'">
-            <% if balloon[1].balloon_img.blank? %>
-              <%= balloon[1].content %>
-            <% else %>
-              <%= cl_image_tag balloon[1].balloon_img %>
-            <% end %>
-          </p>
-          <p class="hidden">
-            <%= link_to "#{balloon[1].link}", balloon[1].link %>
-          </p>
+            <div class="text-center btn-margin">
+              <a class="btn btn-xs click-next"><%= post.option_next %></a>
+            </div>
+          </div>
         <% end %>
       <% end %>
-        <div class="text-center btn-margin hidden">
-          <% unless balloon[1] == post.balloons.last || balloon[0] == post.balloons[-1] %>
-            <a class="btn btn-xs new-click-more"><%= post.option_more %></a>
-          <% end %>
-          <% unless post.id == @user.editions.last.posts.last.id %>
-            <a class="btn btn-xs new-click-next"><%= post.option_next %></a>
-          <% else %>
-            Botão para index
-          <% end %>
-        </div>
-      <% n += 1 %>
     </div>
-    <% end %>
-  </div>
-<% end %>
-
+  <% end %>
 </div>
