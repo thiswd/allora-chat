@@ -1,13 +1,42 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-6">
       <h1>Criar uma nova edição</h1>
       <%= render 'form_edition' %>
     </div>
-    <div class="col-md-5">
+
+      <div class="container">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Ativar modal</button>
+        <div class="modal" id="modal-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h3 class="modal-title">Busque um GIF</h3>
+              </div>
+              <div class="modal-body">
+
+                <form action="" method="GET" data-remote="true">
+                    <input type="text" id="gif_search" name="gif_search" class="search-input-rounded" value="<%params[:gif_search]%>">
+                    <button id="gif-search" type="submit" class="btn btn-primary"> Search for GIFs </button>
+                </form>
+                <div class="giphys">
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <a href="" class="btn btn-primary" data-dismiss="modal">Choose Gif</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     <div class="col-md-5">
       <%= render 'shared/preview' %>
     </div>
   </div>
 </div>
+
 
 
