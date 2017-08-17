@@ -26,7 +26,7 @@ class BalloonsController < ApplicationController
   private
 
   def balloon_params
-    params.require(:balloon).permit(:content, :link, :option_next, :balloon_img, :balloon_img_cache, :remote_balloon_img_url, :post_id)
+    params.require(:balloon).permit(:content, :link, :option_next, :balloon_img, :balloon_img_cache, :post_id)
   end
 
   def set_post

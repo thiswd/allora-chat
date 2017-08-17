@@ -1,10 +1,36 @@
 <%= simple_form_for [@edition, @post, @balloon], remote: true, method: :post do |f| %>
-
-    <%= f.input :type, label: false, as: :radio_buttons, collection: ["Texto", "Imagem/GIF"], item_wrapper_class: 'inline', class: "btn btn-primary" %>
+  <div class="btn-group radio-options" data-toggle="buttons">
+    <label class="btn btn-default active text">
+      <%= f.radio_button("type", "Texto", checked: "checked") %> Texto
+    </label>
+    <label class="btn btn-default img">
+      <%= f.radio_button("type", "Imagem/GIF") %> Imagem/GIF
+    </label>
+  </div>
   <%= f.input :content, label: false, placeholder: "Texto" %>
-  <%= f.input :balloon_img, label: "Imagem ou GIF" %>
+  <%= f.input :balloon_img, label: false %>
   <%= f.input :balloon_img_cache, as: :hidden %>
   <%= f.input :link, label: false, placeholder: "URL para texto ou imagem" %>
-  <%#= f.input :remote_balloon_img_url %>
-  <%= f.submit 'Criar um balão', class: "btn btn-primary" %>
+  <%= f.submit 'Criar um balão', class: "btn btn-default btn-block" %>
 <% end %>
+
+<% content_for(:js) do %>
+
+  <script>
+
+    $("#balloon_balloon_img").hide();
+
+    $('.text').on("click", function(){
+      $("#balloon_content").show();
+      $("#balloon_balloon_img").hide();
+    });
+
+    $('.img').on("click", function(){
+      $("#balloon_balloon_img").show();
+      $("#balloon_content").hide();
+    });
+
+  </script>
+
+<% end %>
+

@@ -28,7 +28,7 @@ class EditionsController < ApplicationController
   private
 
   def edition_params
-    params.require(:edition).permit(:date, :greeting, :greeting_img, :remote_greeting_img_url, :greeting_img_cache, :farewell, :farewell_img, :farewell_img_cache, :remote_farewell_img_url, :user_id)
+    params.require(:edition).permit(:date, :greeting, :greeting_img, :greeting_img_cache, :farewell, :farewell_img, :farewell_img_cache, :user_id)
   end
 
 end

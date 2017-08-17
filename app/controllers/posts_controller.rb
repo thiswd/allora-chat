@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:headline, :option_more, :option_next, :post_img, :post_img_cache, :remote_post_img_url, :edition_id)
+    params.require(:post).permit(:headline, :option_more, :option_next, :post_img, :post_img_cache, :edition_id)
   end
 
   def set_edition
