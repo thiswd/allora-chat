@@ -1,0 +1,33 @@
+.footer {
+  font-family: 'Pacifico', cursive;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px;
+  width: 100%;
+  color: $middle-grey;
+  opacity: 1.7;
+  border-radius: 10px;
+  height: 70px;
+  left:0px;
+  bottom:0px;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: $middle-grey;
+  opacity: 0.4;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: $red;
+}
+
