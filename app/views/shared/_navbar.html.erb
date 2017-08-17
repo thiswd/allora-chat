@@ -5,6 +5,7 @@
   <% end %>
 
   <% if current_page?(root_path) %>
+    <% unless user_signed_in?  %>
 
     <div class="btn-position">
       <%= link_to "Conheça o nosso chat", '#one', class: "navbar-wagon-item  navbar-wagon-link" %>
@@ -13,6 +14,7 @@
       <%= link_to "Get Started", '#four', class: "navbar-wagon-item  navbar-wagon-link" %>
 
     </div>
+    <% end %>
   <% end %>
 
   <!-- Right Navigation -->

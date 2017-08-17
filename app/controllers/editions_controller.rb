@@ -1,6 +1,13 @@
 class EditionsController < ApplicationController
   def new
     @edition = Edition.new
+
+    if params[:gif_search]
+      @giphys = Giphy.search( params[:gif_search], {limit: 24})
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
   def create

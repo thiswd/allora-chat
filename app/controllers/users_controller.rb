@@ -9,7 +9,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    editions = @user.editions.where('date::date = ?', Date.today).order(date: :desc)
+    if editions.count > 0
+      @edition = editions.first
+    else
+      @edition = @user.editions.where('date::date < ?', Date.today).order(date: :desc).first
+    end
+  end
 
+  def index
+    @users = User.all
   end
 
   private
