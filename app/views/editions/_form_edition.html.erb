@@ -8,12 +8,14 @@
     <%= f.input :greeting, label: false, placeholder: "Saudação" %>
     <%= f.input :greeting_img, label: false %>
     <%= f.input :greeting_img_cache, as: :hidden %>
+    <%= f.input :remote_greeting_img_url %>
   </div>
   <div class="farewell">
     <h4>Definir despedida</h4>
     <%= f.input :farewell, label: false, placeholder: "Despedida" %>
     <%= f.input :farewell_img, label: false %>
     <%= f.input :farewell_img_cache, as: :hidden %>
+    <%= f.input :remote_farewell_img_url %>
   </div>
   <%= f.submit 'Criar um post', class: "btn btn-primary" %>
 <% end %>
