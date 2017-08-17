@@ -2,10 +2,11 @@
 
 <div class="post">
   <div class="screen1">
-    <p class="balloon">Hi there! Shall we start?</p>
-    <div class="text-center btn-margin">
-      <a class="btn btn-xs new-click-next">YEAAAH!</a>
-    </div>
+    <% if @user.editions.last.greeting_img.blank? %>
+      <p class="balloon"><%= @user.editions.last.greeting %></p>
+    <% else %>
+      <p class="balloon"><%= cl_image_tag @user.editions.last.greeting_img %></p>
+    <% end %>
   </div>
 </div>
 
@@ -13,16 +14,36 @@
 
   <div class="post">
 
-    <!-- SCREEN 1 -->
-    <div class="screen1">
-      <p class="balloon hidden"><%= post.headline %></p>
-      <img class="pic-border hidden" src="http://via.placeholder.com/250x150" alt="">
-      <div class="text-center btn-margin hidden">
-        <a class="btn btn-xs new-click-more">Tell me more</a>
-        <a class="btn btn-xs new-click-next">Next post</a>
-      </div>
-    </div>
 
+    <!-- SCREEN 1 -->
+    <% if @user.editions.last.posts.first == post %>
+      <div class="screen1">
+        <p class="balloon"><%= post.headline %></p>
+        <img class="pic-border" src="http://via.placeholder.com/250x150" alt="">
+        <div class="text-center btn-margin">
+            <a class="btn btn-xs new-click-more"><%= post.option_more %></a>
+          <% if post.id == @user.editions.last.posts.last.id %>
+            botao index
+          <% else %>
+            <a class="btn btn-xs new-click-next"><%= post.option_next %></a>
+          <% end %>
+        </div>
+      </div>
+
+    <% else %>
+      <div class="screen1">
+        <p class="balloon hidden"><%= post.headline %></p>
+        <img class="pic-border hidden" src="http://via.placeholder.com/250x150" alt="">
+        <div class="text-center btn-margin hidden">
+          <a class="btn btn-xs new-click-more"><%= post.option_more %></a>
+          <% if post.id == @user.editions.last.posts.last.id %>
+            botao index
+          <% else %>
+            <a class="btn btn-xs new-click-next"><%= post.option_next %></a>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   <!-- SCREEN 2 -->
 
     <% post.balloons.each_slice(2) do |balloon|%>
@@ -33,7 +54,7 @@
           <% if balloon[0].balloon_img.blank? %>
             <%= balloon[0].content %>
           <% else %>
-            <%= balloon[0].balloon_img %>
+            <%= cl_image_tag balloon[0].balloon_img %>
           <% end %>
         </p>
       <% else %>
@@ -41,7 +62,7 @@
           <% if balloon[0].balloon_img.blank? %>
             <%= balloon[0].content %>
           <% else %>
-            <%= balloon[0].balloon_img %>
+            <%= cl_image_tag balloon[0].balloon_img %>
           <% end %>
         </p>
         <p class="hidden">
@@ -54,7 +75,7 @@
             <% if balloon[1].balloon_img.blank? %>
               <%= balloon[1].content %>
             <% else %>
-              <%= balloon[1].balloon_img %>
+              <%= cl_image_tag balloon[1].balloon_img %>
             <% end %>
           </p>
         <% else %>
@@ -62,7 +83,7 @@
             <% if balloon[1].balloon_img.blank? %>
               <%= balloon[1].content %>
             <% else %>
-              <%= balloon[1].balloon_img %>
+              <%= cl_image_tag balloon[1].balloon_img %>
             <% end %>
           </p>
           <p class="hidden">
@@ -72,16 +93,18 @@
       <% end %>
         <div class="text-center btn-margin hidden">
           <% unless balloon[1] == post.balloons.last || balloon[0] == post.balloons[-1] %>
-            <a class="btn btn-xs new-click-more">Continue...</a>
+            <a class="btn btn-xs new-click-more"><%= post.option_more %></a>
           <% end %>
-          <a class="btn btn-xs new-click-next">Next post</a>
+          <% unless post.id == @user.editions.last.posts.last.id %>
+            <a class="btn btn-xs new-click-next"><%= post.option_next %></a>
+          <% else %>
+            Botão para index
+          <% end %>
         </div>
       <% n += 1 %>
     </div>
     <% end %>
-
   </div>
-
 <% end %>
 
 </div>
