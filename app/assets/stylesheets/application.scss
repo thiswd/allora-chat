@@ -1,3 +1,5 @@
+@import 'rails_emoji_picker';
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -13,3 +15,9 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+@import "components/form";
+
+.container {
+  margin-top: 50px;
+}
+
