@@ -64,7 +64,7 @@
 .banner {
   color: white;
   text-align: center;
-  height: 66vh;
+  height: 100vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -74,7 +74,7 @@
 .banner h1 {
   font-size: 40px;
   font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 3px #333333;
   font-family: 'Droid Serif', serif;
 }
 .banner p {
@@ -84,4 +84,39 @@
   margin-bottom: 30px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
+  text-shadow: 3px 7px #333333;
+}
+
+// === ScrollSpy ===
+.dots {
+  width: 22px;
+  display: inline-block;
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  z-index: 2;
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px #999 solid;
+  }
+
+  .active .dot {
+    background-color: black;
+    border-color: black;
+  }
+}
+
+.home-vertical {
+  height: 100vh;
+}
+
+.banner-color {
+  background: #B53C0;
+}
+
+.banner-content {
+  height: 1px;
 }
