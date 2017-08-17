@@ -26,58 +26,58 @@
   <!-- SCREEN 2 -->
 
     <% post.balloons.each_slice(2) do |balloon|%>
-    <% n = 1 %>
-    <div class="screen<%= n + 1 %>">
-      <% if balloon[0].link.blank? %>
-        <p class="balloon hidden">
-          <% if balloon[0].balloon_img.blank? %>
-            <%= balloon[0].content %>
-          <% else %>
-            <%= balloon[0].balloon_img %>
-          <% end %>
-        </p>
-      <% else %>
-        <p class="balloon hidden" style="cursor:pointer" onclick="location.href='<%= balloon[0].link %>'">
-          <% if balloon[0].balloon_img.blank? %>
-            <%= balloon[0].content %>
-          <% else %>
-            <%= balloon[0].balloon_img %>
-          <% end %>
-        </p>
-        <p class="hidden">
-          <%= link_to "#{balloon[0].link}", balloon[0].link %>
-        </p>
-      <% end %>
-      <% unless balloon[1].nil? %>
-        <% if balloon[1].link.blank? %>
+      <% n = 1 %>
+      <div class="screen<%= n + 1 %>">
+        <% if balloon[0].link.blank? %>
           <p class="balloon hidden">
-            <% if balloon[1].balloon_img.blank? %>
-              <%= balloon[1].content %>
+            <% if balloon[0].balloon_img.blank? %>
+              <%= balloon[0].content %>
             <% else %>
-              <%= balloon[1].balloon_img %>
+              <%= balloon[0].balloon_img %>
             <% end %>
           </p>
         <% else %>
-          <p class="balloon hidden" style="cursor:pointer" onclick="location.href='<%= balloon[1].link %>'">
-            <% if balloon[1].balloon_img.blank? %>
-              <%= balloon[1].content %>
+          <p class="balloon hidden" style="cursor:pointer" onclick="location.href='<%= balloon[0].link %>'">
+            <% if balloon[0].balloon_img.blank? %>
+              <%= balloon[0].content %>
             <% else %>
-              <%= balloon[1].balloon_img %>
+              <%= balloon[0].balloon_img %>
             <% end %>
           </p>
           <p class="hidden">
-            <%= link_to "#{balloon[1].link}", balloon[1].link %>
+            <%= link_to "#{balloon[0].short_link}", balloon[0].link %>
           </p>
         <% end %>
-      <% end %>
+        <% unless balloon[1].nil? %>
+          <% if balloon[1].link.blank? %>
+            <p class="balloon hidden">
+              <% if balloon[1].balloon_img.blank? %>
+                <%= balloon[1].content %>
+              <% else %>
+                <%= balloon[1].balloon_img %>
+              <% end %>
+            </p>
+          <% else %>
+            <p class="balloon hidden" style="cursor:pointer" onclick="location.href='<%= balloon[1].link %>'">
+              <% if balloon[1].balloon_img.blank? %>
+                <%= balloon[1].content %>
+              <% else %>
+                <%= balloon[1].balloon_img %>
+              <% end %>
+            </p>
+            <p class="hidden">
+              <%= link_to "#{balloon[1].short_link}", balloon[1].link %>
+            </p>
+          <% end %>
+        <% end %>
         <div class="text-center btn-margin hidden">
           <% unless balloon[1] == post.balloons.last || balloon[0] == post.balloons[-1] %>
             <a class="btn btn-xs new-click-more">Continue...</a>
           <% end %>
           <a class="btn btn-xs new-click-next">Next post</a>
         </div>
-      <% n += 1 %>
-    </div>
+        <% n += 1 %>
+      </div>
     <% end %>
 
   </div>

@@ -1,5 +1,9 @@
 // Specific CSS for your home-page
 
+.color-wrapper {
+  background-color: #FFFFFF;
+}
+
 .home-vertical {
   .h2 {
     font-style: "cursive";
@@ -106,6 +110,9 @@
   .active .dot {
     background-color: black;
     border-color: black;
+  }
+  .nav li a {
+    background-color: transparent;
   }
 }
 
