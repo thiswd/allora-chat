@@ -1,4 +1,4 @@
-<%= simple_form_for [@edition, @post, @balloon], remote: true, method: :post do |f| %>
+<%= simple_form_for [@edition, @post, @balloon], method: :post do |f| %>
   <div class="btn-group radio-options" data-toggle="buttons">
     <label class="btn btn-default btn-xs active text">
       <%= f.radio_button("type", "Texto", checked: "checked") %> Texto
@@ -12,7 +12,8 @@
   <%= f.input :balloon_img, label: false %>
   <%= f.input :balloon_img_cache, as: :hidden %>
   <%= f.input :link, label: false, placeholder: "URL para texto ou imagem" %>
-  <%= f.submit 'Criar um balão', class: "btn btn-default btn-block" %>
+  <%= f.submit 'Criar um balão', class: "btn btn-default" %>
+  <%= link_to "Finalizar post", new_edition_post_path(@edition), class: "btn btn-default" %>
 <% end %>
 
 <% content_for(:js) do %>

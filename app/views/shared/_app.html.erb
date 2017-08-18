@@ -2,10 +2,9 @@
 
 <div class="post">
   <div class="screen1">
-    <% if @user.editions.last.greeting_img.blank? %>
-      <p class="balloon"><%= @user.editions.last.greeting %></p>
-    <% else %>
-      <p class="balloon"><%= cl_image_tag @user.editions.last.greeting_img %></p>
+    <p class="balloon"><%= content_with_emoji(@edition.greeting) %></p>
+    <% if @edition.greeting_img.present? %>
+      <p class="balloon"><%= cl_image_tag @edition.greeting_img, height: 150 %></p>
     <% end %>
   </div>
 </div>
@@ -14,97 +13,99 @@
 
   <div class="post">
 
-
     <!-- SCREEN 1 -->
-    <% if @user.editions.last.posts.first == post %>
+    <% if @edition.posts.first == post %>
       <div class="screen1">
-        <p class="balloon"><%= post.headline %></p>
-        <img class="pic-border" src="http://via.placeholder.com/250x150" alt="">
+        <p class="balloon"><%= content_with_emoji(post.headline) %></p>
+        <p class="balloon"><%= cl_image_tag post.post_img, height: 150 %></p>
         <div class="text-center btn-margin">
-            <a class="btn btn-xs new-click-more"><%= post.option_more %></a>
-          <% if post.id == @user.editions.last.posts.last.id %>
-            botao index
-          <% else %>
-            <a class="btn btn-xs new-click-next"><%= post.option_next %></a>
-          <% end %>
+            <a class="btn btn-xs new-click-more"><%= content_with_emoji(post.option_more) %></a>
+          <%# if post.id == @edition.posts.last.id %>
+            <!-- botao index -->
+          <%# else %>
+            <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
+          <%# end %>
         </div>
       </div>
 
     <% else %>
       <div class="screen1">
-        <p class="balloon hidden"><%= post.headline %></p>
-        <img class="pic-border hidden" src="http://via.placeholder.com/250x150" alt="">
+        <p class="balloon hidden"><%= content_with_emoji(post.headline) %></p>
+        <p class="balloon hidden"><%= cl_image_tag post.post_img, height: 150 %></p>
         <div class="text-center btn-margin hidden">
-          <a class="btn btn-xs new-click-more"><%= post.option_more %></a>
-          <% if post.id == @user.editions.last.posts.last.id %>
-            botao index
-          <% else %>
-            <a class="btn btn-xs new-click-next"><%= post.option_next %></a>
-          <% end %>
+          <a class="btn btn-xs new-click-more"><%= content_with_emoji(post.option_more) %></a>
+          <%# if post.id == @edition.posts.last.id %>
+            <!-- botao index -->
+          <%# else %>
+            <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
+          <%# end %>
         </div>
       </div>
     <% end %>
   <!-- SCREEN 2 -->
 
-    <% post.balloons.each_slice(2) do |balloon|%>
+    <% post.balloons.order(:created_at).each_slice(2) do |balloon| %>
 
-    <% n = 1 %>
-    <div class="screen<%= n + 1 %>">
-      <% if balloon[0].link.blank? %>
-        <p class="balloon hidden">
-          <% if balloon[0].balloon_img.blank? %>
-            <%= balloon[0].content %>
-          <% else %>
-            <%= cl_image_tag balloon[0].balloon_img %>
-          <% end %>
-        </p>
-      <% else %>
-        <p class="balloon hidden" style="cursor:pointer" onclick="location.href='<%= balloon[0].link %>'">
-          <% if balloon[0].balloon_img.blank? %>
-            <%= balloon[0].content %>
-          <% else %>
-            <%= cl_image_tag balloon[0].balloon_img %>
-          <% end %>
-        </p>
-        <p class="hidden">
-          <%= link_to "#{balloon[0].link}", balloon[0].link %>
-        </p>
-      <% end %>
-
-      <% unless balloon[1].nil? %>
-        <% if balloon[1].link.blank? %>
+    <%# n = 1 %>
+      <div class="screen2">
+        <% if balloon[0].link.blank? %>
           <p class="balloon hidden">
-            <% if balloon[1].balloon_img.blank? %>
-              <%= balloon[1].content %>
+            <% if balloon[0].balloon_img.blank? %>
+              <%= content_with_emoji(balloon[0].content) %>
             <% else %>
-              <%= balloon[1].balloon_img %>
+              <%= cl_image_tag balloon[0].balloon_img, height: 150 %>
             <% end %>
           </p>
         <% else %>
-          <p class="balloon hidden" style="cursor:pointer" onclick="location.href='<%= balloon[1].link %>'">
-            <% if balloon[1].balloon_img.blank? %>
-              <%= balloon[1].content %>
+          <p class="balloon hidden" style="cursor:pointer" onclick="location.href='<%= balloon[0].link %>'">
+            <% if balloon[0].balloon_img.blank? %>
+              <%= content_with_emoji(balloon[0].content) %>
             <% else %>
-              <%= balloon[1].balloon_img %>
+              <%= cl_image_tag balloon[0].balloon_img, height: 150 %>
             <% end %>
+            <br>
+            <%= link_to "#{balloon[0].short_link}", balloon[0].link %>
           </p>
-          <p class="hidden">
-            <%= link_to "#{balloon[1].short_link}", balloon[1].link %>
-          </p>
         <% end %>
-      <% end %>
-      <div class="text-center btn-margin hidden">
-        <% unless balloon[1] == post.balloons.last || balloon[0] == post.balloons[-1] %>
-          <a class="btn btn-xs new-click-more"><%= post.option_more %></a>
+
+        <% if balloon[1].present? %>
+          <% if balloon[1].link.blank? %>
+            <p class="balloon hidden">
+              <% if balloon[1].balloon_img.blank? %>
+                <%= content_with_emoji(balloon[1].content) %>
+              <% else %>
+                <%= balloon[1].balloon_img %>
+              <% end %>
+            </p>
+          <% else %>
+            <p class="balloon hidden" style="cursor:pointer" onclick="location.href='<%= balloon[1].link %>'">
+              <% if balloon[1].balloon_img.blank? %>
+                <%= content_with_emoji(balloon[1].content) %>
+              <% else %>
+                <%= balloon[1].balloon_img %>
+              <% end %>
+              <br>
+              <%= link_to "#{balloon[1].short_link}", balloon[1].link %>
+            </p>
+          <% end %>
         <% end %>
-        <% unless post.id == @user.editions.last.posts.last.id %>
-          <a class="btn btn-xs new-click-next"><%= post.option_next %></a>
-        <% else %>
-          Botão para index
-        <% end %>
+
+        <div class="text-center btn-margin hidden">
+          <% unless balloon[1] == post.balloons.last || balloon[0] == post.balloons[-1] %>
+            <a class="btn btn-xs new-click-more"><%= content_with_emoji(post.option_more) %></a>
+          <% end %>
+          <% unless post.id == @edition.posts.last.id %>
+            <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
+          <% else %>
+            <!-- Botão para index -->
+            <p class="balloon hidden"><%= content_with_emoji(@edition.farewell) %></p>
+              <% if @edition.farewell_img.present? %>
+                <p class="balloon hidden"><%= cl_image_tag @edition.farewell_img, height: 150 %></p>
+              <% end %>
+          <% end %>
+        </div>
+      <%# n += 1 %>
       </div>
-      <% n += 1 %>
-    </div>
     <% end %>
   </div>
 <% end %>
