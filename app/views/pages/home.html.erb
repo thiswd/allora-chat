@@ -14,47 +14,55 @@
     </ul>
   </div>
 
+
   <div class="color-wrapper">
-    <div class="container">
-      <div id="zero" class="banner" style="background-image: linear-gradient(-225deg, rgba(255,128,7,0.6) 0%, rgba(255,200,55,0.6) 50%), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1502893212/pink-hair-selfie-bun_mcxqea.jpg');">
-        <div class="banner-content">
-
-          <h1><i>Bem-Vindo Ao Allora!</i></h1>
-          <%= link_to "Entrar no chat", users_path, class: "btn btn-warning" %>
-          <% if user_signed_in? %>
-            <%= link_to "Create - Edition", new_edition_path, class: "btn btn-warning" %>
-          <% end %>
+    <div id="zero" class="banner" style="background-image: linear-gradient(-225deg, rgba(9, 9, 9, 0.73) 0%,  rgba(0, 0, 0, 0.22) 50%), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503006674/josh-felise-55613_rfizax.jpg');">
+      <div class="banner-content">
 
 
-        </div>
+        <h1><i>Bem-Vindo Ao Allora!</i></h1>
+        <%= link_to "Entrar no chat", users_path, class: "btn btn-warning" %>
+        <% if user_signed_in? %>
+          <%= link_to "Create - Edition", new_edition_path, class: "btn btn-warning" %>
+        <% end %>
+
       </div>
+    </div>
 
-
-
+    <div class="container">
       <div class="home-vertical" id="one">
         <div class="col-xs-12 col-sm-6 slide-left">
           <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502830965/foto_mfzhye.jpg', width: "auto" %>
         </div>
 
-        <div class="col-xs-12 col-md-6 slide-right">
+        <div class="col-xs-12 col-md-6 slide-right allora">
 
-            <h2> <strong> Allora, a maneira mais rápida de obter informação! </strong> </h2>
-            <p align="justify" >Tem melhor forma de oferecer-lhes informação do que através de um <strong>bate-papo</strong> rápido? É muito mais rápido que o e-mail e mais eficiente do que o telefone. <i class="fa fa-comment-o" aria-hidden="true"></i></p>
-            <button type="button" class="btn btn-warning"> Experimente de graça </button>
-            <p class = class-p><i>Você é um influenciador? <u>Faça login.</u></i></p>
+
+            <div class ="allora-size"> <strong> Allora, a maneira mais rápida criar conteúdo!
+            </strong> </div>
+
+            <p text-align="justify"> Ofereça informação aos seus seguidores no formato de um bate-papo! É muito mais amigável que o e-mail e mais eficiente do que o telefone.
+            </p>
+
+            <p class = class-p><i>Você é um influenciador? <u>Cadastre-se.</u></i></p>
             <br>
-            <p class-p><i>Experimente allora gratuitamente e acompanhe todos os posts do seu influenciador preferido.</i></p>
+            <p class-p><i>Experimente allora gratuitamente e publique conteúdo para os seus seguidores.</i></p>
 
         </div>
       </div>
 
       <div class="home-vertical" id="two">
         <div class="col-xs-12 col-md-6 slide-right banner-color">
-            <h2> <strong> Veja como funciona </strong> </h2>
-            <button type="button" class="btn btn-warning"> Try it Free </button>
+            <h3><strong>Crie conteúdo em 3 passos</strong></h3>
+            <h4>Veja como funciona</h4>
+
             <br>
-            <p align="justify" >All messages in public channels, files, uploads and incoming information become indexed and searchable once inside Slack, giving your team access to the collective knowledge of the company. And the more you work in Slack, the smarter Slack’s search becomes, making it easier for you to find exactly what you’re looking for.</p>
-            <H4>Você é um influenciador? <u> Sign in </u> </H4>
+            <article>
+            1) Faça o cadastro em nosso site.<br>
+            2) Comece a escrever as suas futuras publicações.<br>
+            3) Finalize o post.<br>
+            </article>
+            <H4>SIM, é só isso.</H4>
         </div>
 
         <div class="col-xs-12 col-sm-6 slide-left">
@@ -71,7 +79,7 @@
             <h2> <strong> Saiba mais </strong> </h2>
             <button type="button" class="btn btn-warning"> Try it Free </button>
             <br>
-            <p align="justify" >All messages in public channels, files, uploads and incoming information become indexed and searchable once inside Slack, giving your team access to the collective knowledge of the company. And the more you work in Slack, the smarter Slack’s search becomes, making it easier for you to find exactly what you’re looking for.</p>
+            <article> All messages in public channels, files, uploads and incoming information become indexed and searchable once inside Slack, giving your team access to the collective knowledge of the company. And the more you work in Slack, the smarter Slack’s search becomes, making it easier for you to find exactly what you’re looking for.</article>
             <H4>Você é um influenciador? <u> Sign in </u> </H4>
         </div>
       </div>
@@ -81,7 +89,7 @@
             <h2> <strong> Get Started </strong> </h2>
             <button type="button" class="btn btn-warning"> Try it Free </button>
             <br>
-            <p align="justify" >All messages in public channels, files, uploads and incoming information become indexed and searchable once inside Slack, giving your team access to the collective knowledge of the company. And the more you work in Slack, the smarter Slack’s search becomes, making it easier for you to find exactly what you’re looking for.</p>
+            <article> All messages in public channels, files, uploads and incoming information become indexed and searchable once inside Slack, giving your team access to the collective knowledge of the company. And the more you work in Slack, the smarter Slack’s search becomes, making it easier for you to find exactly what you’re looking for. </article>
             <H4>Você é um influenciador? <u> Sign in </u> </H4>
         </div>
 
@@ -91,4 +99,7 @@
       </div>
     </div>
   </div>
+
+
+
 

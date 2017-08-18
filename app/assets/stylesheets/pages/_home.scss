@@ -19,6 +19,7 @@
   height: 700px;
   background-size: cover;
   background: white;
+
 }
 
 .slide-left {
@@ -28,6 +29,14 @@
   .h1 {
     font-size: 72px;
   }
+
+  .p {
+    margin: 20px 20px 20px 20px;
+  }
+}
+
+.h2 {
+  font-size: 20px;
 }
 
 .btn-position {
@@ -49,12 +58,10 @@
 
 .btn-warning {
 
-  top:50%;
-  left:29%;
 }
 
 .class-p {
-   font-size: 2px;
+   font-size: 15px;
 }
 
 .banner {
@@ -129,3 +136,31 @@
     top: 50%;
 }
 
+article {
+  line-height:2;
+  background-image:linear-gradient(rgba(0,0,0,.3) 1px, transparent 1px);
+  background-size: 100% 2em;
+  background-position:0 1.4em;
+  background-origin:content-box;
+  padding:50px;
+
+  font-style:italic;
+
+}
+
+
+.allora-size {
+  font-size: 20px;
+  margin-top: 45px;
+  .p {
+    margin: 38px 0 12.5px;
+  }
+
+}
+
+.allora {
+
+  .p {
+    height: 100px;
+  }
+}
