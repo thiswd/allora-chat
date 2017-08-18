@@ -46,7 +46,6 @@
 
     <% post.balloons.order(:created_at).each_slice(2) do |balloon| %>
 
-    <%# n = 1 %>
       <div class="screen2">
         <% if balloon[0].link.blank? %>
           <p class="balloon hidden">
@@ -91,20 +90,20 @@
         <% end %>
 
         <div class="text-center btn-margin hidden">
-          <% unless balloon[1] == post.balloons.last || balloon[0] == post.balloons[-1] %>
+          <% unless balloon[1] == post.balloons.last || balloon[0] == post.balloons.last %>
             <a class="btn btn-xs new-click-more"><%= content_with_emoji(post.option_more) %></a>
           <% end %>
           <% unless post.id == @edition.posts.last.id %>
             <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
           <% else %>
-            <!-- Botão para index -->
-            <p class="balloon hidden"><%= content_with_emoji(@edition.farewell) %></p>
+            <% if balloon[1] == post.balloons.last || balloon[0] == post.balloons.last %>
+              <p class="balloon"><%= content_with_emoji(@edition.farewell) %></p>
               <% if @edition.farewell_img.present? %>
-                <p class="balloon hidden"><%= cl_image_tag @edition.farewell_img, height: 150 %></p>
+                <p class="balloon"><%= cl_image_tag @edition.farewell_img, height: 150 %></p>
               <% end %>
+            <% end %>
           <% end %>
         </div>
-      <%# n += 1 %>
       </div>
     <% end %>
   </div>
