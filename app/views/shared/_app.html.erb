@@ -73,7 +73,7 @@
               <% if balloon[1].balloon_img.blank? %>
                 <%= content_with_emoji(balloon[1].content) %>
               <% else %>
-                <%= balloon[1].balloon_img %>
+                <%= cl_image_tag balloon[1].balloon_img %>
               <% end %>
             </p>
           <% else %>
@@ -81,7 +81,7 @@
               <% if balloon[1].balloon_img.blank? %>
                 <%= content_with_emoji(balloon[1].content) %>
               <% else %>
-                <%= balloon[1].balloon_img %>
+                <%= cl_image_tag balloon[1].balloon_img %>
               <% end %>
               <br>
               <%= link_to "#{balloon[1].short_link}", balloon[1].link %>
