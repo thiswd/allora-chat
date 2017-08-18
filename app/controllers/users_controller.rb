@@ -7,6 +7,11 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def update
+    current_user.update(user_params)
+    redirect_to current_user
+  end
+
   def show
     @user = User.find(params[:id])
     editions = @user.editions.where('date::date = ?', Date.today).order(date: :desc)
@@ -24,7 +29,10 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :first_name, :last_name, :category, :user_photo, :influencer, :email)
+    params.require(:user).permit(:username, :first_name, :last_name, :category, :user_photo, :user_photo_cache, :influencer, :email, :banner, :banner_cache)
   end
 
+  def banner_params
+    params.require(:user).permit(:banner)
+  end
 end

@@ -3,19 +3,24 @@
     <h4>Data de publicação</h4>
     <%= f.input :date, label: false, as: :date %>
   </div>
+
+
   <div class="greeting">
     <h4>Definir saudação</h4>
     <%= f.input :greeting, label: false, placeholder: "Saudação", wrapper_html: { class: "emoji-picker-container" }, input_html: { data: { emojiable: true } } %>
     <%= f.input :greeting_img, label: false %>
     <%= f.input :greeting_img_cache, as: :hidden %>
-    <%= f.input :remote_greeting_img_url %>
+    <%= f.input :remote_greeting_img_url, placeholder: "Url da imagem ou GIF"%>
   </div>
+
   <div class="farewell">
     <h4>Definir despedida</h4>
     <%= f.input :farewell, label: false, placeholder: "Despedida", wrapper_html: { class: "emoji-picker-container" }, input_html: { data: { emojiable: true } } %>
     <%= f.input :farewell_img, label: false %>
     <%= f.input :farewell_img_cache, as: :hidden %>
-    <%= f.input :remote_farewell_img_url %>
+    <%= f.input :remote_farewell_img_url, placeholder: "Url da imagem ou GIF" %>
   </div>
   <%= f.submit 'Criar um post', class: "btn btn-primary" %>
+
 <% end %>
+
