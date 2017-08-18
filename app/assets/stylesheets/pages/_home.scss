@@ -19,6 +19,7 @@
   height: 700px;
   background-size: cover;
   background: white;
+
 }
 
 .slide-left {
@@ -28,6 +29,14 @@
   .h1 {
     font-size: 72px;
   }
+
+  .p {
+    margin: 20px 20px 20px 20px;
+  }
+}
+
+.h2 {
+  font-size: 20px;
 }
 
 .btn-position {
@@ -140,18 +149,18 @@ article {
 }
 
 
-// @keyframes typing { from { width: 0; } }
-// @keyframes blink-caret { 50% { border-color: transparent; } }
+.allora-size {
+  font-size: 20px;
+  margin-top: 45px;
+  .p {
+    margin: 38px 0 12.5px;
+  }
 
-// code{font: bold 200% Consolas, Monaco, monospace;
-//   border-right: .1em solid;
-//   width: 16.5em; /* fallback */
-//   width: 30ch; /* # of chars */
-//   margin: 2em 1em;
-//   white-space: nowrap;
-//   overflow: hidden;
-//   animation: typing 20s steps(30, end), /* # of steps = # of chars */
-//              blink-caret .5s step-end infinite alternate;
-// }
+}
 
+.allora {
 
+  .p {
+    height: 100px;
+  }
+}
