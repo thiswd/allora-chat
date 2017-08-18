@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170816172023) do
   enable_extension "plpgsql"
 
   create_table "balloons", force: :cascade do |t|
-    t.string "content"
+    t.text "content"
     t.string "link"
     t.string "balloon_img"
     t.bigint "post_id"
@@ -39,25 +39,13 @@ ActiveRecord::Schema.define(version: 20170816172023) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.text "headline"
+    t.string "headline"
     t.string "option_more"
     t.string "option_next"
     t.string "post_img"
     t.bigint "edition_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "content1"
-    t.string "link1"
-    t.string "img1"
-    t.text "content2"
-    t.string "link2"
-    t.string "img2"
-    t.text "content3"
-    t.string "link3"
-    t.string "img3"
-    t.text "content4"
-    t.string "link4"
-    t.string "img4"
     t.index ["edition_id"], name: "index_posts_on_edition_id"
   end
 
