@@ -11,15 +11,9 @@ class BalloonsController < ApplicationController
     @balloon.post = @post
 
     if @balloon.save
-      respond_to do |format|
-        format.html { redirect_to new_edition_post_balloon_path(@edition, @post) }
-        format.js { @balloon = Balloon.new } # <-- will render `app/views/reviews/create.js.erb`
-      end
+      redirect_to new_edition_post_balloon_path(@edition, @post)
     else
-      respond_to do |format|
-        format.html { render :new }
-        format.js  # <-- idem
-      end
+      render :new
     end
   end
 
