@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :username, :first_name, :last_name, :category, presence: true
 
   mount_uploader :user_photo, PhotoUploader
+  mount_uploader :banner, PhotoUploader
   validate :password_complexity
   def password_complexity
     if password.present?
