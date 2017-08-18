@@ -1,9 +1,12 @@
+
 <div class="row no-gutter">
   <% if @user.banner.present? %>
     <div class="col-xs-12 col-sm-6 l-side" id= "banner_edition" style="background-image: url('<%= cl_image_path @user.banner %>');">
   <% else %>
+
     <div class="col-xs-12 col-sm-6 l-side" id= "banner_edition" style="background-image: url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503069359/lep8qikttrcqj7g3fzsw.gif');">
   <% end %>
+
 
     <h1>Allora</h1>
     <p>[v20170817]</p>
@@ -29,8 +32,9 @@
     </div>
   </div>
 
-  <div class="col-xs-12 col-sm-6 r-side">
 
+  <div class="col-xs-12 col-sm-6 r-side">
     <%= render partial: "shared/app" %>
   </div>
 </div>
+
