@@ -15,7 +15,6 @@
 
 }
 
-
 .slide-right {
   height: 700px;
   background-size: cover;
@@ -30,13 +29,6 @@
     font-size: 72px;
   }
 }
-
-
-
-.btn btn-warning {
-
-}
-
 
 .btn-position {
   background: white;
@@ -57,12 +49,10 @@
 
 .btn-warning {
 
-  top:50%;
-  left:29%;
 }
 
 .class-p {
-   font-size: 2px;
+   font-size: 15px;
 }
 
 .banner {
@@ -126,3 +116,41 @@
 .banner-content {
   height: 1px;
 }
+
+.vertical-align {
+    position: relative;
+}
+
+.vertical-align > div {
+    position: absolute;
+    top: 50%;
+}
+
+article {
+  line-height:2;
+  background-image:linear-gradient(rgba(0,0,0,.3) 1px, transparent 1px);
+  background-size: 100% 2em;
+  background-position:0 1.4em;
+  background-origin:content-box;
+  padding:50px;
+
+  font-style:italic;
+
+}
+
+
+// @keyframes typing { from { width: 0; } }
+// @keyframes blink-caret { 50% { border-color: transparent; } }
+
+// code{font: bold 200% Consolas, Monaco, monospace;
+//   border-right: .1em solid;
+//   width: 16.5em; /* fallback */
+//   width: 30ch; /* # of chars */
+//   margin: 2em 1em;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   animation: typing 20s steps(30, end), /* # of steps = # of chars */
+//              blink-caret .5s step-end infinite alternate;
+// }
+
+

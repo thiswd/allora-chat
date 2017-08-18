@@ -1,56 +1,74 @@
 <div id="chatbox">
-  <% if params[:id].nil? %>
+  <% if params[:edition_id].nil? %>
     <div id="app">
     ola
     </div>
   <% else %>
-    <% @edition.posts.each_with_index do |post, index| %>
+    <div id="app">
 
-      <% if index == 0 %>
-        <div id="app">
-
-          <div class="post">
-            <div class="screen1">
-              <p class="balloon">Hi there! Shall we start?</p>
-              <div class="text-center btn-margin">
-                <a class="btn btn-xs new-click-next">YEAAAH!</a>
-              </div>
-            </div>
-          </div>
-
-      <% else %>
-          <div class="post">
-
-            <!-- SCREEN 1 -->
-            <div class="screen1">
-              <p class="balloon hidden"><%= post.headline %></p>
-              <img class="pic-border hidden" src="http://via.placeholder.com/250x150" alt="">
-              <div class="text-center btn-margin hidden">
-                <a class="btn btn-xs new-click-more">Tell me more</a>
-                <a class="btn btn-xs new-click-next">Next post</a>
-              </div>
-            </div>
-
-            <!-- SCREEN 2 -->
-            <div class="screen2">
-              <p class="balloon hidden"><%= post.box1 %></p>
-              <p class="balloon hidden"><%= post.box2 %></p>
-              <div class="text-center btn-margin hidden">
-                <a class="btn btn-xs new-click-more">Continue...</a>
-              </div>
-            </div>
-
-            <!-- SCREEN 3 -->
-            <div class="screen3">
-              <p class="balloon hidden"><%= post.box3 %></p>
-              <p class="balloon hidden"><%= post.box4 %></p>
-              <div class="text-center btn-margin hidden">
-                <a class="btn btn-xs new-click-next">Next post</a>
-              </div>
-            </div>
-          </div>
+      <div class="post">
+        <div class="screen1">
+          <p class="balloon"><%= @edition.greeting %></p>
+          <% if @edition.greeting_img.present? %>
+            <p class="balloon"><%= cl_image_tag @edition.greeting_img %></p>
+          <% end %>
         </div>
+      </div>
+      <% if @edition.posts.present? %>
+        <% @edition.posts.each do |post| %>
+          <div class="post">
+
+          <!-- SCREEN 1 -->
+
+            <div class="screen1">
+              <% if post.post_img.blank? %>
+                <p class="balloon"><%= post.headline %></p>
+              <% else %>
+                <%= cl_image_tag post.headline %>
+              <% end %>
+              <div class="text-center btn-margin">
+                <a class="btn btn-xs click-more"><%= post.option_more %></a>
+                <% if post.id != @edition.posts.last.id %>
+                  <a class="btn btn-xs click-next"><%= post.option_next %></a>
+                <% end %>
+              </div>
+            </div>
+
+          <!-- SCREEN 2 -->
+
+            <% post.balloons.each do |balloon|%>
+              <% n = 1 %>
+
+              <div class="screen<%= n + 1 %>">
+                <% if balloon.link.blank? %>
+                  <p class="balloon">
+                  <% if balloon.balloon_img.blank? %>
+                    <%= balloon.content %>
+                  <% else %>
+                    <%= cl_image_tag balloon.balloon_img %>
+                  <% end %>
+                  </p>
+                <% else %>
+                  <p class="balloon " style="cursor:pointer" onclick="location.href='<%= balloon.link %>'">
+                    <% if balloon.balloon_img.blank? %>
+                      <%= balloon.content %>
+                    <% else %>
+                      <%= cl_image_tag balloon.balloon_img %>
+                    <% end %>
+                  </p>
+                  <p>
+                    <%= link_to "#{balloon.link}", balloon.link %>
+                  </p>
+                <% end %>
+              </div>
+              <% n += 1 %>
+            <% end %>
+            <div class="text-center btn-margin">
+              <a class="btn btn-xs click-next"><%= post.option_next %></a>
+            </div>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   <% end %>
 </div>
