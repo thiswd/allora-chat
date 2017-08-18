@@ -37,10 +37,10 @@ body {
 }
 /* flip speed goes here */
 .card {
-   -webkit-transition: -webkit-transform .5s;
-   -moz-transition: -moz-transform .5s;
-     -o-transition: -o-transform .5s;
-        transition: transform .5s;
+   -webkit-transition: -webkit-transform .1s;
+   -moz-transition: -moz-transform .1s;
+     -o-transition: -o-transform .1s;
+        transition: transform .1s;
 -webkit-transform-style: preserve-3d;
    -moz-transform-style: preserve-3d;
      -o-transform-style: preserve-3d;
@@ -58,7 +58,7 @@ body {
   top: 0;
   left: 0;
   background-color: #FFF;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14);
 }
 
 /* front pane, placed above back */
@@ -92,7 +92,7 @@ body {
   width: 100%;
   height: 420px;
   border-radius: 4px;
-  box-shadow: 2px 7px 14px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.5);
 }
 .card .cover{
     height: 105px;
@@ -112,8 +112,11 @@ body {
 }
 .card .user img{
     background: none repeat scroll 0 0 #FFFFFF;
-    border: 4px solid #FFFFFF;
-    width: 100%;
+    border: 1px solid #FFFFFF;
+    height: 25vh;
+    width: 15vw;
+    margin-right: 20px;
+
 }
 
 .card .content{
