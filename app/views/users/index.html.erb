@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link href='css/bootstrap.css' rel='stylesheet' />
-    <link href='css/rotating-card.css' rel='stylesheet' />
 
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-
-</head>
-<body>
 <div class="color-wrapper">
   <div class="container">
+
 
     <div class="box-height">
       <div class="row">
@@ -19,91 +11,83 @@
 
 
             <div class="col-md-3 col-sm-12">
-              <div class="slider-wrapper">
-                <div class="slider">
-                  <div class="card-container">
-                    <div class="card">
-                      <div class="front">
-                        <div class="cover">
-                          <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502909434/the-background-1017064_960_720_skuvwv.jpg', width: "auto" %>
-                        </div>
-                        <div class="user img-circle" >
-                          <% if user.user_photo.present? %>
-                            <%= image_tag user.user_photo, class: 'card-user' %>
-                          <% else %>
-                            <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502308490/empresario_318-72886_gbwwol.png', class: 'card-user' %>
-                          <% end %>
-                        </div>
-                        <div class="content">
-                          <div class="main">
+              <div class="card-container" style="cursor:pointer" onclick="location.href= 'users/<%=user.id%>'">
+                <div class="card">
+                  <div class="front">
+                    <div class="cover">
+                      <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502909434/the-background-1017064_960_720_skuvwv.jpg', width: "auto" %>
 
-                              <h3 class="name"> <%= user.first_name %> </h3>
-                              <p class="profession"> <%= user.category %> </p>
-                              <p class="text-center">"MODA, BELEZA, LIFESTYLE E TENDÊNCIAS"</p>
-                          </div>
-                          <div class="footer">
-                              <i class="fa fa-mail-forward"></i> Allora
-                          </div>
+                    </div>
+                    <div class="user img-circle" >
+                      <% if user.user_photo.present? %>
+                        <%= image_tag user.user_photo, class: 'card-user' %>
+                      <% else %>
+                        <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502308490/empresario_318-72886_gbwwol.png', class: 'card-user' %>
+                      <% end %>
+                    </div>
+                    <div class="content">
+                      <div class="main">
+
+                          <h3 class="name"> <%= user.first_name %> </h3>
+                          <p class="profession"> <%= user.category %> </p>
+                          <p class="text-center">"MODA, BELEZA, LIFESTYLE E TENDÊNCIAS"</p>
                       </div>
-                    </div> <!-- end front panel -->
-
-                    <div class="back">
-                      <div class="header">
-                          <h5 class="motto">"Viva a vida"</h5>
+                      <div class="footer">
+                          <i class="fa fa-mail-forward"></i> Allora
                       </div>
-                        <div class="content">
-                          <div class="main">
-                            <h4 class="text-center">Descrição da pessoa</h4>
-                            <p class="text-center">MODA, BELEZA, LIFESTYLE E TENDÊNCIAS"</p>
+                  </div>
+                </div> <!-- end front panel -->
 
-                            <div class="stats-container">
-                              <div class="stats">
-                                <h4>235</h4>
-                                <p>
-                                    Followers
-                                </p>
-                              </div>
-                              <div class="stats">
-                                <h4>114</h4>
-                                <p>
-                                    Following
-                                </p>
-                              </div>
-                              <div class="stats">
-                                <h4>35</h4>
-                                <p>
-                                    Projects
-                                </p>
-                              </div>
-                            </div>
+                <div class="back">
+                  <div class="header">
+                      <h5 class="motto">"Viva a vida"</h5>
+                  </div>
+                    <div class="content">
+                      <div class="main">
+                        <h4 class="text-center">Descrição da pessoa</h4>
+                        <p class="text-center">MODA, BELEZA, LIFESTYLE E TENDÊNCIAS"</p>
+
+                        <div class="stats-container">
+                          <div class="stats">
+                            <h4>235</h4>
+                            <p>
+                                Followers
+                            </p>
+                          </div>
+                          <div class="stats">
+                            <h4>114</h4>
+                            <p>
+                                Following
+                            </p>
+                          </div>
+                          <div class="stats">
+                            <h4>35</h4>
+                            <p>
+                                Projects
+                            </p>
                           </div>
                         </div>
-                        <div class="footer">
-                          <div class="social-links text-center">
-                            <a href="http://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-                            <a href="http://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-                            <a href="http://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
-                          </div>
-                        </div>
-                      </div> <!-- end back panel -->
-                    </div> <!-- end card -->
-                  </div> <!-- end card-container -->
-                </div>
-              </div>
+                      </div>
+                    </div>
+                    <div class="footer">
+                      <div class="social-links text-center">
+                        <a href="http://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                        <a href="http://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                        <a href="http://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                      </div>
+                    </div>
+
+                  </div> <!-- end back panel -->
+                </div> <!-- end card -->
+              </div> <!-- end card-container -->
             </div>
 
         <% end %>
 
       </div>
+
     </div>
   </div>
 </div>
-
-
-</body>
-</html>
-
-
-
 
 

@@ -1,5 +1,9 @@
 $(function(){
 
+
+
+
+
   $(".new-click-more").click(function(e){
     e.preventDefault();
 
@@ -34,3 +38,4 @@ $(function(){
 
   });
 });
+
