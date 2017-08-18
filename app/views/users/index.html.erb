@@ -1,25 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link href='css/bootstrap.css' rel='stylesheet' />
-    <link href='css/rotating-card.css' rel='stylesheet' />
 
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-
-</head>
-<body>
 <div class="color-wrapper">
  <div class="container">
 
   <div class="box-height">
     <div class="row">
       <h4>Clique no card abaixo para entrar no chat:</h4>
-
+      <% n = 0 %>
+      <div class="col-xs-11 slide-card">
       <% @users.each do |user| %>
 
 
           <div class="col-md-3 col-sm-12">
-            <div class="card-container">
+            <div class="card-container" style="cursor:pointer" onclick="location.href= 'users/<%=user.id%>'">
               <div class="card">
                 <div class="front">
                   <div class="cover">
@@ -87,13 +79,13 @@
               </div> <!-- end card -->
             </div> <!-- end card-container -->
           </div>
-
       <% end %>
+      </div>
+
     </div>
   </div>
   </div>
 </div>
-
 
 
 
