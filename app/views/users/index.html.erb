@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link href='css/bootstrap.css' rel='stylesheet' />
-    <link href='css/rotating-card.css' rel='stylesheet' />
 
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-
-</head>
-<body>
 <div class="color-wrapper">
   <div class="container">
+
 
     <div class="box-height">
       <div class="row">
@@ -19,11 +11,12 @@
 
 
             <div class="col-md-3 col-sm-12">
-              <div class="card-container ">
+              <div class="card-container" style="cursor:pointer" onclick="location.href= 'users/<%=user.id%>'">
                 <div class="card">
                   <div class="front">
                     <div class="cover">
                       <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502909434/the-background-1017064_960_720_skuvwv.jpg', width: "auto" %>
+
                     </div>
                     <div class="user img-circle" >
                       <% if user.user_photo.present? %>
@@ -83,6 +76,7 @@
                         <a href="http://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
                       </div>
                     </div>
+
                   </div> <!-- end back panel -->
                 </div> <!-- end card -->
               </div> <!-- end card-container -->
@@ -91,118 +85,9 @@
         <% end %>
 
       </div>
+
     </div>
   </div>
 </div>
-
-
-</body>
-</html>
-
-
-
-
-
-
-<script type="text/javascript">
-
-var $slider = $('.slider');
-
-var $slickTrack = $('.slick-track');
-var $slickCurrent = $('.slick-current');
-
-var slideDuration = 900;
-
-//RESET ANIMATIONS
-// On init slide change
-$slider.on('init', function(slick){
-  TweenMax.to($('.slick-track'), 0.9, {
-    marginLeft: 0
-  });
-  TweenMax.to($('.slick-active'), 0.9, {
-    x: 0,
-    zIndex: 2
-  });
-});
-// On before slide change
-$slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-  TweenMax.to($('.slick-track'), 0.9, {
-    marginLeft: 0
-  });
-  TweenMax.to($('.slick-active'), 0.9, {
-    x: 0
-  });
-});
-
-// On after slide change
-$slider.on('afterChange', function(event, slick, currentSlide){
-  TweenMax.to($('.slick-track'), 0.9, {
-    marginLeft: 0
-  });
-  $('.slick-slide').css('z-index','1');
-  TweenMax.to($('.slick-active'), 0.9, {
-    x: 0,
-    zIndex: 2
-  });
-});
-
-//SLICK INIT
-$slider.slick({
-  speed: slideDuration,
-  dots: true,
-  waitForAnimate: true,
-  useTransform: true,
-  cssEase: 'cubic-bezier(0.455, 0.030, 0.130, 1.000)'
-})
-
-//PREV
-$('.slick-prev').on('mouseenter', function(){
-                TweenMax.to($('.slick-track'), 0.6, {
-                  marginLeft: "180px",
-                  ease: Quad.easeOut
-                });
-                TweenMax.to($('.slick-current'), 0.6, {
-                  x: -100,
-                  ease: Quad.easeOut
-                });
-            });
-
-$('.slick-prev').on('mouseleave', function(){
-                TweenMax.to($('.slick-track'), 0.4, {
-                  marginLeft: 0,
-                  ease: Sine.easeInOut
-                });
-                TweenMax.to($('.slick-current'), 0.4, {
-                  x: 0,
-                  ease: Sine.easeInOut
-                });
-            });
-
-//NEXT
-$('.slick-next').on('mouseenter', function(){
-
-                TweenMax.to($('.slick-track'), 0.6, {
-                  marginLeft: "-180px",
-                  ease: Quad.easeOut
-                });
-                TweenMax.to($('.slick-current'), 0.6, {
-                  x: 100,
-                  ease: Quad.easeOut
-                });
-            });
-
-$('.slick-next').on('mouseleave', function(){
-                TweenMax.to($('.slick-track'), 0.4, {
-                  marginLeft: 0,
-                  ease: Quad.easeInOut
-                });
-                TweenMax.to($('.slick-current'), 0.4, {
-                  x: 0,
-                  ease: Quad.easeInOut
-                });
-            });
-
-</script>
-
 
 
