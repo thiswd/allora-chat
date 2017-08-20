@@ -36,23 +36,23 @@
 </div>
 
 
+<!-- Não tá funcionando -->
 <% content_for(:js) do %>
 
   <script>
-console.log("Mimimimi");
-$(".input-img-balloon").hide();
 
-$('#funciona-porra').on "cocoon:after-insert", ("click", function(){
-  console.log("clicado");
-  $(".emoji-picker-container").show();
-  $("input-img-balloon").hide();
-});
+    $("#balloon_balloon_img").hide();
 
-$('.img').on("click", function(){
-  $("#balloon_balloon_img").show();
-  $(".emoji-picker-container").hide();
-});
+    $('.text').on("click", function(){
+      $(".emoji-picker-container").show();
+      $("#balloon_balloon_img").hide();
+    });
 
-</script>
+    $('.img').on("click", function(){
+      $("#balloon_balloon_img").show();
+      $(".emoji-picker-container").hide();
+    });
+
+  </script>
 
 <% end %>
