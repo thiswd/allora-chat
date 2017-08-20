@@ -36,3 +36,23 @@
 </div>
 
 
+<% content_for(:js) do %>
+
+  <script>
+console.log("Mimimimi");
+$(".input-img-balloon").hide();
+
+$('#funciona-porra').on "cocoon:after-insert", ("click", function(){
+  console.log("clicado");
+  $(".emoji-picker-container").show();
+  $("input-img-balloon").hide();
+});
+
+$('.img').on("click", function(){
+  $("#balloon_balloon_img").show();
+  $(".emoji-picker-container").hide();
+});
+
+</script>
+
+<% end %>

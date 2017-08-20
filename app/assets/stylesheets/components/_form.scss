@@ -77,21 +77,19 @@
 .section-partial {
   color: #777777;
   border-top: 1px dotted #777777;
+  margin-bottom: 0;
+  margin-top: 10px;
 }
 
 .btn-plus {
   background: #aafd61;
   border-radius: 10px;
-  margin: 0 auto;
+  margin: 10px auto 0;
 }
 
 .plus-post, .plus-balloon {
   font-size: 20px;
   color: black;
-}
-
-.plus-post:hover, .plus-balloon:hover, .plus-name:hover {
-  text-decoration: none !important;
 }
 
 .plus-name {

@@ -41,23 +41,4 @@
   <% end %>
 </div>
 
-<% content_for(:js) do %>
-
-  <script>
-
-    $("#balloon_balloon_img").hide();
-
-    $('.text-option').on("click", function(){
-      $(".emoji-picker-container").show();
-      $("#balloon_balloon_img").hide();
-    });
-
-    $('.img-option').on("click", function(){
-      $("#balloon_balloon_img").show();
-      $(".emoji-picker-container").hide();
-    });
-
-  </script>
-
-<% end %>
 
