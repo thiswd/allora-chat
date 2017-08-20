@@ -1,24 +1,17 @@
 #app {
   height: calc(100vh - 40px);
   width: 100%;
-  padding: 20px 100px 20px 100px;
+  // padding: 20px 100px 20px 100px;
   overflow-y: scroll;
 }
 
-.click-more {
-  background: #FF8008;
-  color: white;
-  border-radius: 20px;
-  padding: 10px 15px;
-  margin: 5px 0;
-}
-
-.click-next {
-  background: #FF8008;
-  color: white;
-  border-radius: 20px;
-  padding: 10px 15px;
-  margin: 5px 0;
+#chat {
+  flex: 1;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
 }
 
 .new-click-more {
@@ -35,26 +28,37 @@
   border-radius: 20px;
   padding: 10px 15px;
   margin: 5px 0;
-  text-decoration: none;
+  text-decoration: none; // Tá funcionando?
 }
 
 .btn-margin {
-  margin: 20px 0;
+  // margin: 20px 0; // Antiga versão
+  margin-top: 50px;
+  margin-bottom: 25px;
 }
 
-.pic-border {
-  border-radius: 4px 20px 20px 20px;
+
+// Não tá sendo usada em nenhum lugar
+// .pic-border {
+//   border-radius: 0 20px 20px 20px;
+// }
+
+.left {
+  position: relative;
+  left: 700px;
 }
 
 .balloon {
-  background: #EBEBEB;
-  border-radius: 4px 20px 20px 20px;
-  padding: 15px;
+  background: white;
+  width: 95%;
+  border-radius: 0 20px 20px 20px;
+  padding: 10px 20px;
+  line-height: 125%;
   text-decoration: none;
 
   &-image {
-    background: #EBEBEB;
-    border-radius: 4px 20px 20px 20px;
+    background: white;
+    border-radius: 0 20px 20px 20px;
     padding: 5px;
     margin-bottom: 12px;
   }
@@ -62,7 +66,7 @@
   &-right {
     background: #FFC837;
     color: white;
-    border-radius: 20px 4px 20px 20px;
+    border-radius: 20px 0 20px 20px;
     padding: 10px 15px;
     margin: 5px 0;
   }

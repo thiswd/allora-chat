@@ -13,8 +13,8 @@
           <p class="balloon"><%= content_with_emoji(post.headline) %></p>
             <%= cl_image_tag post.post_img, height: 150 %>
           <div class="text-center btn-margin">
-            <%= link_to content_with_emoji(post.option_more), "#", class: "btn btn-xs click-more" %>
-            <%= link_to content_with_emoji(post.option_next), "#", class: "btn btn-xs click-next" %>
+            <%= link_to content_with_emoji(post.option_more), "#", class: "btn btn-xs new-click-more" %>
+            <%= link_to content_with_emoji(post.option_next), "#", class: "btn btn-xs new-click-next" %>
           </div>
 
           <% if post.balloons.present? %>
