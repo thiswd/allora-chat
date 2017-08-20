@@ -15,7 +15,7 @@ class EditionsController < ApplicationController
     @edition = Edition.new(edition_params)
     @edition.user = current_user
     if @edition.save
-      redirect_to new_edition_post_path(@edition)
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -35,7 +35,7 @@ class EditionsController < ApplicationController
   private
 
   def edition_params
-    params.require(:edition).permit(:date, :greeting, :greeting_img, :greeting_img_cache, :farewell, :farewell_img, :farewell_img_cache, :user_id)
+    params.require(:edition).permit(:date, :greeting, :greeting_img, :greeting_img_cache, :farewell, :farewell_img, :farewell_img_cache, :user_id, :posts_attributes => [:id, :headline, :post_img, :post_img_cache, :option_more, :option_next, :edition_id, :_destroy, :balloons_attributes => [:id, :content, :balloon_img, :balloon_img_cache, :link, :_destroy]])
   end
 
 end

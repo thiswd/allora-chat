@@ -1,13 +1,12 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <h1>Criar uma nova edição</h1>
-      <%= render 'form_edition' %>
-    </div>
-
-
+<div id="form-background">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= render 'form_edition' %>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Ativar modal</button>
+      </div>
       <div class="container">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Ativar modal</button>
+
         <div class="modal" id="modal-1">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -32,12 +31,8 @@
           </div>
         </div>
       </div>
-
-     <div class="col-md-5">
-      <%= render 'shared/preview' %>
     </div>
   </div>
 </div>
-
 
 
