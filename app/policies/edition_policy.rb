@@ -9,6 +9,10 @@ class EditionPolicy < ApplicationPolicy
     true
   end
 
+  def weather?
+    true
+  end
+
   def update?
     user_is_owner_or_admin?
   end
