@@ -1,22 +1,24 @@
-<p class="text-right section-partial">Balão</p>
-<%= link_to_remove_association "<i class='fa fa-times-circle times-color' aria-hidden='true'></i><span class='plus-name'>Remover</span>".html_safe, f, data: { confirm: 'Tem certeza que deseja apagar este balão?'} %>
-<br>
-<div class="btn-group radio-options" data-toggle="buttons">
-  <label class="btn btn-default btn-xs active text-option">
-    <%= f.radio_button("type", "Texto", checked: "checked") %> Texto
-  </label>
-  <label class="btn btn-default btn-xs img-option">
-    <%= f.radio_button("type", "Imagem/GIF") %> Imagem/GIF
-  </label>
-</div>
-<br>
-<div class="balloon-form input-text-balloon">
-  <%= f.input :content, label: false, placeholder: "Texto", input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input-text" } %>
-  <%= f.input :link, label: false, placeholder: "Link para texto", input_html: { class: "balloon-form-input balloon-form-link" } %>
-</div>
+<div class="balloons-fields">
+  <p class="text-right section-partial">Balão</p>
+  <%= link_to_remove_association "<i class='fa fa-times-circle times-color' aria-hidden='true'></i><span class='plus-name'>Remover</span>".html_safe, f, data: { confirm: 'Tem certeza que deseja apagar este balão?'} %>
+  <br>
+  <div class="btn-group radio-options" data-toggle="buttons">
+    <label class="btn btn-default btn-xs active text-option">
+      <%= f.radio_button("type", "Texto", checked: "checked") %> Texto
+    </label>
+    <label class="btn btn-default btn-xs img-option">
+      <%= f.radio_button("type", "Imagem/GIF") %> Imagem/GIF
+    </label>
+  </div>
+  <br>
+  <div class="balloon-form input-text-balloon">
+    <%= f.input :content, label: false, placeholder: "Texto", input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input-text" } %>
+    <%= f.input :link, label: false, placeholder: "Link para texto", input_html: { class: "balloon-form-input balloon-form-link" } %>
+  </div>
 
-<div class="balloon-form input-img-balloon">
-  <%= f.input :balloon_img, label: false %>
-  <%= f.input :balloon_img_cache, as: :hidden %>
-  <%= f.input :remote_balloon_img_url, label: false, placeholder: "Link da imagem ou do GIF", input_html: { class: "balloon-form-input balloon-form-link" } %>
+  <div class="balloon-form input-img-balloon hidden">
+    <%= f.input :balloon_img, label: false %>
+    <%= f.input :balloon_img_cache, as: :hidden %>
+    <%= f.input :remote_balloon_img_url, label: false, placeholder: "Link da imagem ou do GIF", input_html: { class: "balloon-form-input balloon-form-link" } %>
+  </div>
 </div>

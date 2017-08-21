@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20170818174123) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "headline"
+    t.text "headline"
     t.string "option_more"
     t.string "option_next"
     t.string "post_img"
