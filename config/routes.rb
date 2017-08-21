@@ -3,11 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :edit, :update, :show, :destroy, :index]
 
-  resources :editions, only: [:new, :create, :edit, :update, :destroy] do
-    resources :posts, only: [:new, :create] do
-      resources :balloons, only: [:new, :create]
-    end
-  end
+  resources :editions, only: [:new, :create, :show, :edit, :update, :destroy]
 
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

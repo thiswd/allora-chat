@@ -2,7 +2,12 @@
 <%= link_to_remove_association "<i class='fa fa-times-circle times-color' aria-hidden='true'></i><span class='plus-name'>Remover</span>".html_safe, f, data: { confirm: 'Tem certeza que deseja apagar este balão?'} %>
 <br>
 <div class="btn-group radio-options" data-toggle="buttons">
-  <%= button_tag "Texto", class: "btn btn-default btn-xs active text-option", id: "funciona-porra" %>
+  <label class="btn btn-default btn-xs active text-option">
+    <%= f.radio_button("type", "Texto", checked: "checked") %> Texto
+  </label>
+  <label class="btn btn-default btn-xs img-option">
+    <%= f.radio_button("type", "Imagem/GIF") %> Imagem/GIF
+  </label>
 </div>
 <br>
 <div class="balloon-form input-text-balloon">
@@ -15,19 +20,3 @@
   <%= f.input :balloon_img_cache, as: :hidden %>
   <%= f.input :remote_balloon_img_url, label: false, placeholder: "Link da imagem ou do GIF", input_html: { class: "balloon-form-input balloon-form-link" } %>
 </div>
-
-<!-- <label class="btn btn-default btn-xs active text-option">
-    <%#= f.radio_button("type", "Texto", checked: "checked") %> Texto
-  </label>
-  <label class="btn btn-default btn-xs img-option">
-    <%#= f.radio_button("type", "Imagem/GIF") %> Imagem/GIF
-  </label> -->
-<% content_for(:js) do %>
-
-  <script>
-
-  console.log("Kkkkkkk");
-
-  </script>
-
-  <% end %>

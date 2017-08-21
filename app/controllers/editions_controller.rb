@@ -1,4 +1,10 @@
 class EditionsController < ApplicationController
+  before_action :set_user, only: [:show, :create]
+  before_action :set_edition, only: [:show, :edit, :update, :destroy]
+
+  def show
+  end
+
   def new
     @edition = Edition.new
 
@@ -11,31 +17,48 @@ class EditionsController < ApplicationController
   end
 
   def create
-    @user = current_user
     @edition = Edition.new(edition_params)
     @edition.user = current_user
     if @edition.save
-      redirect_to user_path(current_user)
+      redirect_to edition_path(@edition)
     else
       render :new
     end
   end
 
   def edit
+    if params[:gif_search]
+      @giphys = Giphy.search( params[:gif_search], {limit: 24})
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
   def update
-
+    if @edition.update(edition_params)
+      redirect_to edition_path(@edition)
+    else
+      render :edit
+    end
   end
 
   def destroy
-
+    @edition.destroy
   end
 
   private
 
   def edition_params
     params.require(:edition).permit(:date, :greeting, :greeting_img, :greeting_img_cache, :farewell, :farewell_img, :farewell_img_cache, :user_id, :posts_attributes => [:id, :headline, :post_img, :post_img_cache, :option_more, :option_next, :edition_id, :_destroy, :balloons_attributes => [:id, :content, :balloon_img, :balloon_img_cache, :link, :_destroy]])
+  end
+
+  def set_user
+    @user = current_user
+  end
+
+  def set_edition
+    @edition = Edition.find(params[:id])
   end
 
 end

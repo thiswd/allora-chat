@@ -1,74 +1,59 @@
 <div id="chatbox">
-  <% if params[:edition_id].nil? %>
-    <div id="app">
-    ola
-    </div>
-  <% else %>
-    <div id="app">
-
-      <div class="post">
-        <div class="screen1">
-          <p class="balloon"><%= @edition.greeting %></p>
-          <% if @edition.greeting_img.present? %>
-            <p class="balloon"><%= cl_image_tag @edition.greeting_img %></p>
-          <% end %>
-        </div>
-      </div>
-      <% if @edition.posts.present? %>
-        <% @edition.posts.each do |post| %>
-          <div class="post">
-
-          <!-- SCREEN 1 -->
-
-            <div class="screen1">
-              <% if post.post_img.blank? %>
-                <p class="balloon"><%= post.headline %></p>
-              <% else %>
-                <%= cl_image_tag post.headline %>
-              <% end %>
-              <div class="text-center btn-margin">
-                <a class="btn btn-xs click-more"><%= post.option_more %></a>
-                <% if post.id != @edition.posts.last.id %>
-                  <a class="btn btn-xs click-next"><%= post.option_next %></a>
-                <% end %>
-              </div>
-            </div>
-
-          <!-- SCREEN 2 -->
-
-            <% post.balloons.each do |balloon|%>
-              <% n = 1 %>
-
-              <div class="screen<%= n + 1 %>">
-                <% if balloon.link.blank? %>
-                  <p class="balloon">
-                  <% if balloon.balloon_img.blank? %>
-                    <%= balloon.content %>
-                  <% else %>
-                    <%= cl_image_tag balloon.balloon_img %>
-                  <% end %>
-                  </p>
-                <% else %>
-                  <p class="balloon " style="cursor:pointer" onclick="location.href='<%= balloon.link %>'">
-                    <% if balloon.balloon_img.blank? %>
-                      <%= balloon.content %>
-                    <% else %>
-                      <%= cl_image_tag balloon.balloon_img %>
-                    <% end %>
-                  </p>
-                  <p>
-                    <%= link_to "#{balloon.link}", balloon.link %>
-                  </p>
-                <% end %>
-              </div>
-              <% n += 1 %>
-            <% end %>
-            <div class="text-center btn-margin">
-              <a class="btn btn-xs click-next"><%= post.option_next %></a>
-            </div>
-          </div>
-        <% end %>
+  <div id="app">
+    <div class="post">
+      <p class="balloon"><%= content_with_emoji(@edition.greeting) %></p>
+      <% if @edition.greeting_img.present? %>
+        <p class="balloon"><%= cl_image_tag @edition.greeting_img, height: 150 %></p>
       <% end %>
     </div>
-  <% end %>
+    <% if @edition.posts.present? %>
+      <% @edition.posts.each do |post| %>
+        <div class="post">
+
+          <p class="balloon"><%= content_with_emoji(post.headline) %></p>
+            <%= cl_image_tag post.post_img, height: 150 %>
+          <div class="text-center btn-margin">
+            <%= link_to content_with_emoji(post.option_more), "#", class: "btn btn-xs new-click-more" %>
+            <%= link_to content_with_emoji(post.option_next), "#", class: "btn btn-xs new-click-next" %>
+          </div>
+
+          <% if post.balloons.present? %>
+            <% post.balloons.each do |balloon|%>
+
+              <% if balloon.link.blank? %>
+                <p class="balloon">
+                  <% if balloon.balloon_img.blank? %>
+                    <%= content_with_emoji(balloon.content) %>
+                  <% else %>
+                    <%= cl_image_tag balloon.balloon_img, height: 150 %>
+                  <% end %>
+                </p>
+              <% else %>
+                <p class="balloon " style="cursor:pointer" onclick="location.href='<%= balloon.link %>'">
+                  <% if balloon.balloon_img.blank? %>
+                    <%= content_with_emoji(balloon.content) %>
+                  <% else %>
+                    <%= cl_image_tag balloon.balloon_img, height: 150 %>
+                  <% end %>
+                </p>
+                <p>
+                  <%= link_to "#{balloon.link}", balloon.link %>
+                </p>
+              <% end %>
+
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+
+    <% end %>
+
+    <div class="post">
+      <p class="balloon"><%= content_with_emoji(@edition.farewell) %></p>
+      <% if @edition.farewell_img.present? %>
+        <p class="balloon"><%= cl_image_tag @edition.farewell_img, height: 150 %></p>
+      <% end %>
+    </div>
+
+  </div>
 </div>
