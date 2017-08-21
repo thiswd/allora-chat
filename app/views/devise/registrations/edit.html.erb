@@ -9,6 +9,8 @@
       <%= f.input :first_name, required: true%>
       <%= f.input :last_name, required: true%>
       <%= f.input :category, required: true%>
+      <%= f.input :position, required: true, placeholder: "ex: Editor na Vogue"%>
+      <%= f.input :description, required: true, placeholder: "ex: Descrição"%>
       <%= f.input :email, required: true %>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
