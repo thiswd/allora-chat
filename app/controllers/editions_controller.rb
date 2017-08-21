@@ -3,6 +3,7 @@ class EditionsController < ApplicationController
   before_action :set_edition, only: [:show, :edit, :update, :destroy]
 
   def show
+    @weather_info = @edition.balloons.first.weather.split('-')
   end
 
   def new

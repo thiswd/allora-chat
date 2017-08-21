@@ -55,5 +55,23 @@
       <% end %>
     </div>
 
+    <div class="post">
+      <div class="balloon balloon-weather">
+        <div class="banner_weather" style="background-image: linear-gradient(rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.32)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503347454/ceulimpo_anptvb.jpg');">
+
+          <div class="weather-category">
+
+            <% @weather_info.each do |weather| %>
+              <p><%= weather %></p>
+            <% end %>
+          </div>
+          <img class="card-weather" src="http://res.cloudinary.com/dpg1ipkol/image/upload/v1503350575/sol_bkz0fz.jpg">
+        </div>
+
+      </div>
+
+    </div>
+
+
   </div>
 </div>
