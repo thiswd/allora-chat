@@ -10,12 +10,16 @@
       </div>
     </div>
 
+    <div id="init" class="btn-margin">
+      <a class="btn btn-lg click-start">Começar!</a>
+    </div>
+
     <% @edition.posts.each do |post| %>
 
       <div class="post">
 
         <!-- SCREEN 1 -->
-        <div class="screen1">
+        <div class="intro">
           <p class="balloon hidden left"><%= content_with_emoji(post.headline) %></p>
           <p class="balloon hidden left"><%= cl_image_tag post.post_img, height: 150 %></p>
           <div class="text-center btn-margin hidden">

@@ -1,5 +1,5 @@
 $(function(){
-  $('.container').on('cocoon:after-insert', function() {
+  $('.form-container').on('cocoon:after-insert', function() {
     $("#weather").click(function(e){
       e.preventDefault();
       value = $(".weather input").val();

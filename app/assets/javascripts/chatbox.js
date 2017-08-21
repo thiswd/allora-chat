@@ -48,5 +48,25 @@ $(function(){
     $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
 
   });
+
+  $(".click-start").click(function(e){
+    e.preventDefault();
+
+    var start = $(this).parent().next();
+    $(start).children(".intro").children().each(function(index, element){
+
+      setTimeout(function() {
+
+        $(element).removeClass("hidden")
+        $(element).animate({"left": "0px"})
+
+      }, index * 1000 + Math.random() * 750);
+
+    });
+
+    $(this).remove();
+    $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
+
+  });
 });
 

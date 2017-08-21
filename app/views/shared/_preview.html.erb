@@ -20,7 +20,7 @@
           </div>
 
           <% if post.balloons.present? %>
-            <% post.balloons.each do |balloon|%>
+            <% post.balloons.order(:created_at).each do |balloon|%>
 
               <% if balloon.link.blank? %>
                 <p class="balloon">
