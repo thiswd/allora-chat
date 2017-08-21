@@ -26,3 +26,134 @@
   margin-bottom: 15px;
 }
 
+#form-background {
+  background: white;
+}
+
+#form-chatbox {
+  background: #E5E9ED;
+  padding: 5px 25px;
+}
+
+.balloon-form {
+  background: #FFFFFF;
+  border-radius: 0 20px 20px 20px;
+  padding: 5px;
+  max-width: 88%;
+  margin-bottom: 15px;
+
+  &-input {
+    border-radius: 0 20px 20px 20px;
+  }
+
+  &-input-text {
+    border-radius: 0 20px 0 0;
+  }
+
+
+  &-link {
+    height: 25px;
+    border-radius: 0 0 20px 20px;
+  }
+}
+
+.emoji-picker-icon {
+  right: 7px;
+  top: 5px;
+}
+
+.form-posts {
+  margin-top: 10px;
+  position: relative;
+}
+
+.form-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 130px;
+}
+
+.section-partial {
+  color: #777777;
+  border-top: 1px dotted #777777;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.btn-plus {
+  background: #aafd61;
+  border-radius: 10px;
+  margin: 10px auto 0;
+}
+
+.plus-post, .plus-balloon {
+  font-size: 20px;
+  color: black;
+}
+
+.plus-name {
+  color: #777777;
+  font-size: 12px;
+}
+
+.times-color {
+  color: #f52620;
+  margin-right: 3px;
+}
+
+.times-name {
+  font-size: 10px;
+}
+
+.farewell {
+  margin-top: 30px;
+}
+
+.answers {
+  text-align: right;
+}
+
+.answers-fields {
+  align-items: left;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  p {
+    color: #777777;
+    font-size: 12px;
+    margin-left: auto;
+  }
+}
+
+.user-btns {
+  background: #FF8008;
+  border-radius: 20px 0 20px 20px;
+  padding: 5px;
+  width: 88%;
+  margin-bottom: 0;
+  margin-left: auto;
+
+  &-input {
+    background: #FF8008;
+    border-radius: 20px 0 20px 20px;
+    color: white;
+    text-align: right;
+  }
+}
+
+.form-balloon-header {
+  margin-bottom: 0;
+}
+
+.balloons-hint p {
+  color: #777777;
+  font-size: 12px;
+}
+
+.date-center {
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,4 +1,4 @@
-<%= simple_form_for [@edition, @post, @balloon], method: :post do |f| %>
+<%= simple_form_for [@edition, @post, @balloon] do |f| %>
   <div class="btn-group radio-options" data-toggle="buttons">
     <label class="btn btn-default btn-xs active text">
       <%= f.radio_button("type", "Texto", checked: "checked") %> Texto

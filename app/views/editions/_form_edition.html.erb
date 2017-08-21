@@ -1,26 +1,42 @@
-<%= simple_form_for @edition do |f| %>
-  <div class="date">
-    <h4>Data de publicação</h4>
-    <%= f.input :date, label: false, as: :date %>
-  </div>
+<div id="form-chatbox">
+  <%= simple_form_for @edition do |f| %>
+    <div class="greeting">
+      <h5>Como vai começar sua edição?</h5>
+      <%= f.input :greeting, label: false, placeholder: "Definir uma saudação", wrapper_html: { class: "balloon-form" }, input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input" } %>
+      <div class="balloon-form">
+        <%= f.input :greeting_img, label: false %>
+        <%= f.input :remote_greeting_img_url, label: false, placeholder: "Link da imagem ou do GIF", input_html: { class: "balloon-form-input balloon-form-link" } %>
+        <%= f.input :greeting_img_cache, as: :hidden %>
+      </div>
+    </div>
+
+    <div class="form-posts">
+      <h5 class="text-center">Agora vamos adicionar conteúdo</h5>
+
+      <fieldset id="post-fields">
+
+      </fieldset>
 
 
-  <div class="greeting">
-    <h4>Definir saudação</h4>
-    <%= f.input :greeting, label: false, placeholder: "Saudação", wrapper_html: { class: "emoji-picker-container" }, input_html: { data: { emojiable: true } } %>
-    <%= f.input :greeting_img, label: false %>
-    <%= f.input :greeting_img_cache, as: :hidden %>
-    <%= f.input :remote_greeting_img_url, placeholder: "Url da imagem ou GIF"%>
-  </div>
+      <%= link_to_add_association "<div class='form-flex btn btn-plus'><i class='fa fa-plus-circle plus-post' aria-hidden='true'></i><span class='plus-name'>Novo post</span></div>".html_safe, f, :posts, "data-association-insertion-node" => "#post-fields" %>
 
-  <div class="farewell">
-    <h4>Definir despedida</h4>
-    <%= f.input :farewell, label: false, placeholder: "Despedida", wrapper_html: { class: "emoji-picker-container" }, input_html: { data: { emojiable: true } } %>
-    <%= f.input :farewell_img, label: false %>
-    <%= f.input :farewell_img_cache, as: :hidden %>
-    <%= f.input :remote_farewell_img_url, placeholder: "Url da imagem ou GIF" %>
-  </div>
-  <%= f.submit 'Criar um post', class: "btn btn-primary" %>
-
-<% end %>
-
+      <%= f.simple_fields_for :posts do |post| %>
+        <%= render 'post_fields', f: post %>
+      <% end %>
+    </div>
+    <div class="farewell">
+      <h5>Como vai terminar sua edição?</h5>
+      <%= f.input :farewell, label: false, placeholder: "Definir uma despedida", wrapper_html: { class: "balloon-form" }, input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input" } %>
+      <div class="balloon-form">
+        <%= f.input :farewell_img, label: false %>
+        <%= f.input :remote_farewell_img_url, label: false, placeholder: "Link da imagem ou do GIF", input_html: { class: "balloon-form-input balloon-form-link" } %>
+        <%= f.input :farewell_img_cache, as: :hidden %>
+      </div>
+    </div>
+    <div class="date">
+      <h5 class="text-center">Data de publicação</h5>
+      <%= f.input :date, label: false, as: :date, wrapper_html: { class: "date-center" } %>
+    </div>
+    <%= f.submit 'Concluir', class: "btn btn-primary" %>
+  <% end %>
+</div>
