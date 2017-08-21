@@ -1,20 +1,21 @@
 <div id="chatbox">
   <div id="app">
     <div class="post">
+      <h4>SAUDAÇÕES</h4>
       <p class="balloon"><%= content_with_emoji(@edition.greeting) %></p>
       <% if @edition.greeting_img.present? %>
         <p class="balloon"><%= cl_image_tag @edition.greeting_img, height: 150 %></p>
       <% end %>
     </div>
     <% if @edition.posts.present? %>
-      <% @edition.posts.each do |post| %>
+      <% @edition.posts.each_with_index do |post, index| %>
         <div class="post">
+          <h4> POST <%= index + 1%> </h4>
 
           <p class="balloon"><%= content_with_emoji(post.headline) %></p>
             <%= cl_image_tag post.post_img, height: 150 %>
           <div class="text-center btn-margin">
             <%= link_to content_with_emoji(post.option_more), "#", class: "btn btn-xs new-click-more" %>
-            <%= link_to content_with_emoji(post.option_next), "#", class: "btn btn-xs new-click-next" %>
           </div>
 
           <% if post.balloons.present? %>
@@ -44,11 +45,17 @@
             <% end %>
           <% end %>
         </div>
+        <% unless post.id == @edition.posts.last.id %>
+          <div class="text-center btn-margin">
+            <%= link_to content_with_emoji(post.option_next), "#", class: "btn btn-xs new-click-next" %>
+          </div>
+        <% end %>
       <% end %>
 
     <% end %>
 
     <div class="post">
+      <h4>DESPEDIDA</h4>
       <p class="balloon"><%= content_with_emoji(@edition.farewell) %></p>
       <% if @edition.farewell_img.present? %>
         <p class="balloon"><%= cl_image_tag @edition.farewell_img, height: 150 %></p>

@@ -1,58 +1,40 @@
-<div class="row no-gutter user-page" >
 
-    <div class="col-xs-12 col-sm-6 l-side user-content">
-        <h1>@<%= @user. username %></h1>
-         <div class="user img-circle" >
-            <% if @user.user_photo.present? %>
-              <%= image_tag @user.user_photo, class: 'card-user' %>
-            <% else %>
-              <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502308490/empresario_318-72886_gbwwol.png', class: 'card-user' %>
-            <% end %>
-          </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 l-side">
-          <br>
-            <h4>
-              <%= @user.first_name.capitalize + " " + @user.last_name.capitalize %>
-            </h4>
-            <p>
-              <%= @user.category %>
-            </p>
-            <p>
-              <%= @user.position %>
+<div class="no-gutter user-page" >
 
-            </p>
-            <h4>
-              Descripção:
-            </h4>
-            <p>
-              <%= @user.description %>
-            </p>
-          </div>
-          <div class="col-xs-12 col-sm-6 r-side">
+  <div class="col-xs-12 col-sm-offset-1 col-sm-5 l-side edition-content">
+    <h1>Revisão final.</h1>
 
+    <hr>
+    <h4>
+      Informações da edition do dia <%= @edition.date.to_date.strftime("%d, %m, %Y")%>.
+    </h4>
+    <p>
+      Posts: <%= @edition.posts.count %>
+    </p>
+    <% n = 0 %>
+    <% @edition.posts.each do |post|%>
+      <% n = n + post.balloons.count %>
+    <% end %>
+    <p>
+      Balloons: <%= n %>
+    </p>
+    <hr>
+    <h4>
+      Editar posts:
+    </h4>
+    <% @edition.posts.each_with_index do |post, index| %>
+      <p>
+        <%= link_to "Editar POST  #{(index + 1).to_s}", edit_post_path(post), :class => "btn btn-post" %>
+        <%= " Título: " + post.headline %>
+      </p>
+    <% end %>
 
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 r-side">
-          <ul>
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-          </ul>
-          </div>
-          <div class="col-xs-12 col-sm-6 r-side">
-            <p>
-              Membro desde:
-            </p>
-            <p>
-              Editions criadas:
-            </p>
-          </div>
-        </div>
-    </div>
+    <hr>
+    <p>
+      <%= link_to "Nada que editar", user_path(@user), :class => "btn btn-post" %>
+    </p>
+
+  </div>
 
   <div class="col-xs-12 col-sm-6 r-side">
     <%= render partial: "shared/preview" %>

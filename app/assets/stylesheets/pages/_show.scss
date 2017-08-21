@@ -5,8 +5,10 @@
 }
 
 .user-page {
-  background-color: rgba(255,200,55,0.6);
-  height: calc(100vh - 103px);
+  background-color: $light-gray;
+  height: calc(100vh - 95px);
+  padding-top: 10px;
+  margin-left: 30px;
 }
 .user-content {
   font-family: $montserrat;
