@@ -1,2 +1,16 @@
-<h1>Editions#edit</h1>
-<p>Find me in app/views/editions/edit.html.erb</p>
+<h1>Edition edit</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Criar uma nova edição</h2>
+      <%= render 'form_edition' %>
+      <%= render 'modal_edition' %>
+    </div>
+  </div>
+
+  <div class="row">
+     <div class="col-md-6">
+      <%= render 'shared/preview' %>
+    </div>
+  </div>
+</div>

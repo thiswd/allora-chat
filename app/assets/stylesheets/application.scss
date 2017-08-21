@@ -1,4 +1,6 @@
 @import 'rails_emoji_picker';
+@import 'slick';
+@import 'slick-theme';
 
 // Graphical variables
 @import "config/fonts";
@@ -17,6 +19,6 @@
 @import "pages/index";
 @import "components/form";
 @import "components/rotating-card";
-@import "components/slider";
+
 
 
