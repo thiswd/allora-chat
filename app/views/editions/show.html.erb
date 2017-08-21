@@ -4,7 +4,9 @@
     <h1>allora</h1>
     <p>[v20170807]</p>
 
-    <%= link_to "Editar edição", edit_edition_path(@edition), class: "btn btn-default" %>
+      <%= link_to "Editar edição", edit_edition_path(@edition), class: "btn btn-default" %>
+
+      <%= link_to "Apagar edição", user_path(@user), method: :delete, data: { confirm: "Tem certeza que deseja apagar toda a edição?" } %>
 
     <div class="user-content">
       <h3>

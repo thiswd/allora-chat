@@ -7,6 +7,7 @@ class EditionsController < ApplicationController
 
   def new
     @edition = Edition.new
+    authorize @edition
 
     if params[:gif_search]
       @giphys = Giphy.search( params[:gif_search], {limit: 24})
@@ -19,6 +20,8 @@ class EditionsController < ApplicationController
   def create
     @edition = Edition.new(edition_params)
     @edition.user = current_user
+    authorize @edition
+
     if @edition.save
       redirect_to edition_path(@edition)
     else
@@ -50,7 +53,7 @@ class EditionsController < ApplicationController
   private
 
   def edition_params
-    params.require(:edition).permit(:date, :greeting, :greeting_img, :greeting_img_cache, :farewell, :farewell_img, :farewell_img_cache, :user_id, :posts_attributes => [:id, :headline, :post_img, :post_img_cache, :option_more, :option_next, :edition_id, :_destroy, :balloons_attributes => [:id, :content, :balloon_img, :balloon_img_cache, :link, :_destroy]])
+    params.require(:edition).permit(:date, :greeting, :greeting_img, :greeting_img_cache, :farewell, :farewell_img, :farewell_img_cache, :posts_attributes => [:id, :headline, :post_img, :post_img_cache, :option_more, :option_next, :edition_id, :_destroy, :balloons_attributes => [:id, :content, :balloon_img, :balloon_img_cache, :link, :_destroy]])
   end
 
   def set_user
@@ -59,6 +62,7 @@ class EditionsController < ApplicationController
 
   def set_edition
     @edition = Edition.find(params[:id])
+    authorize @edition
   end
 
 end

@@ -9,6 +9,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    authorize @user
+
     editions = @user.editions.where('date::date = ?', Date.today).order(date: :desc)
     if editions.count > 0
       @edition = editions.first

@@ -24,6 +24,9 @@ gem 'giphy'
 # Authentication
 gem 'devise'
 
+# Authorization
+gem 'pundit'
+
 # Nested forms
 gem 'cocoon'
 
