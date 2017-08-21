@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170821160109) do
+
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +26,7 @@ ActiveRecord::Schema.define(version: 20170821160109) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "type"
+    t.string "weather"
     t.index ["post_id"], name: "index_balloons_on_post_id"
   end
 
@@ -39,7 +43,7 @@ ActiveRecord::Schema.define(version: 20170821160109) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "headline"
+    t.text "headline"
     t.string "option_more"
     t.string "option_next"
     t.string "post_img"
