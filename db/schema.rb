@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821150904) do
+
+ActiveRecord::Schema.define(version: 20170821160109) do
+
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "balloons", force: :cascade do |t|
-    t.text "content"
+    t.string "content"
     t.string "link"
     t.string "balloon_img"
     t.bigint "post_id"
@@ -79,6 +82,8 @@ ActiveRecord::Schema.define(version: 20170821150904) do
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
     t.string "banner"
+    t.string "position"
+    t.text "description"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
