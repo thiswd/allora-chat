@@ -1,5 +1,5 @@
 class Edition < ApplicationRecord
-  after_create :send_release_email # afte press commit button
+  after_create :send_release_email # after press commit button
 
   belongs_to :user
   has_many :posts, inverse_of: :edition, dependent: :destroy
