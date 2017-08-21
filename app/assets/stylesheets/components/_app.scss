@@ -5,6 +5,12 @@
   overflow-y: scroll;
 }
 
+.post {
+  h4 {
+    color: $middle-grey;
+  }
+
+}
 #chat {
   flex: 1;
   width: 100%;

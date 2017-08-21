@@ -1,31 +1,44 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 l-side" style="background-image: linear-gradient(-225deg, rgba(255,128,8,0.6) 0%, rgba(255,200,55,0.6) 50%), url('https://static.pexels.com/photos/9634/pink-hair-selfie-bun.jpg');">
-    <h1>allora</h1>
-    <p>[v20170807]</p>
 
-      <%= link_to "Editar edição", edit_edition_path(@edition), class: "btn btn-default" %>
+<div class="no-gutter user-page" >
 
-      <%= link_to "Apagar edição", user_path(@user), method: :delete, data: { confirm: "Tem certeza que deseja apagar toda a edição?" } %>
+  <div class="col-xs-12 col-sm-offset-1 col-sm-5 l-side edition-content">
+    <h1>Revisão final.</h1>
 
-    <div class="user-content">
-      <h3>
-        <%= @user.username %>
-      </h3>
-      <h4>
-        <%= @user.first_name.capitalize + " " + @user.last_name.capitalize %>
-      </h4>
+    <hr>
+    <h4>
+      Informações da edition do dia <%= @edition.date.to_date.strftime("%d, %m, %Y")%>.
+    </h4>
+    <p>
+      Posts: <%= @edition.posts.count %>
+    </p>
+    <% n = 0 %>
+    <% @edition.posts.each do |post|%>
+      <% n = n + post.balloons.count %>
+    <% end %>
+    <p>
+      Balloons: <%= n %>
+    </p>
+    <hr>
+    <h4>
+      Editar posts:
+    </h4>
+    <% @edition.posts.each_with_index do |post, index| %>
       <p>
-        <%= @user.category %>
-        <%= @edition.balloons.first.weather %>
+        <%= link_to "Editar POST  #{(index + 1).to_s}", edit_post_path(post), :class => "btn btn-post" %>
+        <%= " Título: " + post.headline %>
       </p>
+    <% end %>
 
-    </div>
+    <hr>
+    <p>
+      <%= link_to "Nada que editar", user_path(@user), :class => "btn btn-post" %>
+    </p>
+
   </div>
 
   <div class="col-xs-12 col-sm-6 r-side">
     <%= render partial: "shared/preview" %>
   </div>
-  </div>
+
 </div>
 
