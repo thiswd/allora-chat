@@ -30,6 +30,9 @@ gem 'pundit'
 # Nested forms
 gem 'cocoon'
 
+# Weather
+gem 'open-weather'
+
 # Emojis
 gem 'rails_emoji_picker'
 

@@ -3,8 +3,7 @@
 <%= cl_image_tag("THE_IMAGE_ID_FROM_LIBRARY",
       width: 400, height: 300, crop: :fill) %> -->
 
-
-<!--  <div class="dots">
+  <div class="dots">
     <ul class="nav">
       <li><a href="#zero"><div class="dot"></div></a></li>
       <li><a href="#one"><div class="dot"></div></a></li>
@@ -12,23 +11,50 @@
       <li><a href="#three"><div class="dot"></div></a></li>
     </ul>
   </div>
--->
 
   <div class="color-wrapper">
-    <div id="zero" class="banner" style="background-image: linear-gradient(-225deg, rgba(255,128,8,0.6) 0%, rgba(255,200,55,0.6) 50%),  url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1502893212/pink-hair-selfie-bun_mcxqea.jpg');">
-      <div class="banner-content">
+    <div class="home-vertical" id="zero">
 
-        <h1><i>Bem-vindo ao Allora</i></h1>
-        <%= link_to "Entrar no chat", users_path, class: "btn btn-warning" %>
-        <% if user_signed_in? %>
-          <%= link_to "Create - Edition", new_edition_path, class: "btn btn-warning" %>
-        <% end %>
+      <div class="col-xs-12 col-sm-6 slide-left">
+          <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1503261595/hm_ft79qn.jpg', width: "auto" %>
+      </div>
 
+      <div class="col-xs-12 col-md-6">
+        <div class="main-content">
+          <p>Allora, <br>
+          a sua <strong>newsletter</strong> interativa!
+          </p>
+        </div>
+        <div class="second-content">
+          <p>
+            A maneira mais divertida de expor conteúdo <br> para os seus seguidores <i class="fa fa-commenting-o" aria-hidden="true"></i><br>
+            <%= link_to "Cadastrar", users_path, class: "btn btn-warning btn-home" %>
+            <%= link_to "Entrar no chat", users_path, class: "btn btn-warning btn-home" %>
+            <% if user_signed_in? %>
+              <%= link_to "Criar edição", new_edition_path, class: "btn btn-warning btn-home" %>
+            <% end %>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12">
+        <div class="banner" style="background-image: linear-gradient(-225deg, rgba(255,128,8,0.6) 0%, rgba(255,200,55,0.6) 50%),  url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1502893212/pink-hair-selfie-bun_mcxqea.jpg');">
+        </div>
       </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
     <div class="container">
-      <div class="home-vertical" id="one">
+      <div class="home-vertical" id="three">
         <div class="col-xs-12 col-sm-6 slide-left">
           <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502830965/foto_mfzhye.jpg', width: "auto" %>
         </div>
@@ -49,7 +75,7 @@
       </div>
 
 
-      <div class="home-vertical" id="two">
+      <div class="home-vertical" id="three">
 
         <div class="col-xs-12 col-md-6 slide-right">
             <div class="allora-size"><strong> Como funciona ? </strong></div>
@@ -67,7 +93,7 @@
       </div>
 
       <div class="home-vertical" id="three">
-        <div class="allora-size"><strong>Veja quem já está utilizando a nossa plataforma <i class="fa fa-heart-o" aria-hidden="true"></i><strong></div>
+        <div class="allora-size"><strong>Veja quem já está utilizando a nossa plataforma <i class="fa fa-heart-o" aria-hidden="true"></i></strong></div>
         <div class="container">
           <div class="row steps">
           <div class="col-xs-12 col-sm-4">
@@ -113,6 +139,10 @@
 
     </div>
   </div>
+</div>
+
+
+
 
 
 
