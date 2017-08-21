@@ -1,5 +1,6 @@
 $(function(){
 
+
   $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
 
   if(screen.width < 500) {
@@ -48,3 +49,4 @@ $(function(){
 
   });
 });
+

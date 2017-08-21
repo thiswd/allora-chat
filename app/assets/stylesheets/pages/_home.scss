@@ -16,18 +16,27 @@
 }
 
 .slide-right {
-  height: 700px;
+  // height: 700px;
   background-size: cover;
   background: white;
+
 }
 
 .slide-left {
-  height: 700px;
+  // height: 700px;
   background-size: cover;
 
   .h1 {
     font-size: 72px;
   }
+
+  .p {
+    margin: 20px 20px 20px 20px;
+  }
+}
+
+.h2 {
+  font-size: 20px;
 }
 
 .btn-position {
@@ -58,7 +67,7 @@
 .banner {
   color: white;
   text-align: center;
-  height: 100vh;
+  height: 85vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -66,10 +75,9 @@
   justify-content: center;
 }
 .banner h1 {
-  font-size: 40px;
-  font-weight: bold;
-  text-shadow: 2px 3px #333333;
-  font-family: 'Droid Serif', serif;
+  font-size: 53px;
+  text-shadow: 2px 3px #e68028;
+  font-family:  "Montserrat";
 }
 .banner p {
   font-size: 54px;
@@ -107,7 +115,18 @@
 }
 
 .home-vertical {
-  height: 100vh;
+  height: 70vh;
+
+  img {
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .slide-right, .slide-left {
+    height: 100%;
+  }
 }
 
 .banner-color {
@@ -115,7 +134,7 @@
 }
 
 .banner-content {
-  height: 1px;
+  height: 275px;
 }
 
 .vertical-align {
@@ -136,22 +155,77 @@ article {
   padding:50px;
 
   font-style:italic;
+  font-size: 18px;
 
 }
 
 
-// @keyframes typing { from { width: 0; } }
-// @keyframes blink-caret { 50% { border-color: transparent; } }
+.allora-size {
+  font-size: 20px;
+  margin-top: 45px;
+  .p {
+    margin: 38px 0 12.5px;
+  }
 
-// code{font: bold 200% Consolas, Monaco, monospace;
-//   border-right: .1em solid;
-//   width: 16.5em; /* fallback */
-//   width: 30ch; /* # of chars */
-//   margin: 2em 1em;
-//   white-space: nowrap;
-//   overflow: hidden;
-//   animation: typing 20s steps(30, end), /* # of steps = # of chars */
-//              blink-caret .5s step-end infinite alternate;
-// }
+}
 
+.allora {
 
+  .p {
+    height: 100px;
+  }
+}
+
+.card {
+  height: 250px;
+//  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: white;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description h2 {
+  font-size: 24px;
+}
+.card-description p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: black;
+}
