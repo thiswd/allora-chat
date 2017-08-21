@@ -55,10 +55,27 @@ class EditionsController < ApplicationController
     @edition.destroy
   end
 
+  def weather
+    options = { units: "metric", APPID: "f2aa967fb9c24b70e9ce5e29b55f7fb6" }
+    weather = OpenWeather::Current.city(params[:weather], options)
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: weather
+        # render text: "Weather Conditions: Min. Temp.: #{weather["main"]["temp"]}"
+      }
+    end
+  end
+
   private
 
   def edition_params
-    params.require(:edition).permit(:date, :greeting, :greeting_img, :greeting_img_cache, :farewell, :farewell_img, :farewell_img_cache, :posts_attributes => [:id, :headline, :post_img, :post_img_cache, :option_more, :option_next, :edition_id, :_destroy, :balloons_attributes => [:id, :content, :balloon_img, :balloon_img_cache, :link, :_destroy]])
+    params.require(:edition).permit(:date, :greeting, :greeting_img,
+                                    :greeting_img_cache, :farewell,
+                                    :farewell_img, :farewell_img_cache,
+                                    :posts_attributes => [:id, :headline, :post_img, :post_img_cache,
+                                      :option_more, :option_next, :edition_id, :_destroy,
+                                      :balloons_attributes => [:id, :content, :balloon_img, :balloon_img_cache, :link, :_destroy, :weather]])
   end
 
   def set_user
