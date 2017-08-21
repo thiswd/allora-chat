@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170818174123) do
   enable_extension "plpgsql"
 
   create_table "balloons", force: :cascade do |t|
-    t.string "content"
+    t.text "content"
     t.string "link"
     t.string "balloon_img"
     t.bigint "post_id"

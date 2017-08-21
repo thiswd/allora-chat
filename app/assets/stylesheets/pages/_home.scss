@@ -1,5 +1,19 @@
 // Specific CSS for your home-page
 
+.main-content {
+  font-size: 42px;
+  margin-top: 40px;
+  letter-spacing: 12px;
+  word-spacing: -3px;
+  color: chocolate;
+
+}
+
+.second-content {
+  font-size: 23px;
+  margin-top: 54px;
+}
+
 .color-wrapper {
   background-color: #FFFFFF;
 }
@@ -57,7 +71,10 @@
 }
 
 .btn-warning {
+}
 
+.btn-home {
+  margin-top: 47px;
 }
 
 .class-p {
@@ -67,7 +84,7 @@
 .banner {
   color: white;
   text-align: center;
-  height: 85vh;
+  height: 20vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
