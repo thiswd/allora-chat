@@ -12,7 +12,7 @@
   </div>
   <br>
   <div class="balloon-form input-text-balloon">
-    <%= f.input :content, label: false, placeholder: "Texto", input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input-text", maxlength: 260 } %>
+    <%= f.input :content, label: false, placeholder: "Texto", input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input-text" } %>
     <%= f.input :link, label: false, placeholder: "Link para texto", input_html: { class: "balloon-form-input balloon-form-link" } %>
   </div>
 
@@ -21,15 +21,9 @@
     <%= f.input :balloon_img_cache, as: :hidden %>
     <%= f.input :remote_balloon_img_url, label: false, placeholder: "Link da imagem ou do GIF", input_html: { class: "balloon-form-input balloon-form-link" } %>
   </div>
-
 </div>
 
 <div class="balloon-form weather">
   <%= f.input :weather, placeholder: "Digite o nome da cidade" %>
-  <p>Obs.: Use esse campo para enviar a previsão do tempo de alguma cidade.</p>
-  <p>Fornecemos o valor da temperatura (mín e máx), velocidade do vento e umidade do ar.</p>
   <a href="#" id="weather" class="btn btn-primary">Pesquisar</a>
 </div>
-  <div class="balloon-form input-text-balloon">
-    <%= f.input :address, label: false, placeholder: "Endereço" %>
-  </div>
