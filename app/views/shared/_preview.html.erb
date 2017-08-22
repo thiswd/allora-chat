@@ -27,6 +27,7 @@
           </div>
 
           <% if post.balloons.present? %>
+
             <% post.balloons.each do |balloon|%>
 
               <% if balloon.link.blank? %>
@@ -42,13 +43,11 @@
                     <div id="map" style="height: 240px; width: 240px "></div>
                     <br>
                     <%= balloon.address %>
-
                   <% elsif balloon.weather.present? %>
                     <div class="balloon-weather">
                       <div class="banner_weather" style="background-image: linear-gradient(rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.32)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503347454/ceulimpo_anptvb.jpg');">
-
                         <div class="weather-category">
-                          <% @weather_info.each do |weather| %>
+                          <% balloon.weather.split('-').each do |weather| %>
                             <p><%= weather %></p>
                           <% end %>
                         </div>
@@ -70,7 +69,6 @@
                   <%= link_to "#{balloon.link}", balloon.link %>
                 </p>
               <% end %>
-
             <% end %>
           <% end %>
         </div>

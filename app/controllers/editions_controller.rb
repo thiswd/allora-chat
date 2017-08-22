@@ -3,13 +3,15 @@ class EditionsController < ApplicationController
   before_action :set_edition, only: [:show, :edit, :update, :destroy]
 
   def show
-    @weather_info = @edition.balloons.first.weather.split('-')
+
     @balloons = []
     @edition.posts.each do |post|
       post.balloons.each do |balloon|
         @balloons << balloon
       end
     end
+
+
     @hash = Gmaps4rails.build_markers(@balloons) do |meeting, marker|
       marker.lat meeting.latitude
       marker.lng meeting.longitude
