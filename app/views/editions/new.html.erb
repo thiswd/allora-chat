@@ -3,29 +3,28 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <%= render 'form_edition' %>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1">Ativar modal</button>
       </div>
       <div class="container">
 
         <div class="modal" id="modal-1">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
-              <div class="modal-header">
+              <div class="modal-header text-center">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h3 class="modal-title">Busque um GIF</h3>
+                  <h3 class="modal-title">Buscar um GIF</h3>
               </div>
               <div class="modal-body">
 
-                <form action="" method="GET" data-remote="true">
+                <form action="" method="GET" data-remote="true" class="text-center">
                     <input type="text" id="gif_search" name="gif_search" class="search-input-rounded" value="<%params[:gif_search]%>">
-                    <button id="gif-search" type="submit" class="btn btn-primary"> Search for GIFs </button>
+                    <button id="gif-search" type="submit" class="btn btn-primary btn-xs">Pesquisar</button>
                 </form>
                 <div class="giphys">
                 </div>
               </div>
 
               <div class="modal-footer">
-                <a href="" class="btn btn-primary" data-dismiss="modal">Choose Gif</a>
+                <a href="" class="btn btn-primary" data-dismiss="modal">Inserir GIF</a>
               </div>
             </div>
           </div>

@@ -2,6 +2,9 @@
   <div id="app">
     <div class="post">
       <p class="balloon"><%= content_with_emoji(@edition.greeting) %></p>
+      <% if @edition.greeting_gif.present? %>
+        <p class="balloon"><%= image_tag @edition.greeting_gif, height: 150 %></p>
+      <% end %>
       <% if @edition.greeting_img.present? %>
         <p class="balloon"><%= cl_image_tag @edition.greeting_img, height: 150 %></p>
       <% end %>

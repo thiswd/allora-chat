@@ -1,11 +1,19 @@
 $(function(){
+  $('.gif-library').click(function(){
+    $(".giphys").empty();
+    $("#modal-1").modal("show");
+    window.inputModal = this;
+  });
 
   $('.giphys').on('DOMNodeInserted', function() {
 
     $('.giphys img').on('click', function(){
       var gif_url = $(this)[0].src;
+      $('.giphys').children().removeClass("clicked-gif");
 
-      $('#edition_remote_greeting_img_url').val(gif_url);
+      $(this).addClass("clicked-gif");
+
+      $(inputModal).val(gif_url);
 
     });
   });
