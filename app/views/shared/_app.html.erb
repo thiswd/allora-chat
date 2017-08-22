@@ -7,6 +7,9 @@
         <% if @edition.greeting_img.present? %>
           <p class="balloon"><%= cl_image_tag @edition.greeting_img, height: 150 %></p>
         <% end %>
+        <% if @edition.greeting_img_url.present? %>
+          <p class="balloon"><%= image_tag @edition.greeting_img_url, height: 150 %></p>
+        <% end %>
       </div>
     </div>
 

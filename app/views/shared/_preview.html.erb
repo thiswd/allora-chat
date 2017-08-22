@@ -7,6 +7,9 @@
         <% if @edition.greeting_img.present? %>
           <%= cl_image_tag @edition.greeting_img, height: 150 %>
         <% end %>
+        <% if @edition.greeting_gif.present? %>
+          <%= image_tag @edition.greeting_gif, height: 150 %>
+        <% end %>
       </div>
     </div>
     <% if @edition.posts.present? %>
