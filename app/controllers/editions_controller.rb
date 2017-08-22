@@ -4,6 +4,16 @@ class EditionsController < ApplicationController
 
   def show
     @weather_info = @edition.balloons.first.weather.split('-')
+    @balloons = []
+    @edition.posts.each do |post|
+      post.balloons.each do |balloon|
+        @balloons << balloon
+      end
+    end
+    @hash = Gmaps4rails.build_markers(@balloons) do |meeting, marker|
+      marker.lat meeting.latitude
+      marker.lng meeting.longitude
+    end
   end
 
   def new
@@ -67,11 +77,11 @@ class EditionsController < ApplicationController
 
   def edition_params
     params.require(:edition).permit(:date, :greeting, :greeting_img,
-                                    :greeting_img_cache, :farewell,
-                                    :farewell_img, :farewell_img_cache,
-                                    :posts_attributes => [:id, :headline, :post_img, :post_img_cache,
-                                      :option_more, :option_next, :edition_id, :_destroy,
-                                      :balloons_attributes => [:id, :content, :balloon_img, :balloon_img_cache, :link, :_destroy, :weather]])
+      :greeting_img_cache, :farewell, :farewell_img, :farewell_img_cache,
+      :posts_attributes => [:id, :headline, :post_img, :post_img_cache,
+      :option_more, :option_next, :edition_id, :_destroy,
+      :balloons_attributes => [:id, :content, :balloon_img, :balloon_img_cache,
+      :link, :_destroy, :weather, :address, :latitude, :longitude]])
   end
 
   def set_user
