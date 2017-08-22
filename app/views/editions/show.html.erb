@@ -3,7 +3,6 @@
 
   <div class="col-xs-12 col-sm-offset-1 col-sm-5 l-side edition-content">
     <h1>Revisão final.</h1>
-
     <hr>
     <h4>
       Informações da edition do dia <%= @edition.date.to_date.strftime("%d, %m, %Y")%>.
@@ -32,6 +31,7 @@
     <hr>
     <p>
       <%= link_to "Nada que editar", user_path(@user), :class => "btn btn-post" %>
+
     </p>
 
   </div>
@@ -42,3 +42,21 @@
 
 </div>
 
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        console.log(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+  <% end %>
+<% end %>
