@@ -2,7 +2,7 @@ $(document).ready(function() {
   $(".steps").slick({
     centerMode: true,
     centerPadding: '60px',
-    slidesToShow: 4,
+    slidesToShow: 3,
     responsive: [
       {
         breakpoint: 768,
