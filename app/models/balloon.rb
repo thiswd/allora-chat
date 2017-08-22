@@ -1,6 +1,7 @@
 class Balloon < ApplicationRecord
   belongs_to :post
   mount_uploader :balloon_img, PhotoUploader
+  validates :content, presence: true
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?

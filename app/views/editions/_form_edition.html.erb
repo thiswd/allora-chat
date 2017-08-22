@@ -2,11 +2,15 @@
   <%= simple_form_for @edition do |f| %>
     <div class="greeting">
       <h5>Como vai começar sua edição?</h5>
-      <%= f.input :greeting, label: false, placeholder: "Definir uma saudação", wrapper_html: { class: "balloon-form" }, input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input" } %>
+
+      <%= f.input :greeting, label: false, placeholder: "Definir uma saudação", wrapper_html: { class: "balloon-form" }, input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input", maxlength: 35 } %>
+
+
       <div class="balloon-form">
         <%= f.input :greeting_img, label: false %>
         <%= f.input :remote_greeting_img_url, label: false, placeholder: "Link da imagem ou do GIF", input_html: { class: "balloon-form-input balloon-form-link" } %>
         <%= f.input :greeting_img_cache, as: :hidden %>
+
       </div>
     </div>
 
@@ -26,7 +30,7 @@
     </div>
     <div class="farewell">
       <h5>Como vai terminar sua edição?</h5>
-      <%= f.input :farewell, label: false, placeholder: "Definir uma despedida", wrapper_html: { class: "balloon-form" }, input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input" } %>
+      <%= f.input :farewell, label: false, placeholder: "Definir uma despedida", wrapper_html: { class: "balloon-form" }, input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input" , maxlength: 50} %>
       <div class="balloon-form">
         <%= f.input :farewell_img, label: false %>
         <%= f.input :remote_farewell_img_url, label: false, placeholder: "Link da imagem ou do GIF", input_html: { class: "balloon-form-input balloon-form-link" } %>

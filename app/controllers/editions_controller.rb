@@ -2,6 +2,10 @@ class EditionsController < ApplicationController
   before_action :set_user, only: [:show, :create]
   before_action :set_edition, only: [:show, :edit, :update, :destroy]
 
+  def index
+
+  end
+
   def show
     @weather_info = @edition.balloons.first.weather.split('-')
     @balloons = []

@@ -1,9 +1,11 @@
 class Edition < ApplicationRecord
- # after_create :send_release_email
+  # after_create :send_release_email # after press commit button
 
   belongs_to :user
   has_many :posts, inverse_of: :edition, dependent: :destroy
   has_many :balloons, through: :posts, class_name: "Balloon"
+  validates :greeting, :farewell, presence: true
+
 
   mount_uploader :greeting_img, PhotoUploader
   mount_uploader :farewell_img, PhotoUploader
@@ -14,9 +16,9 @@ class Edition < ApplicationRecord
 
   private
 
-  # def send_release_email
-  #   UserMailer.new_edition(self).deliver_now
-  # end
+  def send_release_email
+   # UserMailer.new_edition(self.user).deliver
+  end
 
 end
 
