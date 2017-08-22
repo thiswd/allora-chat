@@ -15,6 +15,8 @@ $(function(){
 
       $(inputModal).val(gif_url);
 
+      $("#gif_search").val("");
+
     });
   });
 });
