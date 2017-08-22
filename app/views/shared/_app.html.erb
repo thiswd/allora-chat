@@ -1,48 +1,35 @@
 <div id="app">
-  <div id="chat">
 
-    <div class="post">
-      <div class="screen1">
-        <p class="balloon"><%= content_with_emoji(@edition.greeting) %></p>
-        <% if @edition.greeting_img.present? %>
-          <p class="balloon"><%= cl_image_tag @edition.greeting_img, height: 150 %></p>
-        <% end %>
-      </div>
+  <div id="chat">
+    <!-- <div class=".intro"> -->
+      <div class="balloon"><%= content_with_emoji(@edition.greeting) %></div>
+      <% if @edition.greeting_img.present? %>
+        <div class="balloon"><%= cl_image_tag @edition.greeting_img, height: 150 %></div>
+      <% end %>
+    <!-- </div> -->
+  </div>
+    <div class="btn-margin">
+      <a class="btn btn-lg click-start" style="text-decoration: none; color: white">Começar!</a>
     </div>
+
 
     <% @edition.posts.each do |post| %>
 
       <div class="post">
 
         <!-- SCREEN 1 -->
-        <% if @edition.posts.first == post %>
-          <div class="screen1">
-            <p class="balloon"><%= content_with_emoji(post.headline) %></p>
-            <p class="balloon"><%= cl_image_tag post.post_img, height: 150 %></p>
-            <div class="text-center btn-margin">
-                <a class="btn btn-xs new-click-more"><%= content_with_emoji(post.option_more) %></a>
-              <%# if post.id == @edition.posts.last.id %>
-                <!-- botao index -->
-              <%# else %>
-                <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
-              <%# end %>
-            </div>
+        <div class="screen1">
+          <p class="balloon hidden left"><%= content_with_emoji(post.headline) %></p>
+          <p class="balloon hidden left"><%= cl_image_tag post.post_img, height: 150 %></p>
+          <div class="text-center btn-margin hidden">
+            <a class="btn btn-xs new-click-more"><%= content_with_emoji(post.option_more) %></a>
+            <%# if post.id == @edition.posts.last.id %>
+              <!-- botao index -->
+            <%# else %>
+              <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
+            <%# end %>
           </div>
-
-        <% else %>
-          <div class="screen1">
-            <p class="balloon hidden left"><%= content_with_emoji(post.headline) %></p>
-            <p class="balloon hidden left"><%= cl_image_tag post.post_img, height: 150 %></p>
-            <div class="text-center btn-margin hidden">
-              <a class="btn btn-xs new-click-more"><%= content_with_emoji(post.option_more) %></a>
-              <%# if post.id == @edition.posts.last.id %>
-                <!-- botao index -->
-              <%# else %>
-                <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
-              <%# end %>
-            </div>
-          </div>
-        <% end %>
+        </div>
       <!-- SCREEN 2 -->
 
         <% post.balloons.order(:created_at).each_slice(2) do |balloon| %>
