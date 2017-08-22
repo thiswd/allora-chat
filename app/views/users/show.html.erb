@@ -1,7 +1,16 @@
 
 <div class="row no-gutter user-page" >
 
+
+
+
+
+
+
+
     <div class="col-xs-12 col-sm-6 l-side user-content">
+
+
         <h1>@<%= @user. username %></h1>
          <div class="user img-circle" >
             <% if @user.user_photo.present? %>
@@ -23,7 +32,7 @@
               <%= @user.position %>
             </p>
             <h4>
-              Descripção:
+              Descrição:
             </h4>
             <p>
               <%= @user.description %>
@@ -37,7 +46,9 @@
               <%= cl_image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1503069359/lep8qikttrcqj7g3fzsw.gif',
               height: 350, width: 100, crop: :fill, id: 'banner_edition' %>
             <% end %>
+
             <% if user_signed_in? && current_user == @user %>
+
               <%= link_to "Create - Edition", new_edition_path, class: "btn btn-warning btn-xs" %>
               <%= simple_form_for @user do |b| %>
                 <%= b.input :banner %>
@@ -65,10 +76,16 @@
             </p>
           </div>
         </div>
+
     </div>
 
 
     <div class="col-xs-12 col-sm-6 r-side">
+      <div class="p-user">
+        <p>
+          Essa foi a sua última edição <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        </p>
+      </div>
       <%= render partial: "shared/app" %>
     </div>
 

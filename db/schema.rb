@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(version: 20170822173603) do
     t.string "type"
     t.string "weather"
     t.string "balloon_gif"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
     t.index ["post_id"], name: "index_balloons_on_post_id"
   end
 
@@ -43,7 +46,7 @@ ActiveRecord::Schema.define(version: 20170822173603) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.text "headline"
+    t.string "headline"
     t.string "option_more"
     t.string "option_next"
     t.string "post_img"

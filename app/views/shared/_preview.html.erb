@@ -1,44 +1,71 @@
 <div id="chatbox">
   <div id="app">
     <div class="post">
-      <p class="balloon"><%= content_with_emoji(@edition.greeting) %></p>
-      <% if @edition.greeting_gif.present? %>
-        <p class="balloon"><%= image_tag @edition.greeting_gif, height: 150 %></p>
-      <% end %>
-      <% if @edition.greeting_img.present? %>
-        <p class="balloon"><%= cl_image_tag @edition.greeting_img, height: 150 %></p>
-      <% end %>
+      <h4>SAUDAÇÕES</h4>
+        <div class="balloon">
+          <p><%= content_with_emoji(@edition.greeting) %></p>
+        <% if @edition.greeting_img.present? %>
+          <%= cl_image_tag @edition.greeting_img, height: 150 %>
+        <% end %>
+        <% if @edition.greeting_gif.present? %>
+          <%= image_tag @edition.greeting_gif, height: 150 %>
+        <% end %>
+      </div>
     </div>
     <% if @edition.posts.present? %>
-      <% @edition.posts.each do |post| %>
+      <% @edition.posts.each_with_index do |post, index| %>
         <div class="post">
-
-          <p class="balloon"><%= content_with_emoji(post.headline) %></p>
-            <%= cl_image_tag post.post_img, height: 150 %>
+          <h4> POST <%= index + 1%> </h4>
+          <div class="balloon">
+            <p><%= content_with_emoji(post.headline) %></p>
+            <% if post.post_img.present? %>
+              <%= cl_image_tag post.post_img, height: 150 %>
+            <% end %>
+          </div>
           <div class="text-center btn-margin">
             <%= link_to content_with_emoji(post.option_more), "#", class: "btn btn-xs new-click-more" %>
-            <%= link_to content_with_emoji(post.option_next), "#", class: "btn btn-xs new-click-next" %>
           </div>
 
           <% if post.balloons.present? %>
             <% post.balloons.each do |balloon|%>
 
               <% if balloon.link.blank? %>
-                <p class="balloon">
-                  <% if balloon.balloon_img.blank? %>
+                <div class="balloon">
+                  <% if balloon.content.present? %>
+                  <p>
                     <%= content_with_emoji(balloon.content) %>
-                  <% else %>
+                  </p>
+                  <% elsif balloon.balloon_img.present? %>
                     <%= cl_image_tag balloon.balloon_img, height: 150 %>
+                  <% elsif balloon.address.present? %>
+
+                    <div id="map" style="height: 240px; width: 240px "></div>
+                    <br>
+                    <%= balloon.address %>
+
+                  <% elsif balloon.weather.present? %>
+                    <div class="balloon-weather">
+                      <div class="banner_weather" style="background-image: linear-gradient(rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.32)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503347454/ceulimpo_anptvb.jpg');">
+
+                        <div class="weather-category">
+                          <% @weather_info.each do |weather| %>
+                            <p><%= weather %></p>
+                          <% end %>
+                        </div>
+                        <img class="card-weather" src="http://res.cloudinary.com/dpg1ipkol/image/upload/v1503350575/sol_bkz0fz.jpg">
+                      </div>
+                    </div>
                   <% end %>
-                </p>
+                </div> <!-- Final de cada balloon sem link -->
+
               <% else %>
-                <p class="balloon " style="cursor:pointer" onclick="location.href='<%= balloon.link %>'">
+                <div class="balloon" style="cursor:pointer" onclick="location.href='<%= balloon.link %>'">
                   <% if balloon.balloon_img.blank? %>
-                    <%= content_with_emoji(balloon.content) %>
+                    <p><%= content_with_emoji(balloon.content) %></p>
                   <% else %>
                     <%= cl_image_tag balloon.balloon_img, height: 150 %>
                   <% end %>
-                </p>
+                </div>
                 <p>
                   <%= link_to "#{balloon.link}", balloon.link %>
                 </p>
@@ -47,15 +74,23 @@
             <% end %>
           <% end %>
         </div>
+        <% unless post.id == @edition.posts.last.id %>
+          <div class="text-center btn-margin">
+            <%= link_to content_with_emoji(post.option_next), "#", class: "btn btn-xs new-click-next" %>
+          </div>
+        <% end %>
       <% end %>
 
     <% end %>
 
     <div class="post">
-      <p class="balloon"><%= content_with_emoji(@edition.farewell) %></p>
+      <h4>DESPEDIDA</h4>
+      <div class="balloon">
+        <p><%= content_with_emoji(@edition.farewell) %></p>
       <% if @edition.farewell_img.present? %>
-        <p class="balloon"><%= cl_image_tag @edition.farewell_img, height: 150 %></p>
+        <%= cl_image_tag @edition.farewell_img, height: 150 %>
       <% end %>
+      </div>
     </div>
 
   </div>
