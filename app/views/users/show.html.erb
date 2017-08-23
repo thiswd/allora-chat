@@ -1,67 +1,47 @@
 
 
 <div class="container" >
-    <div class="col-xs-12 col-sm-6 l-side user-content visible-lg-*">
+  <div class="col-xs-12 col-sm-6 l-side user-content visible-lg-*">
 
-        <h1>@<%= @user. username %></h1>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="banner-card">
 
-         <div class="user img-circle" >
-            <% if @user.user_photo.present? %>
-              <%= image_tag @user.user_photo, class: 'card-user' %>
-            <% else %>
-              <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502308490/empresario_318-72886_gbwwol.png', class: 'card-user' %>
-            <% end %>
-          </div>
-
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 l-side">
-          <br>
-            <h4>
-              <%= @user.first_name.capitalize + " " + @user.last_name.capitalize %>
-            </h4>
-            <p>
-              <%= @user.category %>
-            </p>
-            <p>
-              <%= @user.position %>
-            </p>
-            <h4>
-              Descrição:
-            </h4>
-            <p>
-              <%= @user.description %>
-            </p>
-          </div>
-
-          <div class="col-xs-12 col-sm-6">
-            <% if @user.banner.present? %>
-              <%= cl_image_tag @user.banner, height: 50, width: 50, crop: :fill, id: 'banner_edition'%>
-            <% else %>
-              <%= cl_image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1503069359/lep8qikttrcqj7g3fzsw.gif',
-              height: 350, width: 100, crop: :fill, id: 'banner_edition' %>
-            <% end %>
-
-            <% if user_signed_in? && current_user == @user %>
-
-              <%= link_to "Create - Edition", new_edition_path, class: "btn btn-warning btn-xs" %>
-              <%= simple_form_for @user do |b| %>
-                <%= b.input :banner %>
-                <%= b.input :banner_cache, as: :hidden %>
-                <%= b.submit 'Upload banner', class: "btn btn-warning btn-xs" %>
-              <% end%>
-            <% end %>
-          </div>
-
+        <% if @user.banner.present? %>
+          <%= cl_image_tag @user.banner, height: 50, width: 50, crop: :fill, id: 'banner_edition'%>
+        <% else %>
+          <%= cl_image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1503423423/rosto_mulher_preto_e_branco_rldhsi.jpg',
+          height: 350, width: 100, crop: :fill, id: 'banner_edition_user' %>
+        <% end %>
         </div>
+      </div>
 
 
+      <div class="col-xs-12" style="margin-top: 168px;">
+        <div class="user-content">
+          __________________________________________________________________________
+          <p>
+            <strong><i>Informações pessoais:</i></strong>
+          </p>
+          <i class="fa fa-user-o" aria-hidden="true" style="color:orange"></i>
+          <i><%= @user.first_name.capitalize + " " + @user.last_name.capitalize %></i><br>
+          <i class="fa fa-hand-o-right" aria-hidden="true" style="color:orange"></i>
+          <i><%= @user.category %></i><br>
+          <i class="fa fa-hand-o-right" aria-hidden="true" style="color:orange"></i>
+          <i><%= @user.position %></i><br>
+          <i><%= @user.description %></i>
+          __________________________________________________________________________
+        </div>
+      </div>
     </div>
 
+  </div>
 
-    <div class="col-xs-12 col-sm-6 rr-side">
 
-      <%= render partial: "shared/app" %>
-    </div>
+
+  <div class="col-xs-12 col-sm-6 rr-side">
+    <%= render partial: "shared/app" %>
+  </div>
 
 </div>
 
