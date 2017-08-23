@@ -4,6 +4,7 @@ $(function(){
     item_added.find("#weather").click(function(e){
       e.preventDefault();
       e.stopPropagation()
+
       var value = item_added.find(".weather input").val();
       console.log(value)
       $.ajax({

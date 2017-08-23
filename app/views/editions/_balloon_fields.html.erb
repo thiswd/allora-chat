@@ -34,21 +34,19 @@
   </div>
 
   <div class="balloon-form hide-field hidden" id="input-gif-balloon">
-    <%= f.input :balloon_gif, label: false, placeholder: "Link da imagem ou do GIF", input_html: { class: "balloon-form-input balloon-form-link gif-library" } %>
+    <%= f.input :balloon_gif, label: false, placeholder: "Buscar um GIF", input_html: { class: "balloon-form-input gif-library" } %>
   </div>
 
   <div class="balloon-form hide-field hidden" id="input-map-balloon">
-    <%= f.input :address, label: false, placeholder: "Endereço" %>
+    <%= f.input :address, label: false, placeholder: "Endereço", input_html: { class: "balloon-form-input" } %>
   </div>
 
 
   <div class="balloon-form hide-field hidden weather" id="input-meteo-balloon">
-    <%= f.input :weather, placeholder: "Digite o nome da cidade" %>
-    <p>Obs.: Use esse campo para enviar a previsão do tempo de alguma cidade.</p>
-    <p>Fornecemos o valor da temperatura (mín e máx), velocidade do vento e umidade do ar.</p>
+    <%= f.input :weather, label: false, placeholder: "Buscar por cidade para obter previsão de tempo", input_html: { class: "balloon-form-input" } %>
     <a href="#" id="weather" class="btn btn-primary">Pesquisar</a>
   </div>
-
+    <!-- <p>Vai exibir temperatura máxima e mínima, velocidade do vento e umidade do ar</p> -->
 
 </div>
 

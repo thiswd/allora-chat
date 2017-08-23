@@ -3,13 +3,20 @@ $(function(){
 
   $(".iframe-link").click(function(e){
     e.preventDefault();
-    var site = $(this)[0].getElementsByTagName('a')[0].href;
+    var site = $(this)[0].href;
 
     document.getElementById('modal-iframe').getElementsByTagName('iframe')[0].src = site;
+
     $("#modal-iframe").removeClass("hidden");
     setTimeout(function () {
       $("#modal-iframe").css("transform", "translateX(0)");
     }, 1000);
+    $("#site-src").text(site);
+
+
+    $('#iframe-exit').click(function() {
+      $('#modal-iframe').addClass('hidden');
+    });
 
   });
 
