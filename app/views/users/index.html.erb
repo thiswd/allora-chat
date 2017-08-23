@@ -1,59 +1,56 @@
+<div class="body-index-user">
 
-<div class="color-wrapper">
+
   <div class="container">
+  <br>
+    <div class="col-xs-12 col-sm-12 ">
 
+      <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1503453877/fique_por_dentro_kuz51d.jpg' %>
 
-    <div class="box-height">
-      <div class="index-title text-center">
-      <h4>Explore influencers.</h4>
-      </div>
-      <div class="row steps">
+    </div>
 
-
-        <% @users.each do |user| %>
-
-
-            <div class="col-md-4 col-sm-12">
-              <div class="card-container" style="cursor:pointer" onclick="location.href= 'users/<%=user.id%>'">
-                <div class="card">
-                  <div class="front">
-                    <div class="cover">
-                      <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502909434/the-background-1017064_960_720_skuvwv.jpg', width: "auto" %>
-
-                    </div>
-                    <div class="user img-circle" >
-                      <% if user.user_photo.present? %>
-                        <%= image_tag user.user_photo, class: 'card-user' %>
-                      <% else %>
-                        <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502308490/empresario_318-72886_gbwwol.png', class: 'card-user' %>
-                      <% end %>
-                    </div>
-                    <div class="content">
-                      <div class="main">
-
-                          <h3 class="name"> <%= user.first_name %> </h3>
-                          <p class="profession"> <%= user.category %> </p>
-                          <p class="text-center">"Ativista de direitos humanos"</p>
-                      </div>
-                      <div class="footer" >
-                        Influencer
-                      </div>
-                  </div>
-                </div> <!-- end front panel -->
-                </div> <!-- end card -->
-              </div> <!-- end card-container -->
-            </div>
-
+    <% influencers = [] %>
+      <% if @users.map do |user|%>
+        <% if user.editions.present? %>
+            <% influencers << user %>
+          <% end %>
         <% end %>
+      <% end %>
 
-      </div>
-      <div class="index-filter">
-        <h1>Filtre por categorias.</h1>
 
+    <div class="row">
+
+      <% influencers.each do |user| %>
+      <% if user.user_photo.present? %>
+        <% image_url = user.user_photo.url %>
+      <% else %>
+        <% image_url = 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502308490/empresario_318-72886_gbwwol.png'%>
+      <% end %>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="card-username">
+          <div class="p-username">
+            <p><%= user.first_name %> <%= user.last_name %></p>
+          </div>
+        </div>
+
+
+        <div class="card grayscale" style="background-image: url(<%= cl_image_path(image_url) %>);">
+          <!-- <div class="card-category"><%= user.username %></div> -->
+          <div class="card-description">
+            <h2><%= user.first_name %></h2>
+            <p><%= user.category %></p>
+          </div>
+          <img class="card-user" src="http://res.cloudinary.com/dpg1ipkol/image/upload/v1503433111/filled_chat1600_uimuaz.png">
+          <a class="card-link" href="#" ></a>
+        </div>
+
+        <!-- insert <div class="card"> -->
       </div>
+      <% end %>
+
 
     </div>
   </div>
+
 </div>
-
-

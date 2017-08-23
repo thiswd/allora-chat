@@ -3,8 +3,10 @@
   width: 100%;
   // padding: 20px 100px 20px 100px;
   overflow-y: scroll;
+  overflow-x: hidden;
   position: relative;
 }
+
 #modal-iframe {
   position: absolute;
   width: 100%;
@@ -21,11 +23,13 @@ iframe {
   border: none;
 }
 .post {
+  width: 100%;
+
   h4 {
     color: $middle-grey;
   }
-
 }
+
 #chat {
   flex: 1;
   width: 100%;
@@ -66,16 +70,19 @@ iframe {
 
 .left {
   position: relative;
-  left: 700px;
+  transform: translateX(700px);
+  transition: transform 0.5s cubic-bezier(0.52, 1.7, 0.79, 0.91);
 }
 
 .balloon {
   background: white;
-  width: 95%;
+  max-width: 65%;
   border-radius: 0 20px 20px 20px;
   padding: 10px 20px;
   line-height: 125%;
   text-decoration: none;
+  display: inline-block;
+  transition: transform 0.5s cubic-bezier(0.52, 1.7, 0.79, 0.91);
 
   &-image {
     background: white;
