@@ -5,7 +5,7 @@
   <div class="balloon-form">
     <%= f.input :post_img, label: false %>
     <%= f.input :post_img_cache, as: :hidden %>
-    <%= f.input :post_gif, label: false, placeholder: "Link da imagem ou do GIF", input_html: { class: "balloon-form-input balloon-form-link gif-library" } %>
+    <%= f.input :post_gif, label: false, placeholder: "Buscar um GIF", input_html: { class: "balloon-form-input balloon-form-link gif-library" } %>
   </div>
   <div class="answers">
     <h5>Como o usuário vai te responder?</h5>
@@ -27,9 +27,6 @@
     <%= f.simple_fields_for :balloons do |balloon| %>
       <%= render 'balloon_fields', f: balloon %>
     <% end %>
-    <fieldset id="balloon-fields">
-
-    </fieldset>
 
     <%= link_to_add_association "<div class='form-flex btn btn-plus'><i class='fa fa-plus-circle plus-post' aria-hidden='true'></i><span class='plus-name'>Novo Balão</span></div>".html_safe, f, :balloons %>
   </div>
