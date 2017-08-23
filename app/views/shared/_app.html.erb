@@ -90,11 +90,11 @@
                       <%= link_to "#{uniq_balloon.short_link}", uniq_balloon.link, class: "iframe-link" %>
                     <% end %>
                   </div>
-                <% elsif uniq_balloon.post_img.present? %>
+                <% elsif uniq_balloon.balloon_img.present? %>
                   <div class="balloon hidden left">
                     <%= cl_image_tag uniq_balloon.balloon_img, height: 150 %>
                   </div>
-                <% elsif uniq_balloon.post_gif.present? %>
+                <% elsif uniq_balloon.balloon_gif.present? %>
                   <div class="balloon hidden left">
                     <%= image_tag uniq_balloon.balloon_gif, height: 150 %>
                   </div>
@@ -102,18 +102,18 @@
                   <div class="balloon hidden left balloon-weather">
                     <div class="banner_weather" style="background-image: linear-gradient(rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.32)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503347454/ceulimpo_anptvb.jpg');">
                       <div class="weather-category">
-                        <% balloon.weather.split('-').each do |weather| %>
+                        <% uniq_balloon.weather.split('-').each do |weather| %>
                           <p><%= weather %></p>
                         <% end %>
                       </div>
                       <img class="card-weather" src="http://res.cloudinary.com/dpg1ipkol/image/upload/v1503350575/sol_bkz0fz.jpg">
                     </div>
                   </div>
-                <% elsif uniq_balloon.post_img.present? %>
+                <% elsif uniq_balloon.address.present? %>
                   <div class="balloon hidden left">
                     <div id="map" style="height: 240px; width: 240px "></div>
                       <br>
-                      <%= balloon.address %>
+                      <%= uniq_balloon.address %>
                   </div>
                 <% end %>
               </div>
