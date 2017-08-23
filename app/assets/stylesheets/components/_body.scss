@@ -24,7 +24,27 @@ body  {
 .body-index-user {
   background-color: white;
   min-height: 87vh;
-
 }
 
+.ll-side {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rr-side {
+  min-height: 630px;
+  // height: calc(100vh - 50px);
+  background: $light-gray;
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
 
