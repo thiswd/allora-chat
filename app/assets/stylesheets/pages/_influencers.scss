@@ -1,0 +1,245 @@
+// Specific CSS for your influencers-page
+
+#zero {
+
+body .row {
+  background-color: white;
+}
+
+
+  #three {
+   background-color: #FCE879;
+  }
+
+  .video-banner {
+    position: relative;
+    margin-top: -100px;
+  }
+
+  .guide-how-to {
+    background-color: white;
+    height: 300px;
+    width: 100%;
+    h2 {
+      font-size: 30px;
+    }
+  }
+}
+.main-content {
+  position: absolute;
+  bottom: -10px;
+  font-size: 42px;
+  margin-top: 30px;
+  letter-spacing: 6px;
+  word-spacing: -3px;
+  color: white;
+  margin-left: 270px;
+  margin-right: 270px;
+  height: 570px;
+  text-shadow: 0px 0px 6px #424242;
+}
+
+.second-content {
+  font-size: 23px;
+  margin-top: 54px;
+}
+
+.color-wrapper {
+  background-color: white;
+}
+
+.home-vertical {
+  .h2 {
+    font-style: "cursive";
+    background-color: #FCE879;
+  }
+}
+
+.color-h1-p {
+  color: white;
+
+}
+
+.slide-right {
+  // height: 700px;
+  background-size: cover;
+  background: white;
+
+}
+
+.slide-left {
+  // height: 700px;
+  background-size: cover;
+
+  .h1 {
+    font-size: 72px;
+  }
+
+  .p {
+    margin: 20px 20px 20px 20px;
+  }
+}
+
+.h2 {
+  font-size: 20px;
+}
+
+.btn-position {
+  background: white;
+}
+
+.btn-navbar {
+  margin-top: 2%;
+  margin-bottom: 2%;;
+  color: rgb(119, 119, 119);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #ccc;
+  cursor: pointer;
+}
+
+.btn-navbar:hover {
+  background-color: #A8A8A8;
+}
+
+.btn-warning {
+}
+
+.btn-home {
+  margin-top: 47px;
+}
+
+.class-p {
+   font-size: 15px;
+}
+
+.banner {
+  color: white;
+  text-align: center;
+  height: 20vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  font-size: 53px;
+  text-shadow: 2px 3px #e68028;
+  font-family:  "Montserrat";
+}
+.banner p {
+  font-size: 54px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  margin-bottom: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-shadow: 3px 7px #333333;
+}
+
+// === ScrollSpy ===
+.dots {
+  width: 22px;
+  display: inline-block;
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  z-index: 2;
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px #999 solid;
+  }
+
+  .active .dot {
+    background-color: black;
+    border-color: black;
+  }
+  .nav li a {
+    background-color: transparent;
+  }
+}
+
+.home-vertical {
+  height: 90vh;
+
+  img {
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .slide-right, .slide-left {
+    height: 100%;
+  }
+}
+
+.banner-color {
+  background: #B53C0;
+}
+
+.banner-content {
+  height: 275px;
+}
+
+.vertical-align {
+    position: relative;
+}
+
+.vertical-align > div {
+    position: absolute;
+    top: 50%;
+}
+
+article {
+  line-height:2;
+  background-image:linear-gradient(rgba(0,0,0,.3) 1px, transparent 1px);
+  background-size: 100% 2em;
+  background-position:0 1.4em;
+  background-origin:content-box;
+  padding:50px;
+
+  font-style:italic;
+  font-size: 18px;
+
+}
+
+
+.allora-size {
+  font-size: 20px;
+  margin-top: 45px;
+  .p {
+    margin: 38px 0 12.5px;
+  }
+
+}
+
+.allora {
+
+  .p {
+    height: 100px;
+  }
+}
+
+.banner-follow {
+  background-color: #ff8008;
+  height: 60px;
+  width: 320px;
+  position: relative;
+  bottom: 0px;
+
+}
+
+.p-follow {
+  background-color: #ff8008;
+  position: absolute;
+  color: white;
+  bottom: 5px;
+  margin-left: 75px;
+  font-size: 30px;
+
+}
+
