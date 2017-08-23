@@ -18,7 +18,7 @@ $(function(){
 
   if(screen.width < 500) {
     setTimeout(function () {
-      $(".r-side").addClass("show")
+      $(".rr-side").addClass("mobile-show")
     }, 2000);
   }
 
