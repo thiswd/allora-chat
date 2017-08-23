@@ -1,8 +1,10 @@
 
-<div class="row no-gutter user-page" >
 
-    <div class="col-xs-12 col-sm-6 l-side user-content">
+<div class="container" >
+    <div class="col-xs-12 col-sm-6 l-side user-content visible-lg-*">
+
         <h1>@<%= @user. username %></h1>
+
          <div class="user img-circle" >
             <% if @user.user_photo.present? %>
               <%= image_tag @user.user_photo, class: 'card-user' %>
@@ -10,6 +12,7 @@
               <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502308490/empresario_318-72886_gbwwol.png', class: 'card-user' %>
             <% end %>
           </div>
+
         <div class="row">
           <div class="col-xs-12 col-sm-6 l-side">
           <br>
@@ -23,21 +26,23 @@
               <%= @user.position %>
             </p>
             <h4>
-              Descripção:
+              Descrição:
             </h4>
             <p>
               <%= @user.description %>
             </p>
           </div>
-          <div class="col-xs-12 col-sm-6 r-side">
 
+          <div class="col-xs-12 col-sm-6">
             <% if @user.banner.present? %>
               <%= cl_image_tag @user.banner, height: 50, width: 50, crop: :fill, id: 'banner_edition'%>
             <% else %>
               <%= cl_image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1503069359/lep8qikttrcqj7g3fzsw.gif',
               height: 350, width: 100, crop: :fill, id: 'banner_edition' %>
             <% end %>
+
             <% if user_signed_in? && current_user == @user %>
+
               <%= link_to "Create - Edition", new_edition_path, class: "btn btn-warning btn-xs" %>
               <%= simple_form_for @user do |b| %>
                 <%= b.input :banner %>
@@ -46,29 +51,15 @@
               <% end%>
             <% end %>
           </div>
+
         </div>
-        <hr>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 r-side">
-          <ul>
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-          </ul>
-          </div>
-          <div class="col-xs-12 col-sm-6 r-side">
-            <p>
-              Membro desde:
-            </p>
-            <p>
-              Editions criadas:
-            </p>
-          </div>
-        </div>
+
+
     </div>
 
 
-    <div class="col-xs-12 col-sm-6 r-side">
+    <div class="col-xs-12 col-sm-6 rr-side">
+
       <%= render partial: "shared/app" %>
     </div>
 

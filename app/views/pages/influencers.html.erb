@@ -1,0 +1,105 @@
+  <div class="color-wrapper" id="zero">
+      <div class="video-banner" width= '90%' >
+      <%= cl_video_tag("343378693_ayzqol", :color=>"#e9c10f", :delay=>"2", :effect=>"deshake:16", :crop=>"scale", :height=>690, :width=>1300, autoplay: true, muted: true, loop: true, class: "video")%>
+
+      </div>
+
+      <div class="main-content">
+        <p>Allora, a sua <strong>newsletter</strong> interativa!
+        </p>
+        <div class="second-content" align="center">
+          <p>
+            A maneira mais rápida de expor conteúdo <br> para os seus leitores <i class="fa fa-commenting-o" aria-hidden="true"></i><br>
+            <%= link_to "Entrar no chat", users_path, class: "btn btn-warning btn-home" %>
+            <% if user_signed_in? %>
+              <%= link_to "Criar edição", new_edition_path, class: "btn btn-warning btn-home" %>
+            <% end %>
+          </p>
+        </div>
+      </div>
+  </div>
+
+<div class="container" id="carousel">
+  <div class="row">
+    <div class='col-md-offset-2 col-md-8 text-center'>
+    </div>
+
+  </div>
+  <div class='row'>
+    <div class='col-md-offset-2 col-md-8'>
+      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+        <!-- Bottom Carousel Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#quote-carousel" data-slide-to="1"></li>
+          <li data-target="#quote-carousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Carousel Slides / Quotes -->
+        <div class="carousel-inner">
+
+          <!-- Quote 1 -->
+          <div class="item active">
+
+              <div class="row">
+                <div class="col-sm-11 text-center">
+                  <h3>Uma nova forma de se comunicar</h3>
+                  <p>Diferente das demais plataformas de notícias, o Allora foi pensado para proporcinar uma leitura mais fluida, resumida e focada nas informações que realmente importam </p>
+                </div>
+              </div>
+
+          </div>
+          <!-- Quote 2 -->
+          <div class="item">
+
+              <div class="row">
+                <div class="col-sm-11 text-center"">
+                  <h3>Todas as informações em um só lugar</h3>
+                  <p>Com apenas um click, consiga mais subscribers para a sua página, divulgue suas nóticias em tempo real, compartilhe imagens, links, mapas e comunique-se por meio de gifs e emojis.</p>
+                </div>
+              </div>
+
+          </div>
+          <!-- Quote 3 -->
+          <div class="item">
+
+              <div class="row">
+                <div class="col-sm-11 text-center"">
+                  <h3>Atualize seu feed quando quiser</h3>
+                  <p>Erro na publicação? Faltou alguma coisa? Sem problema! No Allora você  pode editar e atualizar suas publicações quando quiser.<br> Simples assim!</p>
+                </div>
+              </div>
+
+          </div>
+        </div>
+
+        <!-- Carousel Buttons Next/Prev -->
+        <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+        <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+      <div class="home-vertical" id="three">
+        <div class="col-xs-12 col-sm-6 slide-left">
+          <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1503349078/iphonepng_nximnd.png', width: "auto" %>
+        </div>
+
+        <div class="col-xs-12 col-md-6 slide-right allora" id="three">
+
+            <div class ="allora-size"> <strong> Allora, a maneira mais rápida de criar conteúdo!
+            </strong> </div>
+
+            <p text-align="justify"> Ofereça informação aos seus seguidores no formato de um bate-papo! É muito mais amigável que o e-mail e mais eficiente do que o telefone.
+            </p>
+
+            <p class = class-p><i>Você é um influenciador? <u>Cadastre-se.</u></i></p>
+            <br>
+            <p class-p><i>Experimente allora gratuitamente e publique conteúdo para os seus seguidores.</i></p>
+
+        </div>
+      </div>

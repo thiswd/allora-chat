@@ -10,16 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20170821160109) do
-
-
+ActiveRecord::Schema.define(version: 20170822173603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "balloons", force: :cascade do |t|
-    t.string "content"
+    t.text "content"
     t.string "link"
     t.string "balloon_img"
     t.bigint "post_id"
@@ -27,6 +24,10 @@ ActiveRecord::Schema.define(version: 20170821160109) do
     t.datetime "updated_at", null: false
     t.string "type"
     t.string "weather"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
+    t.string "balloon_gif"
     t.index ["post_id"], name: "index_balloons_on_post_id"
   end
 
@@ -39,17 +40,20 @@ ActiveRecord::Schema.define(version: 20170821160109) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "greeting_gif"
+    t.string "farewell_gif"
     t.index ["user_id"], name: "index_editions_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.text "headline"
+    t.string "headline"
     t.string "option_more"
     t.string "option_next"
     t.string "post_img"
     t.bigint "edition_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "post_gif"
     t.index ["edition_id"], name: "index_posts_on_edition_id"
   end
 
@@ -82,6 +86,11 @@ ActiveRecord::Schema.define(version: 20170821160109) do
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
     t.string "banner"
+    t.string "provider"
+    t.string "uid"
+    t.string "facebook_picture_url"
+    t.string "token"
+    t.datetime "token_expiry"
     t.string "position"
     t.text "description"
     t.index ["email"], name: "index_users_on_email", unique: true

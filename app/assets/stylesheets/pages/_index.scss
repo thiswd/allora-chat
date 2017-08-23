@@ -1,7 +1,19 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+@import "influencers";
 
 .box-height {
   height: -webkit-fill-available;
+}
+
+.index-title {
+  height: 100px;
+  padding: 25px;
+  margin-bottom: 85px;
+
+}
+
+.index-filter {
+  height: 200px;
 }

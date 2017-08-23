@@ -1,8 +1,79 @@
+.mobile-show {
+  transition: transform 0.5s ease-in-out;
+  transform: translate(-100%, 0);
+  position: absolute;
+  right: -100%;
+  height: auto;
+}
+
 #app {
-  height: calc(100vh - 103px);
+  height: calc(100vh - 94px);
   width: 100%;
   // padding: 20px 100px 20px 100px;
   overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#modal-iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in;
+  z-index: 999;
+}
+
+iframe {
+  width: 100%;
+  border: none;
+  height: 100%;
+}
+
+#head-iframe {
+  position: relative;
+  background-color: #FCE879;
+  height: 30px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+#site-src {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 0 10px 0 10px;
+  width: 80%;
+  background-color: white;
+  height: 20px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+#iframe-exit {
+  position: absolute;
+  right: 10px;
+  border-radius: 5px;
+  top: 7px;
+  font-size: 10px;
+}
+
+#iframe-exit:hover {
+  color: $red;
+}
+
+
+
+.post {
+  width: 100%;
+
+  h4 {
+    color: $middle-grey;
+  }
 }
 
 #chat {
@@ -45,16 +116,19 @@
 
 .left {
   position: relative;
-  left: 700px;
+  transform: translateX(700px);
+  transition: transform 0.5s cubic-bezier(0.52, 1.7, 0.79, 0.91);
 }
 
 .balloon {
-  background: white;
-  width: 95%;
+  background: #F4F4F4;
+  max-width: 80%;
   border-radius: 0 20px 20px 20px;
   padding: 10px 20px;
   line-height: 125%;
   text-decoration: none;
+  display: inline-block;
+  transition: transform 0.5s cubic-bezier(0.52, 1.7, 0.79, 0.91);
 
   &-image {
     background: white;
@@ -70,4 +144,32 @@
     padding: 10px 15px;
     margin: 5px 0;
   }
+}
+
+.balloon-weather {
+  color: black;
+}
+
+.banner_weather {
+  height: 160px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+
+.weather-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+}
+
+.card-weather {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 50px;
+  border-radius: 50%;
 }

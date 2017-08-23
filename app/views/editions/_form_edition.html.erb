@@ -5,7 +5,7 @@
       <%= f.input :greeting, label: false, placeholder: "Definir uma saudação", wrapper_html: { class: "balloon-form" }, input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input" } %>
       <div class="balloon-form">
         <%= f.input :greeting_img, label: false %>
-        <%= f.input :remote_greeting_img_url, label: false, placeholder: "Link da imagem ou do GIF", input_html: { class: "balloon-form-input balloon-form-link" } %>
+        <%= f.input :greeting_gif, label: false, placeholder: "Buscar um GIF", input_html: { class: "balloon-form-input balloon-form-link gif-library" } %>
         <%= f.input :greeting_img_cache, as: :hidden %>
       </div>
     </div>
@@ -29,14 +29,16 @@
       <%= f.input :farewell, label: false, placeholder: "Definir uma despedida", wrapper_html: { class: "balloon-form" }, input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input" } %>
       <div class="balloon-form">
         <%= f.input :farewell_img, label: false %>
-        <%= f.input :remote_farewell_img_url, label: false, placeholder: "Link da imagem ou do GIF", input_html: { class: "balloon-form-input balloon-form-link" } %>
+        <%= f.input :farewell_gif, label: false, placeholder: "Buscar um GIF", input_html: { class: "balloon-form-input balloon-form-link gif-library" } %>
         <%= f.input :farewell_img_cache, as: :hidden %>
       </div>
     </div>
     <div class="date">
       <h5 class="text-center">Data de publicação</h5>
-      <%= f.input :date, label: false, as: :date, wrapper_html: { class: "date-center" } %>
+      <div class="form-inline">
+        <%= f.input :date, label: false, as: :date %>
+        <%= f.submit 'Concluir', class: "btn btn-primary" %>
+      </div>
     </div>
-    <%= f.submit 'Concluir', class: "btn btn-primary" %>
   <% end %>
 </div>

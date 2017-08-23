@@ -1,3 +1,5 @@
+
+
 .form-inputs {
   background: white;
   padding: 10px 20px;
@@ -44,10 +46,12 @@
 
   &-input {
     border-radius: 0 20px 20px 20px;
+    height: auto;
   }
 
   &-input-text {
     border-radius: 0 20px 0 0;
+    height: auto;
   }
 
 
@@ -55,6 +59,7 @@
     height: 25px;
     border-radius: 0 0 20px 20px;
   }
+
 }
 
 .emoji-picker-icon {
@@ -153,7 +158,21 @@
   font-size: 12px;
 }
 
+.date {
+  text-align: center;
+}
+
 .date-center {
   display: flex;
   justify-content: space-around;
 }
+
+.giphys img {
+  cursor: pointer;
+  margin: 5px;
+}
+
+.clicked-gif {
+  border: 4px solid $blue;
+}
+
