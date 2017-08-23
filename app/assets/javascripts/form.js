@@ -5,14 +5,33 @@ $(function(){
     emojiPicker.discover();
 
     $('.text-option').on("click", function(){
-      $(this).parent().parent().children(".balloon-form.input-text-balloon").removeClass("hidden");
-      $(this).parent().parent().children(".balloon-form.input-img-balloon").addClass("hidden");
+      hideField(this);
+      $(this).parent().parent().children("#input-text-balloon").removeClass("hidden");
     });
 
     $('.img-option').on("click", function(){
-      $(this).parent().parent().children(".balloon-form.input-img-balloon").removeClass("hidden");
-      $(this).parent().parent().children(".balloon-form.input-text-balloon").addClass("hidden");
+      hideField(this);
+      $(this).parent().parent().children("#input-img-balloon").removeClass("hidden");
     });
+
+    $('.gif-option').on("click", function(){
+      hideField(this);
+      $(this).parent().parent().children("#input-gif-balloon").removeClass("hidden");
+    });
+
+    $('.map-option').on("click", function(){
+      hideField(this);
+      $(this).parent().parent().children("#input-map-balloon").removeClass("hidden");
+    });
+
+    $('.meteo-option').on("click", function(){
+      hideField(this);
+      $(this).parent().parent().children("#input-meteo-balloon").removeClass("hidden");
+    });
+
+    function hideField(el) {
+      $(el).parent().parent().children(".hide-field").addClass("hidden");
+    }
 
     $('.gif-library').click(function(){
       $(".giphys").empty();
