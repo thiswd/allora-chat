@@ -1,5 +1,5 @@
 #app {
-  height: calc(100vh - 103px);
+  height: calc(100vh - 94px);
   width: 100%;
   // padding: 20px 100px 20px 100px;
   overflow-y: scroll;
@@ -75,8 +75,8 @@ iframe {
 }
 
 .balloon {
-  background: white;
-  max-width: 65%;
+  background: #F4F4F4;
+  max-width: 80%;
   border-radius: 0 20px 20px 20px;
   padding: 10px 20px;
   line-height: 125%;
