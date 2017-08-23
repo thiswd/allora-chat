@@ -5,7 +5,6 @@ $(function(){
       e.preventDefault();
       e.stopPropagation()
       var value = item_added.filter(".weather").find("input").val();
-      console.log(value)
       $.ajax({
         type: "GET",
         url: "/editions/weather?weather=" + value,

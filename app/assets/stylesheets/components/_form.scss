@@ -44,10 +44,12 @@
 
   &-input {
     border-radius: 0 20px 20px 20px;
+    height: auto;
   }
 
   &-input-text {
     border-radius: 0 20px 0 0;
+    height: auto;
   }
 
 
@@ -55,6 +57,7 @@
     height: 25px;
     border-radius: 0 0 20px 20px;
   }
+
 }
 
 .emoji-picker-icon {
@@ -151,6 +154,10 @@
 .balloons-hint p {
   color: #777777;
   font-size: 12px;
+}
+
+.date {
+  text-align: center;
 }
 
 .date-center {
