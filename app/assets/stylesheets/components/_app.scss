@@ -4,8 +4,24 @@
   // padding: 20px 100px 20px 100px;
   overflow-y: scroll;
   overflow-x: hidden;
+  position: relative;
 }
 
+#modal-iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in;
+  z-index: 999;
+}
+
+iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 .post {
   width: 100%;
 
