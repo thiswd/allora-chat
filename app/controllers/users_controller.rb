@@ -31,7 +31,8 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :first_name, :last_name, :category, :user_photo, :user_photo_cache, :influencer, :email, :banner, :banner_cache)
+    params.require(:user).permit(:username, :first_name, :last_name, :category, :user_photo,
+    :user_photo_cache, :influencer, :email, :banner, :banner_cache, :position, :description)
   end
 
   def banner_params

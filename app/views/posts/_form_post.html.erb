@@ -1,28 +1,18 @@
-<div class="nested-fields">
-  <p class="text-right section-partial">Post</p>
-  <%= link_to_remove_association "<i class='fa fa-times-circle times-color' aria-hidden='true'></i><span class='plus-name'>Remover</span>".html_safe, f, data: { confirm: 'Tem certeza que deseja apagar este post?'} %>
-  <%= f.input :headline, label: false, placeholder: "Título do post", wrapper_html: { class: "balloon-form" }, input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input" } %>
+<div id="form-chatbox">
+  <%= simple_form_for @post do |f| %>
+    <%= f.input :headline, label: false, placeholder: "Título do post", wrapper_html: { class: "balloon-form" }, input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input" } %>
   <div class="balloon-form">
     <%= f.input :post_img, label: false %>
     <%= f.input :post_img_cache, as: :hidden %>
-    <%= f.input :post_gif, label: false, placeholder: "Link da imagem ou do GIF", input_html: { class: "balloon-form-input balloon-form-link gif-library" } %>
+    <%= f.input :remote_post_img_url, label: false, placeholder: "Link da imagem ou do GIF", input_html: { class: "balloon-form-input balloon-form-link" } %>
   </div>
   <div class="answers">
-    <h5>Como o usuário vai te responder?</h5>
-
     <div class="answers-fields">
       <%= f.input :option_more, label: false, wrapper_html: { class: "user-btns" }, input_html: { data: { emojiable: true }, value: "Quero saber mais", class: "emoji-picker-container user-btns-input" } %>
       <p>Para o usuário ver mais informações sobre seu post</p>
       <%= f.input :option_next, label: false, wrapper_html: { class: "user-btns" }, input_html: { data: { emojiable: true }, value: "Vamos mudar de assunto", class: "emoji-picker-container user-btns-input" } %>
-      <p>Para o usuário ver o título do post seguinte</p>
     </div>
   </div>
-
-  <h5 class="text-center form-balloon-header">Hora de inserir conteúdo nos balões!</h5>
-  <div class="balloons-hint text-center">
-    <p>Dica: se o conteúdo for extenso, é melhor dividi-lo em vários balões</p>
-  </div>
-
   <div class="post-content">
     <%= f.simple_fields_for :balloons do |balloon| %>
       <%= render 'balloon_fields', f: balloon %>
@@ -33,4 +23,7 @@
 
     <%= link_to_add_association "<div class='form-flex btn btn-plus'><i class='fa fa-plus-circle plus-post' aria-hidden='true'></i><span class='plus-name'>Novo Balão</span></div>".html_safe, f, :balloons %>
   </div>
+
+    <%= f.submit 'Concluir', class: "btn btn-primary" %>
+  <% end %>
 </div>

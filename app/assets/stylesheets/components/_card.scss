@@ -1,0 +1,74 @@
+.card {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  box-shadow: 6px 9px 2px rgba(0, 0, 0, 0.33);
+  margin: 0px 5px 20px 5px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  filter: none;
+}
+
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description h2 {
+  font-size: 24px;
+}
+.card-description p {
+  font-size: 14px;
+
+  font-weight: lighter;
+  color: white; text-shadow: black 0.1em 0.1em 0.2em;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+
+.card-username {
+  background-color: #333333;
+  height: 34px;
+  margin: 5px 5px 0px 5px;
+  color: white;
+  position: relative;
+  font-size: 16px;
+
+}
+
+.p-username {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  letter-spacing: 2px;
+}
