@@ -1,32 +1,14 @@
-
-
-  <div class="dots">
-    <ul class="nav">
-      <li><a href="#zero"><div class="dot"></div></a></li>
-      <li><a href="#one"><div class="dot"></div></a></li>
-      <li><a href="#two"><div class="dot"></div></a></li>
-      <li><a href="#three"><div class="dot"></div></a></li>
-    </ul>
-  </div>
-
-
-  <div class="color-wrapper">
-    <div class="home-vertical" id="zero">
-
-      <div class="col-xs-12 col-sm-6 slide-left">
-          <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1503261595/hm_ft79qn.jpg', width: "auto" %>
+  <div class="color-wrapper" id="zero">
+      <div class="video-banner" width= '90%' >
+      <%= cl_video_tag("343378693_ayzqol", :color=>"#e9c10f", :delay=>"2", :effect=>"deshake:16", :crop=>"scale", :height=>690, :width=>1300, autoplay: true, muted: true, loop: true, class: "video")%>
       </div>
 
-      <div class="col-xs-12 col-md-6">
-        <div class="main-content">
-          <p>Allora, <br>
-          a sua <strong>newsletter</strong> interativa!
-          </p>
-        </div>
-        <div class="second-content">
+      <div class="main-content">
+        <p>Allora, a sua <strong>newsletter</strong> interativa!
+        </p>
+        <div class="second-content" align="center">
           <p>
-            A maneira mais divertida de expor conteúdo <br> para os seus seguidores <i class="fa fa-commenting-o" aria-hidden="true"></i><br>
-            <%= link_to "Cadastrar", users_path, class: "btn btn-warning btn-home" %>
+            A maneira mais rápida de expor conteúdo <br> para os seus leitores <i class="fa fa-commenting-o" aria-hidden="true"></i><br>
             <%= link_to "Entrar no chat", users_path, class: "btn btn-warning btn-home" %>
             <% if user_signed_in? %>
               <%= link_to "Criar edição", new_edition_path, class: "btn btn-warning btn-home" %>
@@ -34,20 +16,85 @@
           </p>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-12">
-        <div class="banner" style="background-image: linear-gradient(-225deg, rgba(255,128,8,0.6) 0%, rgba(255,200,55,0.6) 50%),  url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1502893212/pink-hair-selfie-bun_mcxqea.jpg');">
-        </div>
-      </div>
+  </div>
+
+<div class="container" id="carousel">
+  <div class="row">
+    <div class='col-md-offset-2 col-md-8 text-center'>
     </div>
 
+  </div>
+  <div class='row'>
+    <div class='col-md-offset-2 col-md-8'>
+      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+        <!-- Bottom Carousel Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#quote-carousel" data-slide-to="1"></li>
+          <li data-target="#quote-carousel" data-slide-to="2"></li>
+        </ol>
 
-    <div class="container">
-      <div class="home-vertical" id="three">
-        <div class="col-xs-12 col-sm-6 slide-left">
-          <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502830965/foto_mfzhye.jpg', width: "auto" %>
+        <!-- Carousel Slides / Quotes -->
+        <div class="carousel-inner">
+
+          <!-- Quote 1 -->
+          <div class="item active">
+
+              <div class="row">
+                <div class="col-sm-1 text-center">
+                </div>
+                <div class="col-sm-9">
+                  <h3>Crie conteudos exclusivos</h3>
+                  <p>Allora é uma plataforma pensada para proporcinar uma leitura mais fluida, resumida e focada nas informações que realmente importam</p>
+                </div>
+              </div>
+
+          </div>
+          <!-- Quote 2 -->
+          <div class="item">
+
+              <div class="row">
+                <div class="col-sm-1 text-center">
+                </div>
+                <div class="col-sm-9">
+                  <h3>Programe suas publicações</h3>
+                  <p>Allora é uma plataforma pensada para proporcinar uma leitura mais fluida, resumida e focada nas informações que realmente importam</p>
+                </div>
+              </div>
+
+          </div>
+          <!-- Quote 3 -->
+          <div class="item">
+
+              <div class="row">
+                <div class="col-sm-1 text-center">
+                </div>
+                <div class="col-sm-9">
+                  <h3>Atualize seu feed quando quiser</h3>
+                  <p>Allora é uma plataforma pensada para proporcinar uma leitura mais fluida, resumida e focada nas informações que realmente importam</p>
+                </div>
+              </div>
+
+          </div>
         </div>
 
-        <div class="col-xs-12 col-md-6 slide-right allora">
+        <!-- Carousel Buttons Next/Prev -->
+        <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+        <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+      <div class="home-vertical" id="three">
+        <div class="col-xs-12 col-sm-6 slide-left">
+          <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1503349078/iphonepng_nximnd.png', width: "auto" %>
+        </div>
+
+        <div class="col-xs-12 col-md-6 slide-right allora" id="three">
 
             <div class ="allora-size"> <strong> Allora, a maneira mais rápida de criar conteúdo!
             </strong> </div>
@@ -61,74 +108,6 @@
 
         </div>
       </div>
-
-
-      <div class="home-vertical" id="three">
-
-        <div class="col-xs-12 col-md-6 slide-right">
-            <div class="allora-size"><strong> Como funciona ? </strong></div>
-            <br>
-            <article>
-              <strong>1° -</strong> Cadastre-se no nosso site <br>
-              <strong>2° -</strong> Crie conteúdos para os seus seguidores <br>
-              FIM.. Simples assim!
-            </article>
-            <H4>Você é um influenciador?</H4><button type="button" class="btn btn-warning"> Cadastre-se agora </button>
-        </div>
-        <div class="col-xs-12 col-sm-6 slide-left">
-          <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502835026/giphy_zgdxon.gif', width: "auto" %>
-        </div>
-      </div>
-
-      <div class="home-vertical" id="three">
-        <div class="allora-size"><strong>Veja quem já está utilizando a nossa plataforma <i class="fa fa-heart-o" aria-hidden="true"></i></strong></div>
-        <div class="container">
-          <div class="row steps">
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503078792/2_1_xkb2an.jpg');">
-              <div class="card-category">Gabriela Pugliesi</div>
-                <a class="card-link" href="#" ></a>
-            </div>
-          </div>
-
-
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503078870/unnamed_dctrtn.png');">
-              <div class="card-category">Catraca Livre</div>
-                <a class="card-link" href="#" ></a>
-            </div>
-          </div>
-
-
-          <div class="col-xs-12 col-sm-6">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503078965/monica_bergamo_gkssgw.jpg');">
-              <div class="card-category">Mônica Bergamo</div>
-                <a class="card-link" href="#" ></a>
-            </div>
-          </div>
-
-
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503079016/2039434-lala-rudge-opengraph_1200-2_xw5iqd.jpg');">
-              <div class="card-category">Lala Rudge</div>
-                <a class="card-link" href="#" ></a>
-            </div>
-          </div>
-
-
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503079074/img-625538-jo-soares20140815191408140541_cccfxp.jpg');">
-              <div class="card-category">Jô Soares</div>
-                <a class="card-link" href="#" ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
 
 
 

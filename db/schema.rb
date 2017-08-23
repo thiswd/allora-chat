@@ -10,16 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20170821160109) do
-
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "balloons", force: :cascade do |t|
-    t.string "content"
+    t.text "content"
     t.string "link"
     t.string "balloon_img"
     t.bigint "post_id"
@@ -43,7 +40,7 @@ ActiveRecord::Schema.define(version: 20170821160109) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.text "headline"
+    t.string "headline"
     t.string "option_more"
     t.string "option_next"
     t.string "post_img"
@@ -82,6 +79,11 @@ ActiveRecord::Schema.define(version: 20170821160109) do
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
     t.string "banner"
+    t.string "provider"
+    t.string "uid"
+    t.string "facebook_picture_url"
+    t.string "token"
+    t.datetime "token_expiry"
     t.string "position"
     t.text "description"
     t.index ["email"], name: "index_users_on_email", unique: true

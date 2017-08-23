@@ -1,12 +1,40 @@
 // Specific CSS for your home-page
 
-.main-content {
-  font-size: 42px;
-  margin-top: 40px;
-  letter-spacing: 12px;
-  word-spacing: -3px;
-  color: chocolate;
+body {
+  background-color: white;
+}
 
+
+#three {
+ background-color: #FCE879;
+}
+
+.video-banner {
+  position: relative;
+  margin-top: -100px;
+}
+
+.guide-how-to {
+  background-color: white;
+  height: 300px;
+  width: 100%;
+  h2 {
+    font-size: 30px;
+  }
+}
+
+.main-content {
+  position: absolute;
+  bottom: -10px;
+  font-size: 42px;
+  margin-top: 30px;
+  letter-spacing: 6px;
+  word-spacing: -3px;
+  color: white;
+  margin-left: 270px;
+  margin-right: 270px;
+  height: 570px;
+  text-shadow: 0px 0px 6px #424242;
 }
 
 .second-content {
@@ -15,12 +43,13 @@
 }
 
 .color-wrapper {
-  background-color: #FFFFFF;
+  background-color: white;
 }
 
 .home-vertical {
   .h2 {
     font-style: "cursive";
+    background-color: #FCE879;
   }
 }
 
@@ -132,7 +161,7 @@
 }
 
 .home-vertical {
-  height: 70vh;
+  height: 90vh;
 
   img {
     height: 100%;
@@ -194,7 +223,7 @@ article {
 }
 
 .card {
-  height: 250px;
+  height: 150px;
 //  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
