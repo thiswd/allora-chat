@@ -86,11 +86,6 @@ ActiveRecord::Schema.define(version: 20170822173603) do
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
     t.string "banner"
-    t.string "provider"
-    t.string "uid"
-    t.string "facebook_picture_url"
-    t.string "token"
-    t.datetime "token_expiry"
     t.string "position"
     t.text "description"
     t.index ["email"], name: "index_users_on_email", unique: true
