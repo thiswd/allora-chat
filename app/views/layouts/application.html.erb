@@ -11,7 +11,7 @@
 
   <body  data-spy="scroll" data-target=".dots" class='<%= controller_name %> <%= action_name %>'>
 
-   <% unless action_name == "home" || action_name == "index" %>
+   <% unless action_name == "home" %>
     <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>
