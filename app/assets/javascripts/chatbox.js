@@ -1,5 +1,16 @@
 $(function(){
 
+  $(".iframe-link").click(function(e){
+    e.preventDefault();
+    var site = $(this)[0].getElementsByTagName('a')[0].href;
+
+    document.getElementById('modal-iframe').getElementsByTagName('iframe')[0].src = site;
+    $("#modal-iframe").removeClass("hidden");
+    setTimeout(function () {
+      $("#modal-iframe").css("transform", "translateX(0)");
+    }, 1000);
+
+  });
 
   $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
 

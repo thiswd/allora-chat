@@ -1,4 +1,5 @@
 <div id="app">
+<div id="modal-iframe" class="hidden"><iframe src="https://es.wikipedia.org/wiki/Iframe"></iframe></div>
   <div id="chat">
 
     <div class="post">
@@ -60,15 +61,13 @@
                 <% end %>
               </p>
             <% else %>
-              <p class="balloon hidden left" style="cursor:pointer" onclick="location.href='<%= balloon[0].link %>'">
-                <% if balloon[0].balloon_img.blank? %>
-                  <%= content_with_emoji(balloon[0].content) %>
-                <% else %>
-                  <%= cl_image_tag balloon[0].balloon_img, height: 150 %>
-                <% end %>
+              <p class="balloon hidden left iframe-link">
+                <%= content_with_emoji(balloon[0].content) %>
                 <br>
                 <%= link_to "#{balloon[0].short_link}", balloon[0].link %>
               </p>
+              </div>
+
             <% end %>
 
             <% if balloon[1].present? %>
@@ -81,12 +80,8 @@
                   <% end %>
                 </p>
               <% else %>
-                <p class="balloon hidden left" style="cursor:pointer" onclick="location.href='<%= balloon[1].link %>'">
-                  <% if balloon[1].balloon_img.blank? %>
-                    <%= content_with_emoji(balloon[1].content) %>
-                  <% else %>
-                    <%= cl_image_tag balloon[1].balloon_img, height: 150 %>
-                  <% end %>
+                <p class="balloon hidden left iframe-link">
+                  <%= content_with_emoji(balloon[1].content) %>
                   <br>
                   <%= link_to "#{balloon[1].short_link}", balloon[1].link %>
                 </p>
