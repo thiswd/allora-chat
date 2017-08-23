@@ -8,9 +8,6 @@
 .user-page {
   background-color: $light-gray;
   height: calc(100vh - 95px);
-  padding-top: 10px;
-  margin-left: 30px;
-
 }
 .user-content {
   font-family: $montserrat;
@@ -19,6 +16,6 @@
   border-width: 1px;
   margin-bottom: 20px;
   height: 104%;
-  box-shadow: 10px 10px 5px #888888;
+  // box-shadow: 10px 10px 5px #888888;
 }
 
