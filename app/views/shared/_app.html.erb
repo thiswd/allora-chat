@@ -100,7 +100,7 @@
                   </div>
                 <% elsif uniq_balloon.weather.present? %>
                   <div class="balloon hidden left balloon-weather">
-                    <div class="banner_weather" style="background-image: linear-gradient(rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.32)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503347454/ceulimpo_anptvb.jpg');">
+                    <div class="banner_weather" style="background-image: linear-gradient(rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.32)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503347454/ceulimpo_anptvb.jpg')">
                       <div class="weather-category">
                         <% uniq_balloon.weather.split('-').each do |weather| %>
                           <p><%= weather %></p>
@@ -118,40 +118,41 @@
                 <% end %>
               </div>
 
-            <% end %>'
+            <% end %>
 
-
-
-            <div>
-              <div class="text-center btn-margin hidden">
-                <% unless balloon[1] == post.balloons.last || balloon[0] == post.balloons.last %>
-                  <a class="btn btn-xs new-click-more"><%= content_with_emoji(post.option_more) %></a>
-                <% end %>
-                <% unless post.id == @edition.posts.last.id %>
-                  <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
-                <% end %>
-              </div>
-            </div>
-            <div>
-              <div class="balloon hidden left">
-                <p><%= content_with_emoji(@edition.farewell) %></p>
-              </div>
-            </div>
-            <% if @edition.farewell_img.present? %>
+            <% if post.id == @edition.posts.last.id %>
               <div>
                 <div class="balloon hidden left">
-                  <%= cl_image_tag @edition.farewell_img, height: 150 %>
+                  <p><%= content_with_emoji(@edition.farewell) %></p>
                 </div>
               </div>
-            <% elsif @edition.farewell_gif.present? %>
               <div>
-                <div class="balloon hidden left">
-                  <%= image_tag @edition.farewell_gif, height: 150 %>
+                <% if @edition.farewell_img.present? %>
+                  <div class="balloon hidden left">
+                    <%= cl_image_tag @edition.farewell_img, height: 150 %>
+                  </div>
+                <% elsif @edition.farewell_gif.present? %>
+                  <div class="balloon hidden left">
+                    <%= image_tag @edition.farewell_gif, height: 150 %>
+                  </div>
+                <% end %>
+              </div>
+            <% else %>
+              <div>
+                <div class="text-center btn-margin hidden">
+                  <% unless balloon[1] == post.balloons.last || balloon[0] == post.balloons.last %>
+                    <a class="btn btn-xs new-click-more"><%= content_with_emoji(post.option_more) %></a>
+                  <% end %>
+                    <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
                 </div>
               </div>
             <% end %>
+
           </div>
         <% end %>
+
+
+
       </div>
     <% end %>
   </div>
