@@ -1,29 +1,35 @@
+<!-- Tá bugado -->
+
+<% @post.balloons.each do |balloon| %>
 <div class="balloons-fields">
   <p class="text-right section-partial">Balão</p>
   <%= link_to_remove_association "<i class='fa fa-times-circle times-color' aria-hidden='true'></i><span class='plus-name'>Remover</span>".html_safe, f, data: { confirm: 'Tem certeza que deseja apagar este balão?'} %>
   <br>
-  <div class="btn-group radio-options" data-toggle="buttons">
-    <label class="btn btn-default btn-xs active text-option">
-      <%= f.radio_button("type", "Texto", checked: "checked") %> Texto
-    </label>
-    <label class="btn btn-default btn-xs img-option">
-      <%= f.radio_button("type", "Imagem/GIF") %> Imagem/GIF
-    </label>
-  </div>
-  <br>
-  <div class="balloon-form input-text-balloon">
-    <%= f.input :content, label: false, placeholder: "Texto", input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input-text" } %>
-    <%= f.input :link, label: false, placeholder: "Link para texto", input_html: { class: "balloon-form-input balloon-form-link" } %>
-  </div>
+    <%# binding.pry %>
+    <% if balloon.content.present? %>
+      <div class="balloon-form" id="input-text-balloon">
+        <%= f.input :content, label: false, placeholder: "Texto", input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input-text" } %>
+        <%= f.input :link, label: false, placeholder: "Link para texto", input_html: { class: "balloon-form-input balloon-form-link" } %>
+      </div>
+    <% elsif balloon.balloon_img.present? %>
+      <div class="balloon-form" id="input-img-balloon">
+        <%= f.input :balloon_img, label: false %>
+        <%= f.input :balloon_img_cache, as: :hidden %>
+      </div>
+    <% elsif balloon.balloon_gif.present? %>
+      <div class="balloon-form" id="input-gif-balloon">
+        <%= f.input :balloon_gif, label: false, placeholder: "Buscar um GIF", input_html: { class: "balloon-form-input gif-library" } %>
+      </div>
+    <% elsif balloon.address.present? %>
+      <div class="balloon-form" id="input-map-balloon">
+        <%= f.input :address, label: false, placeholder: "Endereço", input_html: { class: "balloon-form-input" } %>
+      </div>
+    <% elsif balloon.weather.present? %>
+      <div class="balloon-form weather" id="input-meteo-balloon">
+        <%= f.input :weather, label: false, placeholder: "Buscar por cidade para obter previsão de tempo", input_html: { class: "balloon-form-input" } %>
+        <a href="#" id="weather" class="btn btn-primary">Pesquisar</a>
+      </div>
+  <% end %>
 
-  <div class="balloon-form input-img-balloon hidden">
-    <%= f.input :balloon_img, label: false %>
-    <%= f.input :balloon_img_cache, as: :hidden %>
-    <%= f.input :remote_balloon_img_url, label: false, placeholder: "Link da imagem ou do GIF", input_html: { class: "balloon-form-input balloon-form-link" } %>
-  </div>
 </div>
-
-<div class="balloon-form weather">
-  <%= f.input :weather, placeholder: "Digite o nome da cidade" %>
-  <a href="#" id="weather" class="btn btn-primary">Pesquisar</a>
-</div>
+    <% end %>
