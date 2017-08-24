@@ -44,17 +44,17 @@
         <!-- SCREEN 1 -->
           <div class="screen1 screen">
             <div>
-              <div class="balloon hidden left">
+              <div class="balloon hidden">
                 <p><%= content_with_emoji(post.headline) %></p>
               </div>
             </div>
             <div>
               <% if post.post_img.present? %>
-                <div class="balloon hidden left">
+                <div class="balloon hidden">
                   <%= cl_image_tag post.post_img, height: 150 %>
                 </div>
               <% elsif post.post_gif.present? %>
-                <div class="balloon hidden left">
+                <div class="balloon hidden">
                   <%= image_tag post.post_gif, height: 150 %>
                 </div>
               <% end %>
@@ -83,7 +83,7 @@
 
               <div>
                 <% if uniq_balloon.content.present? %>
-                  <div class="balloon hidden left">
+                  <div class="balloon hidden">
                     <p><%= content_with_emoji(uniq_balloon.content) %></p>
                     <br>
                     <% if uniq_balloon.link.present? %>
@@ -91,15 +91,15 @@
                     <% end %>
                   </div>
                 <% elsif uniq_balloon.balloon_img.present? %>
-                  <div class="balloon hidden left">
+                  <div class="balloon hidden">
                     <%= cl_image_tag uniq_balloon.balloon_img, height: 150 %>
                   </div>
                 <% elsif uniq_balloon.balloon_gif.present? %>
-                  <div class="balloon hidden left">
+                  <div class="balloon hidden">
                     <%= image_tag uniq_balloon.balloon_gif, height: 150 %>
                   </div>
                 <% elsif uniq_balloon.weather.present? %>
-                  <div class="balloon hidden left balloon-weather">
+                  <div class="balloon hidden balloon-weather">
                     <div class="banner_weather" style="background-image: linear-gradient(rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.32)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503347454/ceulimpo_anptvb.jpg')">
                       <div class="weather-category">
                         <% uniq_balloon.weather.split('-').each do |weather| %>
@@ -110,7 +110,7 @@
                     </div>
                   </div>
                 <% elsif uniq_balloon.address.present? %>
-                  <div class="balloon hidden left">
+                  <div class="balloon hidden">
                     <div id="map" style="height: 240px; width: 240px "></div>
                       <br>
                       <%= uniq_balloon.address %>
@@ -122,17 +122,17 @@
 
             <% if post.id == @edition.posts.last.id %>
               <div>
-                <div class="balloon hidden left">
+                <div class="balloon hidden">
                   <p><%= content_with_emoji(@edition.farewell) %></p>
                 </div>
               </div>
               <div>
                 <% if @edition.farewell_img.present? %>
-                  <div class="balloon hidden left">
+                  <div class="balloon hidden">
                     <%= cl_image_tag @edition.farewell_img, height: 150 %>
                   </div>
                 <% elsif @edition.farewell_gif.present? %>
-                  <div class="balloon hidden left">
+                  <div class="balloon hidden">
                     <%= image_tag @edition.farewell_gif, height: 150 %>
                   </div>
                 <% end %>
