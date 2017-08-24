@@ -1,18 +1,17 @@
 .mobile-show {
+  transform: translateX(0) !important;
   transition: transform 0.5s ease-in-out;
-  transform: translate(-100%, 0);
-  position: absolute;
-  right: -100%;
-  height: auto;
 }
 
 #app {
+
   height: calc(100vh - 94px);
   width: 100%;
   // padding: 20px 100px 20px 100px;
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
+  height: calc(100vh - 60px);
 }
 
 #modal-iframe {
@@ -121,8 +120,10 @@ iframe {
 // }
 
 .balloon {
+
   background: #F4F4F4;
   max-width: 80%;
+
   border-radius: 0 20px 20px 20px;
   padding: 10px 20px;
   line-height: 125%;
