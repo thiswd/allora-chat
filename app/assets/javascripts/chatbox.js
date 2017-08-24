@@ -6,12 +6,10 @@ $(function(){
     var site = $(this)[0].href;
 
     document.getElementById('modal-iframe').getElementsByTagName('iframe')[0].src = site;
-
+    $("#app").animate({ scrollTop: 0}, 1000);
     $("#modal-iframe").removeClass("hidden");
-    setTimeout(function () {
-      $("#modal-iframe").css("transform", "translateX(0)");
-    }, 1000);
-    $("#site-src").text(site);
+
+    $("#site-src").text(site.substring(0,37));
 
 
     $('#iframe-exit').click(function() {

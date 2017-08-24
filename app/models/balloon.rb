@@ -6,7 +6,7 @@ class Balloon < ApplicationRecord
   after_validation :geocode, if: :address_changed?
   def short_link
     if self.link.size > 52
-      "#{self.link[0..18]}..."
+      "#{self.link[0..25]}..."
     else
       self.link
     end
