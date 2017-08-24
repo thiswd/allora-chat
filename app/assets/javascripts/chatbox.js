@@ -1,6 +1,4 @@
 $(function(){
-
-
   $(".iframe-link").click(function(e){
     e.preventDefault();
     var site = $(this)[0].href;
@@ -23,9 +21,9 @@ $(function(){
 
   $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
 
-  if(screen.width < 500) {
+  if(window.innerWidth < 500) {
     setTimeout(function () {
-      $(".rr-side").addClass("mobile-show")
+      $(".rr-side").addClass("mobile-show");
     }, 2000);
   }
 
