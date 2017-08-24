@@ -167,6 +167,12 @@
   justify-content: space-around;
 }
 
+.giphys {
+  max-height: 275px;
+  overflow-y: scroll;
+  margin-top: 10px;
+}
+
 .giphys img {
   cursor: pointer;
   margin: 5px;
