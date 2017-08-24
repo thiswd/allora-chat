@@ -128,9 +128,6 @@ iframe {
   line-height: 125%;
   text-decoration: none;
   display: inline-block;
-  transform: scale(0.01,0.01);
-  transition: transform 1s cubic-bezier(0.42, 0, 0.21, 1.18);
-  transition-delay: 0.5s;
 
   &-image {
     background: white;
@@ -146,6 +143,12 @@ iframe {
     padding: 10px 15px;
     margin: 5px 0;
   }
+}
+
+.animate-balloon {
+  transform: scale(0.01,0.01);
+  transition: transform 1s cubic-bezier(0.42, 0, 0.21, 1.18);
+  transition-delay: 0.5s;
 }
 
 .balloon-weather {
