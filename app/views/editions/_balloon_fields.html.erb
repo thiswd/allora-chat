@@ -8,10 +8,13 @@
       <%= f.radio_button("type", "Texto", checked: "checked") %> Texto
     </label>
     <label class="btn btn-default btn-xs img-option">
-      <%= f.radio_button("type", "Imagem/GIF") %> Imagem/GIF
+      <%= f.radio_button("type", "Imagem") %> Imagem
     </label>
     <label class="btn btn-default btn-xs gif-option">
-      <%= f.radio_button("type", "Buscar GIF") %> Buscar GIF
+      <%= f.radio_button("type", "GIF") %> GIF
+    </label>
+    <label class="btn btn-default btn-xs youtube-option">
+      <%= f.radio_button("type", "YouTube") %> YouTube
     </label>
     <label class="btn btn-default btn-xs map-option">
       <%= f.radio_button("type", "Localização") %> Localização
@@ -22,7 +25,6 @@
   </div>
 
   <br>
-  <%= f.input :youtube %>
   <div class="balloon-form hide-field" id="input-text-balloon">
     <%= f.input :content, label: false, placeholder: "Texto", input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input-text" } %>
     <%= f.input :link, label: false, placeholder: "Link para texto", input_html: { class: "balloon-form-input balloon-form-link" } %>
@@ -35,6 +37,10 @@
 
   <div class="balloon-form hide-field hidden" id="input-gif-balloon">
     <%= f.input :balloon_gif, label: false, placeholder: "Buscar um GIF", input_html: { class: "balloon-form-input gif-library" } %>
+  </div>
+
+  <div class="balloon-form hide-field hidden" id="input-youtube-balloon">
+    <%= f.input :youtube, label: false, placeholder: "Link do YouTube", input_html: { class: "balloon-form-input" } %>
   </div>
 
   <div class="balloon-form hide-field hidden" id="input-map-balloon">
