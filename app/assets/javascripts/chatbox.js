@@ -21,11 +21,11 @@ $(function(){
 
   $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
 
-  if(window.innerWidth < 500) {
-    setTimeout(function () {
-      $(".rr-side").addClass("mobile-show");
-    }, 2000);
-  }
+  // if(window.innerWidth < 500) {
+  //   setTimeout(function () {
+  //     $(".rr-side").addClass("mobile-show");
+  //   }, 2000);
+  // }
 
   $(".new-click-more").click(function(e){
     e.preventDefault();
