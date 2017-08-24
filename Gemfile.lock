@@ -98,6 +98,8 @@ GEM
       thor (~> 0.14)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     geocoder (1.4.4)
     giphy (3.0.0)
       faraday (~> 0.9)
@@ -263,6 +265,7 @@ DEPENDENCIES
   faker
   figaro
   font-awesome-sass
+  friendly_id (~> 5.1.0)
   geocoder
   giphy
   gmaps4rails

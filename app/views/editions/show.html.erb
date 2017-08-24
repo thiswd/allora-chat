@@ -1,7 +1,6 @@
 
 <div class="no-gutter user-page" >
-
-  <div class="col-xs-12 col-sm-offset-1 col-sm-5 l-side edition-content">
+    <div class="editionbanner col-xs-12 col-sm-6 l-side" style="background-image: linear-gradient(-225deg, rgba(213,228,200,0.98) 0%, rgba(213,215,215,0.8) 50%), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503347454/ceulimpo_anptvb.jpg');">
     <h1>Revisão final.</h1>
     <hr>
     <h4>
@@ -33,16 +32,16 @@
       <%= link_to "Nada que editar", user_path(@user), :class => "btn btn-post" %>
 
     </p>
-
   </div>
 
   <div class="col-xs-12 col-sm-6 r-side">
     <%= render partial: "shared/preview" %>
   </div>
 
-</div>
+  </div>
 
-<% content_for(:after_js) do %>
+
+<% content_for(:js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {
       var handler = Gmaps.build('Google');
