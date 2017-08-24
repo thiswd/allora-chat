@@ -59,8 +59,8 @@
                   <%= image_tag post.post_gif, height: 150 %>
                 </div>
               <% end %>
-
             </div>
+
             <div>
               <div class="text-center btn-margin hidden">
                 <a class="btn btn-xs new-click-more"><%= content_with_emoji(post.option_more) %></a>
@@ -81,11 +81,6 @@
         <% post.balloons.order(:created_at).each_slice(2) do |balloon| %>
           <div class="screen2 screen">
             <% balloon.each do |uniq_balloon| %>
-            <div class="balloon" style="width: 80%; height: auto; background: white">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= uniq_balloon.youtube_embed %>"></iframe>
-              </div>
-            </div>
 
               <div>
                 <% if uniq_balloon.content.present? %>
@@ -121,12 +116,19 @@
                       <br>
                       <%= uniq_balloon.address %>
                   </div>
+                <% elsif uniq_balloon.youtube.present? %>
+                  <div class="balloon hidden animate-balloon balloon-video" >
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= uniq_balloon.youtube_embed %>"></iframe>
+                    </div>
+                  </div>
                 <% end %>
               </div>
 
             <% end %>
 
             <% if post.id == @edition.posts.last.id %>
+
               <div>
                 <div class="balloon hidden animate-balloon">
                   <p><%= content_with_emoji(@edition.farewell) %></p>
@@ -152,12 +154,11 @@
                     <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
                 </div>
               </div>
+
             <% end %>
 
           </div>
         <% end %>
-
-
 
       </div>
     <% end %>
