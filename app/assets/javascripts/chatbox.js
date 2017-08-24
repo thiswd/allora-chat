@@ -41,10 +41,10 @@ $(function(){
       setTimeout(function() {
           $(element).removeClass("hidden");
           setTimeout(function() {
-            $(element).css("transform", "translateX(0)");
-            $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 300);
+            $(element).css("transform", "scale(1,1)");
           }, 0);
-        }, index * 1000 + Math.random() * 750
+          $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, $(element).height() * 4);
+        }, index * 1500
       );
     });
 
@@ -62,10 +62,10 @@ $(function(){
       setTimeout(function() {
         $(element).removeClass("hidden");
           setTimeout(function() {
-            $(element).css("transform", "translateX(0)");
-            $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 300);
+            $(element).css("transform", "scale(1,1)");
           }, 0);
-        }, index * 1250 + Math.random() * 750
+          $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, $(element).height() * 4);
+        }, index * 1750
       );
     });
 
