@@ -83,7 +83,7 @@ class EditionsController < ApplicationController
                                     :farewell_img, :farewell_img_cache, :greeting_gif, :farewell_gif,
                                     :posts_attributes => [:id, :headline, :post_img, :post_img_cache,
                                     :option_more, :option_next, :edition_id, :post_gif, :_destroy,
-                                    :balloons_attributes => [:id, :content, :balloon_img, :balloon_img_cache, :link, :balloon_gif, :_destroy, :weather]])
+                                    :balloons_attributes => [:id, :content, :balloon_img, :balloon_img_cache, :link, :balloon_gif, :_destroy, :weather, :youtube]])
 
   end
 
