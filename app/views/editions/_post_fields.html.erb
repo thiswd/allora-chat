@@ -1,6 +1,6 @@
 <div class="nested-fields">
   <p class="text-right section-partial">Post</p>
-  <%= link_to_remove_association "<i class='fa fa-times-circle times-color' aria-hidden='true'></i><span class='plus-name'>Remover</span>".html_safe, f, data: { confirm: 'Tem certeza que deseja apagar este post?'} %>
+  <%= link_to_remove_association "<i class='fa fa-times-circle times-color' aria-hidden='true'></i><span class='plus-name'>Remover</span>".html_safe, f, data: { confirm: 'Tem certeza que deseja apagar este post?'}, wrapper_class: "nested-fields" %>
   <%= f.input :headline, label: false, placeholder: "Título do post", wrapper_html: { class: "balloon-form" }, input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input" } %>
   <div class="balloon-form">
     <%= f.input :post_img, label: false %>

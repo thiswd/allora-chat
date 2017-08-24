@@ -1,6 +1,6 @@
 <div class="balloons-fields">
   <p class="text-right section-partial">Balão</p>
-  <%= link_to_remove_association "<i class='fa fa-times-circle times-color' aria-hidden='true'></i><span class='plus-name'>Remover</span>".html_safe, f, data: { confirm: 'Tem certeza que deseja apagar este balão?'} %>
+  <%= link_to_remove_association "<i class='fa fa-times-circle times-color' aria-hidden='true'></i><span class='plus-name'>Remover</span>".html_safe, f, data: { confirm: 'Tem certeza que deseja apagar este balão?'}, wrapper_class: "balloons-fields" %>
   <br>
 
   <div class="btn-group radio-options" data-toggle="buttons">
@@ -8,10 +8,13 @@
       <%= f.radio_button("type", "Texto", checked: "checked") %> Texto
     </label>
     <label class="btn btn-default btn-xs img-option">
-      <%= f.radio_button("type", "Imagem/GIF") %> Imagem/GIF
+      <%= f.radio_button("type", "Imagem") %> Imagem
     </label>
     <label class="btn btn-default btn-xs gif-option">
-      <%= f.radio_button("type", "Buscar GIF") %> Buscar GIF
+      <%= f.radio_button("type", "GIF") %> GIF
+    </label>
+    <label class="btn btn-default btn-xs youtube-option">
+      <%= f.radio_button("type", "YouTube") %> YouTube
     </label>
     <label class="btn btn-default btn-xs map-option">
       <%= f.radio_button("type", "Localização") %> Localização
@@ -22,7 +25,6 @@
   </div>
 
   <br>
-
   <div class="balloon-form hide-field" id="input-text-balloon">
     <%= f.input :content, label: false, placeholder: "Texto", input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input-text" } %>
     <%= f.input :link, label: false, placeholder: "Link para texto", input_html: { class: "balloon-form-input balloon-form-link" } %>
@@ -34,21 +36,23 @@
   </div>
 
   <div class="balloon-form hide-field hidden" id="input-gif-balloon">
-    <%= f.input :balloon_gif, label: false, placeholder: "Buscar um GIF", input_html: { class: "balloon-form-input gif-library" } %>
+    <%= f.input :balloon_gif, label: false, placeholder: "Buscar um GIF", input_html: { class: "balloon-form-input margin-negative gif-library" } %>
+  </div>
+
+  <div class="balloon-form hide-field hidden" id="input-youtube-balloon">
+    <%= f.input :youtube, label: false, placeholder: "Link do YouTube", input_html: { class: "balloon-form-input margin-negative" } %>
   </div>
 
   <div class="balloon-form hide-field hidden" id="input-map-balloon">
-    <%= f.input :address, label: false, placeholder: "Endereço", input_html: { class: "balloon-form-input" } %>
+    <%= f.input :address, label: false, placeholder: "Endereço", input_html: { class: "balloon-form-input margin-negative" } %>
   </div>
 
-
   <div class="balloon-form hide-field hidden weather" id="input-meteo-balloon">
-    <%= f.input :weather, label: false, placeholder: "Buscar por cidade para obter previsão de tempo", input_html: { class: "balloon-form-input" } %>
-    <a href="#" id="weather" class="btn btn-primary">Pesquisar</a>
+    <%= f.input :weather, label: false, placeholder: "Buscar por cidade para obter previsão de tempo", input_html: { class: "balloon-form-input-text" } %>
+    <div class="text-center">
+      <%= link_to "Inserir previsão", "#", id: "weather", class: "btn btn-xs btn-default btn-block btn-search-weather" %>
+    </div>
   </div>
     <!-- <p>Vai exibir temperatura máxima e mínima, velocidade do vento e umidade do ar</p> -->
 
 </div>
-
-
-

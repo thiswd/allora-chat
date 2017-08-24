@@ -29,6 +29,11 @@ $(function(){
       $(this).parent().parent().children("#input-meteo-balloon").removeClass("hidden");
     });
 
+    $('.youtube-option').on("click", function(){
+      hideField(this);
+      $(this).parent().parent().children("#input-youtube-balloon").removeClass("hidden");
+    });
+
     function hideField(el) {
       $(el).parent().parent().children(".hide-field").addClass("hidden");
     }

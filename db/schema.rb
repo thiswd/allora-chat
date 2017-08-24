@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824035205) do
+ActiveRecord::Schema.define(version: 20170824064932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20170824035205) do
     t.float "longitude"
     t.string "address"
     t.string "balloon_gif"
+    t.string "youtube"
     t.index ["post_id"], name: "index_balloons_on_post_id"
   end
 

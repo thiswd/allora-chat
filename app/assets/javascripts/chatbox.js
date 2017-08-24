@@ -1,15 +1,30 @@
 $(function(){
+
+  function setUserAgent(window, userAgent) {
+      if (window.navigator.userAgent != userAgent) {
+          var userAgentProp = { get: function () { return userAgent; } };
+          try {
+              Object.defineProperty(window.navigator, 'userAgent', userAgentProp);
+          } catch (e) {
+              window.navigator = Object.create(navigator, {
+                  userAgent: userAgentProp
+              });
+          }
+      }
+  }
+
   $(".iframe-link").click(function(e){
     e.preventDefault();
     var site = $(this)[0].href;
 
-    document.getElementById('modal-iframe').getElementsByTagName('iframe')[0].src = site;
+    var iframe = document.getElementById('modal-iframe').getElementsByTagName('iframe')[0];
+    setUserAgent(iframe.contentWindow, window.navigator.userAgent);
+    iframe.src = site;
 
+    $("#app").animate({ scrollTop: 0}, 1000);
     $("#modal-iframe").removeClass("hidden");
-    setTimeout(function () {
-      $("#modal-iframe").css("transform", "translateX(0)");
-    }, 1000);
-    $("#site-src").text(site);
+
+    $("#site-src").text(site.substring(0,37));
 
 
     $('#iframe-exit').click(function() {

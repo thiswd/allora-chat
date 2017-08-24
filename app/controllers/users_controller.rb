@@ -25,8 +25,11 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = policy_scope(User)
-  end
+   @users = policy_scope(User)
+   if params[:username].present?
+     @users = @users.where("username ILIKE ?", "%#{params[:username]}%")
+   end
+ end
 
   private
 

@@ -1,14 +1,14 @@
 <div id="app">
+
   <div id="modal-iframe" class="hidden">
     <div id="head-iframe">
       <div id="site-src"></div>
       <div id="iframe-exit"><i class="fa fa-times" aria-hidden="true"></i>
       </div>
     </div>
-    <iframe src=""></iframe>
+      <iframe src=""></iframe>
   </div>
   <div id="chat">
-
     <div class="post">
       <div class="screen1 screen">
         <div>
@@ -36,11 +36,8 @@
         </div>
       </div>
     </div>
-
     <% @edition.posts.each do |post| %>
-
       <div class="post">
-
         <!-- SCREEN 1 -->
           <div class="screen1 screen">
             <div>
@@ -58,29 +55,20 @@
                   <%= image_tag post.post_gif, height: 150 %>
                 </div>
               <% end %>
-
             </div>
+
             <div>
               <div class="text-center btn-margin hidden">
                 <a class="btn btn-xs new-click-more"><%= content_with_emoji(post.option_more) %></a>
-                <% if post.id == @edition.posts.last.id %>
-
-                <% else %>
-                  <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
-                <% end %>
+                <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
               </div>
             </div>
-
           </div>
-
-
-
       <!-- SCREEN 2 -->
 
         <% post.balloons.order(:created_at).each_slice(2) do |balloon| %>
-          <div class="screen2 screen">
+          <div class="screen">
             <% balloon.each do |uniq_balloon| %>
-
               <div>
                 <% if uniq_balloon.content.present? %>
                   <div class="balloon hidden animate-balloon">
@@ -99,45 +87,31 @@
                     <%= image_tag uniq_balloon.balloon_gif, height: 150 %>
                   </div>
                 <% elsif uniq_balloon.weather.present? %>
-                  <div class="balloon hidden animate-balloon balloon-weather">
-                    <div class="banner_weather" style="background-image: linear-gradient(rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.32)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503347454/ceulimpo_anptvb.jpg')">
-                      <div class="weather-category">
+
+                  <div class="balloon hidden animate-balloon" style="background-image: linear-gradient(rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.32)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503347454/ceulimpo_anptvb.jpg')">
+                    <div class="weather-category">
+
                         <% uniq_balloon.weather.split('-').each do |weather| %>
                           <p><%= weather %></p>
                         <% end %>
-                      </div>
-                      <img class="card-weather" src="http://res.cloudinary.com/dpg1ipkol/image/upload/v1503350575/sol_bkz0fz.jpg">
                     </div>
                   </div>
                 <% elsif uniq_balloon.address.present? %>
+
                   <div class="balloon hidden animate-balloon">
-                    <div id="map" style="height: 240px; width: 240px "></div>
-                      <br>
-                      <%= uniq_balloon.address %>
+                    <%= link_to "#{uniq_balloon.address}", "http://www.google.com/maps/place/#{uniq_balloon.latitude}#{uniq_balloon.longitude}", target: "_blank" %>
+
+                  </div>
+                <% elsif uniq_balloon.youtube.present? %>
+                  <div class="balloon hidden animate-balloon balloon-video" >
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= uniq_balloon.youtube_embed %>"></iframe>
+                    </div>
                   </div>
                 <% end %>
               </div>
-
             <% end %>
 
-            <% if post.id == @edition.posts.last.id %>
-              <div>
-                <div class="balloon hidden animate-balloon">
-                  <p><%= content_with_emoji(@edition.farewell) %></p>
-                </div>
-              </div>
-              <div>
-                <% if @edition.farewell_img.present? %>
-                  <div class="balloon hidden animate-balloon">
-                    <%= cl_image_tag @edition.farewell_img, height: 150 %>
-                  </div>
-                <% elsif @edition.farewell_gif.present? %>
-                  <div class="balloon hidden animate-balloon">
-                    <%= image_tag @edition.farewell_gif, height: 150 %>
-                  </div>
-                <% end %>
-              </div>
-            <% else %>
               <div>
                 <div class="text-center btn-margin hidden">
                   <% unless balloon[1] == post.balloons.last || balloon[0] == post.balloons.last %>
@@ -146,14 +120,29 @@
                     <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
                 </div>
               </div>
-            <% end %>
-
           </div>
         <% end %>
-
-
-
       </div>
     <% end %>
+      <div class="post">
+          <div class="screen1">
+            <div>
+              <div class="balloon hidden animate-balloon">
+                <p><%= content_with_emoji(@edition.farewell) %></p>
+              </div>
+            </div>
+            <div>
+              <% if @edition.farewell_img.present? %>
+                <div class="balloon hidden animate-balloon">
+                  <%= cl_image_tag @edition.farewell_img, height: 150 %>
+                </div>
+              <% elsif @edition.farewell_gif.present? %>
+                <div class="balloon hidden animate-balloon">
+                  <%= image_tag @edition.farewell_gif, height: 150 %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
   </div>
 </div>

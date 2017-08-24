@@ -18,16 +18,19 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  transform: translateX(100%);
-  transition: transform 0.5s ease-in;
-  z-index: 999;
-}
 
+  transition: display 1.5s ease-in;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+}
 iframe {
   width: 100%;
   border: none;
   height: 100%;
+  background-color: white;
 }
+
 
 #head-iframe {
   position: relative;
@@ -144,6 +147,11 @@ iframe {
     padding: 10px 15px;
     margin: 5px 0;
   }
+
+  &-video {
+    width: 80%;
+    height: auto;
+  }
 }
 
 .animate-balloon {
@@ -157,7 +165,7 @@ iframe {
 }
 
 .banner_weather {
-  height: 160px;
+  height: 100%;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
@@ -166,10 +174,7 @@ iframe {
 }
 
 .weather-category {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 15px;
+  color: white;
 }
 
 .card-weather {

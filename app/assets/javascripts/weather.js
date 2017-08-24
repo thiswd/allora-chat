@@ -1,7 +1,7 @@
 $(function(){
   $('.container').on('cocoon:after-insert', function(e, item_added) {
     window.item_added = item_added;
-    item_added.find("#weather").click(function(e){
+    item_added.find(".weather .search").click(function(e){
       e.preventDefault();
       e.stopPropagation()
 

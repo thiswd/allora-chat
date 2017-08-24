@@ -38,14 +38,13 @@ gem 'rails_emoji_picker'
 
 # Maps
 gem 'geocoder'
-gem "coffee-rails"
-gem "gmaps4rails"
-source 'https://rails-assets.org' do
-  gem "rails-assets-underscore"
-end
+
 
 # Change URL
 gem 'friendly_id', '~> 5.1.0'
+
+# Select autofill
+gem 'select2-rails'
 
 group :development, :test do
   gem 'pry-byebug'

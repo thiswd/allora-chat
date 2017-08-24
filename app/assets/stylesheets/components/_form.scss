@@ -1,5 +1,3 @@
-
-
 .form-inputs {
   background: white;
   padding: 10px 20px;
@@ -56,10 +54,15 @@
 
 
   &-link {
-    height: 25px;
+    height: 26px;
     border-radius: 0 0 20px 20px;
+    margin: -7px 0 -13px
   }
 
+}
+
+.margin-negative {
+  margin-bottom: -13px;
 }
 
 .emoji-picker-icon {
@@ -182,3 +185,11 @@
   border: 4px solid $blue;
 }
 
+.btn-search-weather {
+  border-radius: 0 0 20px 20px;
+  margin-top: -7px;
+}
+
+.btn-edit-margin {
+  margin-top: 15px;
+}
