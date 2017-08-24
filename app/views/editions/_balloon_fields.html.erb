@@ -1,6 +1,6 @@
 <div class="balloons-fields">
   <p class="text-right section-partial">Balão</p>
-  <%= link_to_remove_association "<i class='fa fa-times-circle times-color' aria-hidden='true'></i><span class='plus-name'>Remover</span>".html_safe, f, data: { confirm: 'Tem certeza que deseja apagar este balão?'} %>
+  <%= link_to_remove_association "<i class='fa fa-times-circle times-color' aria-hidden='true'></i><span class='plus-name'>Remover</span>".html_safe, f, data: { confirm: 'Tem certeza que deseja apagar este balão?'}, wrapper_class: "balloons-fields" %>
   <br>
 
   <div class="btn-group radio-options" data-toggle="buttons">
@@ -22,7 +22,7 @@
   </div>
 
   <br>
-
+  <%= f.input :youtube %>
   <div class="balloon-form hide-field" id="input-text-balloon">
     <%= f.input :content, label: false, placeholder: "Texto", input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input-text" } %>
     <%= f.input :link, label: false, placeholder: "Link para texto", input_html: { class: "balloon-form-input balloon-form-link" } %>
@@ -40,7 +40,6 @@
   <div class="balloon-form hide-field hidden" id="input-map-balloon">
     <%= f.input :address, label: false, placeholder: "Endereço", input_html: { class: "balloon-form-input searchTextField"} %>
   </div>
-
 
   <div class="balloon-form hide-field hidden weather" id="input-meteo-balloon">
     <%= f.input :weather, label: false, placeholder: "Buscar por cidade para obter previsão de tempo", input_html: { class: "balloon-form-input" } %>

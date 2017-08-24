@@ -1,47 +1,30 @@
 
+<div class="container">
+<div class="row">
 
-<div class="container" >
-  <div class="col-xs-12 col-sm-6 l-side user-content visible-lg-*">
-
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="banner-card">
-
-        <% if @user.banner.present? %>
-          <%= cl_image_tag @user.banner, height: 50, width: 50, crop: :fill, id: 'banner_edition'%>
-        <% else %>
-          <%= cl_image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1503423423/rosto_mulher_preto_e_branco_rldhsi.jpg',
-          height: 350, width: 100, crop: :fill, id: 'banner_edition_user' %>
-        <% end %>
-        </div>
+  <div class="col-xs-12 col-sm-6">
+    <div class="blog-card spring-fever">
+      <div class="title-content">
+        <h3><%= @user.first_name.capitalize + " " + @user.last_name.capitalize %></a></h3>
+       <p> <%= @user.category %> </p>
       </div>
 
+      <div class="card-info">
+        <%= @user.description %>
 
-      <div class="col-xs-12" style="margin-top: 168px;">
-        <div class="user-content">
-
-          <p>
-            <strong><i>Informações pessoais:</i></strong>
-          </p>
-          <i class="fa fa-user-o" aria-hidden="true" style="color:orange"></i>
-          <i><%= @user.first_name.capitalize + " " + @user.last_name.capitalize %></i><br>
-          <i class="fa fa-hand-o-right" aria-hidden="true" style="color:orange"></i>
-          <i><%= @user.category %></i><br>
-          <i class="fa fa-hand-o-right" aria-hidden="true" style="color:orange"></i>
-          <i><%= @user.position %></i><br>
-          <i><%= @user.description %></i>
-
-        </div>
       </div>
+
     </div>
-
   </div>
-
 
 
   <div class="col-xs-12 col-sm-6 rr-side">
     <%= render partial: "shared/app" %>
   </div>
+</div>
 
 </div>
+
+
+
 

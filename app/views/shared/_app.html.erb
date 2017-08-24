@@ -1,4 +1,5 @@
 <div id="app">
+
   <div id="modal-iframe" class="hidden">
     <div id="head-iframe">
       <div id="site-src"></div>
@@ -42,21 +43,22 @@
         <!-- SCREEN 1 -->
           <div class="screen1 screen">
             <div>
-              <div class="balloon hidden left">
+              <div class="balloon hidden animate-balloon">
                 <p><%= content_with_emoji(post.headline) %></p>
               </div>
             </div>
             <div>
               <% if post.post_img.present? %>
-                <div class="balloon hidden left">
+                <div class="balloon hidden animate-balloon">
                   <%= cl_image_tag post.post_img, height: 150 %>
                 </div>
               <% elsif post.post_gif.present? %>
-                <div class="balloon hidden left">
+                <div class="balloon hidden animate-balloon">
                   <%= image_tag post.post_gif, height: 150 %>
                 </div>
               <% end %>
             </div>
+
             <div>
               <div class="text-center btn-margin hidden">
                 <a class="btn btn-xs new-click-more"><%= content_with_emoji(post.option_more) %></a>
@@ -75,7 +77,7 @@
             <% balloon.each do |uniq_balloon| %>
               <div>
                 <% if uniq_balloon.content.present? %>
-                  <div class="balloon hidden left">
+                  <div class="balloon hidden animate-balloon">
                     <p><%= content_with_emoji(uniq_balloon.content) %></p>
                     <br>
                     <% if uniq_balloon.link.present? %>
@@ -83,44 +85,55 @@
                     <% end %>
                   </div>
                 <% elsif uniq_balloon.balloon_img.present? %>
-                  <div class="balloon hidden left">
+                  <div class="balloon hidden animate-balloon">
                     <%= cl_image_tag uniq_balloon.balloon_img, height: 150 %>
                   </div>
                 <% elsif uniq_balloon.balloon_gif.present? %>
-                  <div class="balloon hidden left">
+                  <div class="balloon hidden animate-balloon">
                     <%= image_tag uniq_balloon.balloon_gif, height: 150 %>
                   </div>
                 <% elsif uniq_balloon.weather.present? %>
-                  <div class="balloon hidden left" style="background-image: linear-gradient(rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.32)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503347454/ceulimpo_anptvb.jpg')">
+
+                  <div class="balloon hidden animate-balloon" style="background-image: linear-gradient(rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.32)), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503347454/ceulimpo_anptvb.jpg')">
                     <div class="weather-category">
+
                         <% uniq_balloon.weather.split('-').each do |weather| %>
                           <p><%= weather %></p>
                         <% end %>
                     </div>
                   </div>
                 <% elsif uniq_balloon.address.present? %>
-                  <div class="balloon hidden left">
+
+                  <div class="balloon hidden animate-balloon">
                     <%= link_to "#{uniq_balloon.address}", "http://www.google.com/maps/place/#{uniq_balloon.latitude}#{uniq_balloon.longitude}" %>
                     <% raise %>
+
                       <br>
                       <%= uniq_balloon.address %>
+                  </div>
+                <% elsif uniq_balloon.youtube.present? %>
+                  <div class="balloon hidden animate-balloon balloon-video" >
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= uniq_balloon.youtube_embed %>"></iframe>
+                    </div>
                   </div>
                 <% end %>
               </div>
             <% end %>
             <% if post.id == @edition.posts.last.id %>
+
               <div>
-                <div class="balloon hidden left">
+                <div class="balloon hidden animate-balloon">
                   <p><%= content_with_emoji(@edition.farewell) %></p>
                 </div>
               </div>
               <div>
                 <% if @edition.farewell_img.present? %>
-                  <div class="balloon hidden left">
+                  <div class="balloon hidden animate-balloon">
                     <%= cl_image_tag @edition.farewell_img, height: 150 %>
                   </div>
                 <% elsif @edition.farewell_gif.present? %>
-                  <div class="balloon hidden left">
+                  <div class="balloon hidden animate-balloon">
                     <%= image_tag @edition.farewell_gif, height: 150 %>
                   </div>
                 <% end %>
@@ -134,6 +147,7 @@
                     <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
                 </div>
               </div>
+
             <% end %>
           </div>
         <% end %>

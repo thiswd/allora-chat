@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_many :editions, dependent: :destroy
   validates :username, :first_name, :last_name, :category, presence: true
 
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+
   mount_uploader :user_photo, PhotoUploader
   mount_uploader :banner, PhotoUploader
   validate :password_complexity

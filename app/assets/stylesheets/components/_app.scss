@@ -1,18 +1,17 @@
 .mobile-show {
+  transform: translateX(0) !important;
   transition: transform 0.5s ease-in-out;
-  transform: translate(-100%, 0);
-  position: absolute;
-  right: -100%;
-  height: auto;
 }
 
 #app {
+
   height: calc(100vh - 94px);
   width: 100%;
   // padding: 20px 100px 20px 100px;
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
+  height: calc(100vh - 60px);
 }
 
 #modal-iframe {
@@ -117,21 +116,22 @@ iframe {
 //   border-radius: 0 20px 20px 20px;
 // }
 
-.left {
-  position: relative;
-  transform: translateX(700px);
-  transition: transform 0.5s cubic-bezier(0.52, 1.7, 0.79, 0.91);
-}
+// .left {
+//   position: relative;
+//   transform: translateX(700px);
+//   transition: transform 0.5s cubic-bezier(0.52, 1.7, 0.79, 0.91);
+// }
 
 .balloon {
+
   background: #F4F4F4;
   max-width: 80%;
+
   border-radius: 0 20px 20px 20px;
   padding: 10px 20px;
   line-height: 125%;
   text-decoration: none;
   display: inline-block;
-  transition: transform 0.5s cubic-bezier(0.52, 1.7, 0.79, 0.91);
 
   &-image {
     background: white;
@@ -147,6 +147,17 @@ iframe {
     padding: 10px 15px;
     margin: 5px 0;
   }
+
+  &-video {
+    width: 80%;
+    height: auto;
+  }
+}
+
+.animate-balloon {
+  transform: scale(0.01,0.01);
+  transition: transform 1s cubic-bezier(0.42, 0, 0.21, 1.18);
+  transition-delay: 0.5s;
 }
 
 .balloon-weather {

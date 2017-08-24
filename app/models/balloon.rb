@@ -11,4 +11,11 @@ class Balloon < ApplicationRecord
       self.link
     end
   end
+
+  def youtube_embed
+
+    match_data = self.youtube.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
+    match_data[1]
+
+  end
 end

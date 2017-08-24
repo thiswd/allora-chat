@@ -40,6 +40,9 @@ gem 'rails_emoji_picker'
 gem 'geocoder'
 
 
+# Change URL
+gem 'friendly_id', '~> 5.1.0'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

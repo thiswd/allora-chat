@@ -1,4 +1,5 @@
 $(function(){
+
   function setUserAgent(window, userAgent) {
       if (window.navigator.userAgent != userAgent) {
           var userAgentProp = { get: function () { return userAgent; } };
@@ -35,9 +36,9 @@ $(function(){
 
   $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 3000);
 
-  if(screen.width < 500) {
+  if(window.innerWidth < 500) {
     setTimeout(function () {
-      $(".rr-side").addClass("mobile-show")
+      $(".rr-side").addClass("mobile-show");
     }, 2000);
   }
 
@@ -53,10 +54,10 @@ $(function(){
       setTimeout(function() {
           $(element).removeClass("hidden");
           setTimeout(function() {
-            $(element).css("transform", "translateX(0)");
-            $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 300);
+            $(element).css("transform", "scale(1,1)");
           }, 0);
-        }, index * 1000 + Math.random() * 750
+          $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, $(element).height() * 4);
+        }, index * 1500
       );
     });
 
@@ -74,10 +75,10 @@ $(function(){
       setTimeout(function() {
         $(element).removeClass("hidden");
           setTimeout(function() {
-            $(element).css("transform", "translateX(0)");
-            $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, 300);
+            $(element).css("transform", "scale(1,1)");
           }, 0);
-        }, index * 1250 + Math.random() * 750
+          $("#app").animate({ scrollTop: $("#app").prop("scrollHeight")}, $(element).height() * 4);
+        }, index * 1750
       );
     });
 
