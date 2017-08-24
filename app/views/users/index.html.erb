@@ -1,59 +1,57 @@
-<div class="body-index-user">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
+<div class="editionc container">
+  <div class="col-xs-12 col-sm-12 ">
+    <h1>Veja quem mais está por aqui...</h1>
+  </div>
+<br>
 
-  <div class="container">
-  <br>
-    <div class="col-xs-12 col-sm-12 ">
+  <form method="get" action="/users" id="search">
+    <%= select_tag :username, options_from_collection_for_select(User.all, :username, :username, params[:username]), include_blank: true, placeholder: "@username" %>
+    <button type="submit" id="submit" class="btn btn-xs btn-warning">
+      <i class="fa fa-search"></i>
+    </button>
+  <%= link_to "x", users_path %>
+  </form>
 
-
-      <%= image_tag 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1503453877/fique_por_dentro_kuz51d.jpg' %>
-
-
-    </div>
-
+  <div class="users-infl container text-center">
     <% influencers = [] %>
       <% if @users.map do |user|%>
         <% if user.editions.present? %>
-            <% influencers << user %>
-          <% end %>
+      <% influencers << user %>
+        <% end %>
         <% end %>
       <% end %>
 
 
-    <div class="row">
-
+    <div class="cards">
       <% influencers.each do |user| %>
-      <% if user.user_photo.present? %>
-        <% image_url = user.user_photo.url %>
-      <% else %>
-        <% image_url = 'http://res.cloudinary.com/dpg1ipkol/image/upload/v1502308490/empresario_318-72886_gbwwol.png'%>
+        <% if user.user_photo.present? %>
+          <% image_url = user.user_photo.url %>
+        <% else %>
+          <% image_url = 'http://res.cloudinary.com/dpg1ipkol/image/upload/c_scale,h_123/v1503537058/puyuqdcf01bvb65ob5su.png'%>
+        <% end %>
+
+        <% if user.banner.present? %>
+          <% banner_url = user.banner.url %>
+        <% else %>
+          <% banner_url = 'http://res.cloudinary.com/dpg1ipkol/image/upload/c_scale,h_520/v1502981472/aus0xe591i60rw7ykhsb.jpg'%>
+        <% end %>
+
+            <%= link_to user, class: "card hovercard" do %>
+                <div class="cardheader" style="background-image: linear-gradient(rgba(249, 210, 125, 0.8), rgba(249, 210, 125, 0.6)), url('<%= banner_url %> ')">
+                </div>
+                <div class="avatar">
+                  <div class="avatar-img dp"><%= image_tag(image_url) %></div>
+                </div>
+                <div class="info">
+                  <div class="title">
+                    <div>@<%= user.username%></div>
+                  </div>
+                  <div class="desc"><%= user.category%></div>
+                </div>
+          <% end%>
       <% end %>
-
-      <div class="col-xs-12 col-sm-4">
-        <div class="card-username">
-          <div class="p-username">
-            <p><%= user.first_name %> <%= user.last_name %></p>
-          </div>
-        </div>
-
-
-
-          <div class="card grayscale" style="background-image: url(<%= cl_image_path(image_url) %>);">
-            <!-- <div class="card-category"><%= user.username %></div> -->
-            <div class="card-description">
-              <h2><%= user.first_name %></h2>
-              <p><%= user.category %></p>
-            </div>
-            <img class="card-user" src="http://res.cloudinary.com/dpg1ipkol/image/upload/v1503433111/filled_chat1600_uimuaz.png">
-            <a class="card-link" href="#" ></a>
-          </div>
-
-        <!-- insert <div class="card"> -->
-      </div>
-      <% end %>
-
-
     </div>
   </div>
-
 </div>
