@@ -5,7 +5,9 @@
       <div id="iframe-exit"><i class="fa fa-times" aria-hidden="true"></i>
       </div>
     </div>
-    <iframe src=""></iframe>
+    <div class="embed-responsive embed-responsive-4by3">
+      <iframe src=""></iframe>
+    </div>
   </div>
   <div id="chat">
     <div class="post">
@@ -66,7 +68,6 @@
               </div>
             </div>
           </div>
-
       <!-- SCREEN 2 -->
 
         <% post.balloons.order(:created_at).each_slice(2) do |balloon| %>
@@ -99,7 +100,8 @@
                   </div>
                 <% elsif uniq_balloon.address.present? %>
                   <div class="balloon hidden left">
-                    <div id="map" style="height: 240px; width: 240px "></div>
+                    <%= link_to "#{uniq_balloon.address}", "http://www.google.com/maps/place/#{uniq_balloon.latitude}#{uniq_balloon.longitude}" %>
+                    <% raise %>
                       <br>
                       <%= uniq_balloon.address %>
                   </div>

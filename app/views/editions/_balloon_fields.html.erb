@@ -38,17 +38,14 @@
   </div>
 
   <div class="balloon-form hide-field hidden" id="input-map-balloon">
-    <%= f.input :address, label: false, placeholder: "Endereço", input_html: { class: "balloon-form-input" } %>
+    <%= f.input :address, label: false, placeholder: "Endereço", input_html: { class: "balloon-form-input searchTextField"} %>
   </div>
 
 
   <div class="balloon-form hide-field hidden weather" id="input-meteo-balloon">
     <%= f.input :weather, label: false, placeholder: "Buscar por cidade para obter previsão de tempo", input_html: { class: "balloon-form-input" } %>
-    <a href="#" id="weather" class="btn btn-primary">Pesquisar</a>
+    <a href="#" class="btn btn-primary search">Pesquisar</a>
   </div>
     <!-- <p>Vai exibir temperatura máxima e mínima, velocidade do vento e umidade do ar</p> -->
 
 </div>
-
-
-
