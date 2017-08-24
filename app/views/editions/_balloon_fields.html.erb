@@ -36,20 +36,22 @@
   </div>
 
   <div class="balloon-form hide-field hidden" id="input-gif-balloon">
-    <%= f.input :balloon_gif, label: false, placeholder: "Buscar um GIF", input_html: { class: "balloon-form-input gif-library" } %>
+    <%= f.input :balloon_gif, label: false, placeholder: "Buscar um GIF", input_html: { class: "balloon-form-input margin-negative gif-library" } %>
   </div>
 
   <div class="balloon-form hide-field hidden" id="input-youtube-balloon">
-    <%= f.input :youtube, label: false, placeholder: "Link do YouTube", input_html: { class: "balloon-form-input" } %>
+    <%= f.input :youtube, label: false, placeholder: "Link do YouTube", input_html: { class: "balloon-form-input margin-negative" } %>
   </div>
 
   <div class="balloon-form hide-field hidden" id="input-map-balloon">
-    <%= f.input :address, label: false, placeholder: "Endereço", input_html: { class: "balloon-form-input searchTextField"} %>
+    <%= f.input :address, label: false, placeholder: "Endereço", input_html: { class: "balloon-form-input margin-negative" } %>
   </div>
 
   <div class="balloon-form hide-field hidden weather" id="input-meteo-balloon">
-    <%= f.input :weather, label: false, placeholder: "Buscar por cidade para obter previsão de tempo", input_html: { class: "balloon-form-input" } %>
-    <a href="#" class="btn btn-primary search">Pesquisar</a>
+    <%= f.input :weather, label: false, placeholder: "Buscar por cidade para obter previsão de tempo", input_html: { class: "balloon-form-input-text" } %>
+    <div class="text-center">
+      <%= link_to "Inserir previsão", "#", id: "weather", class: "btn btn-xs btn-default btn-block btn-search-weather" %>
+    </div>
   </div>
     <!-- <p>Vai exibir temperatura máxima e mínima, velocidade do vento e umidade do ar</p> -->
 

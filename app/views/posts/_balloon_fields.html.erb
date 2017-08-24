@@ -1,84 +1,89 @@
 <div class="balloons-fields">
-  <p class="text-right section-partial">Balão</p>
-  <%= link_to_remove_association "<i class='fa fa-times-circle times-color' aria-hidden='true'></i><span class='plus-name'>Remover</span>".html_safe, f, data: { confirm: 'Tem certeza que deseja apagar este balão?'} %>
-  <br>
+  <% if f.object.new_record? %>
+    <p class="text-right section-partial">Balão</p>
+    <%= link_to_remove_association "<i class='fa fa-times-circle times-color' aria-hidden='true'></i><span class='plus-name'>Remover</span>".html_safe, f, data: { confirm: 'Tem certeza que deseja apagar este balão?'}, wrapper_class: "balloons-fields"%>
+    <br>
+    <div class="btn-group radio-options" data-toggle="buttons">
+      <label class="btn btn-default btn-xs active text-option">
+        <%= f.radio_button("type", "Texto", checked: "checked") %> Texto
+      </label>
+      <label class="btn btn-default btn-xs img-option">
+        <%= f.radio_button("type", "Imagem") %> Imagem
+      </label>
+      <label class="btn btn-default btn-xs gif-option">
+        <%= f.radio_button("type", "GIF") %> GIF
+      </label>
+      <label class="btn btn-default btn-xs youtube-option">
+        <%= f.radio_button("type", "YouTube") %> YouTube
+      </label>
+      <label class="btn btn-default btn-xs map-option">
+        <%= f.radio_button("type", "Localização") %> Localização
+      </label>
+      <label class="btn btn-default btn-xs meteo-option">
+        <%= f.radio_button("type", "Meteorologia") %> Meteorologia
+      </label>
+    </div>
 
-    <% if f.object.new_record? %>
+    <br>
+    <div class="balloon-form hide-field" id="input-text-balloon">
+      <%= f.input :content, label: false, placeholder: "Texto", input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input-text" } %>
+      <%= f.input :link, label: false, placeholder: "Link para texto", input_html: { class: "balloon-form-input balloon-form-link" } %>
+    </div>
 
-      <div class="btn-group radio-options" data-toggle="buttons">
-        <label class="btn btn-default btn-xs active text-option">
-          <%= f.radio_button("type", "Texto", checked: "checked") %> Texto
-        </label>
-        <label class="btn btn-default btn-xs img-option">
-          <%= f.radio_button("type", "Imagem") %> Imagem
-        </label>
-        <label class="btn btn-default btn-xs gif-option">
-          <%= f.radio_button("type", "GIF") %> GIF
-        </label>
-        <label class="btn btn-default btn-xs youtube-option">
-          <%= f.radio_button("type", "YouTube") %> YouTube
-        </label>
-        <label class="btn btn-default btn-xs map-option">
-          <%= f.radio_button("type", "Localização") %> Localização
-        </label>
-        <label class="btn btn-default btn-xs meteo-option">
-          <%= f.radio_button("type", "Meteorologia") %> Meteorologia
-        </label>
-      </div>
+    <div class="balloon-form hide-field hidden" id="input-img-balloon">
+      <%= f.input :balloon_img, label: false %>
+      <%= f.input :balloon_img_cache, as: :hidden %>
+    </div>
 
-      <br>
-      <div class="balloon-form hide-field" id="input-text-balloon">
+    <div class="balloon-form hide-field hidden" id="input-gif-balloon">
+      <%= f.input :balloon_gif, label: false, placeholder: "Buscar um GIF", input_html: { class: "balloon-form-input margin-negative gif-library" } %>
+    </div>
+
+    <div class="balloon-form hide-field hidden" id="input-youtube-balloon">
+      <%= f.input :youtube, label: false, placeholder: "Link do YouTube", input_html: { class: "balloon-form-input margin-negative" } %>
+    </div>
+
+    <div class="balloon-form hide-field hidden" id="input-map-balloon">
+      <%= f.input :address, label: false, placeholder: "Endereço", input_html: { class: "balloon-form-input margin-negative" } %>
+    </div>
+
+    <div class="balloon-form hide-field hidden weather" id="input-meteo-balloon">
+      <%= f.input :weather, label: false, placeholder: "Buscar por cidade para obter previsão de tempo", input_html: { class: "balloon-form-input-text" } %>
+      <a href="#" id="weather" class="btn btn-xs btn-default btn-block btn-search-weather">Pesquisar</a>
+    </div>
+
+  <% else %>
+
+    <p class="text-right section-partial">Balão</p>
+    <%= link_to_remove_association "<i class='fa fa-times-circle times-color' aria-hidden='true'></i><span class='plus-name'>Remover</span>".html_safe, f, data: { confirm: 'Tem certeza que deseja apagar este balão?'} %>
+    <br>
+
+    <% if f.object.content.present? %>
+      <div class="balloon-form">
         <%= f.input :content, label: false, placeholder: "Texto", input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input-text" } %>
         <%= f.input :link, label: false, placeholder: "Link para texto", input_html: { class: "balloon-form-input balloon-form-link" } %>
       </div>
-
-      <div class="balloon-form hide-field hidden" id="input-img-balloon">
+    <% elsif f.object.balloon_img.present? %>
+      <div class="balloon-form">
         <%= f.input :balloon_img, label: false %>
         <%= f.input :balloon_img_cache, as: :hidden %>
       </div>
-
-      <div class="balloon-form hide-field hidden" id="input-gif-balloon">
-        <%= f.input :balloon_gif, label: false, placeholder: "Buscar um GIF", input_html: { class: "balloon-form-input gif-library" } %>
+    <% elsif f.object.balloon_gif.present? %>
+      <div class="balloon-form">
+        <%= f.input :balloon_gif, label: false, placeholder: "Buscar um GIF", input_html: { class: "balloon-form-input margin-negative gif-library" } %>
       </div>
-
-      <div class="balloon-form hide-field hidden" id="input-youtube-balloon">
-        <%= f.input :youtube, label: false, placeholder: "Link do YouTube", input_html: { class: "balloon-form-input" } %>
+    <% elsif f.object.youtube.present? %>
+      <div class="balloon-form">
+        <%= f.input :youtube, label: false, placeholder: "Link do YouTube", input_html: { class: "balloon-form-input margin-negative" } %>
       </div>
-
-      <div class="balloon-form hide-field hidden" id="input-map-balloon">
-        <%= f.input :address, label: false, placeholder: "Endereço", input_html: { class: "balloon-form-input" } %>
+    <% elsif f.object.address.present? %>
+      <div class="balloon-form">
+        <%= f.input :address, label: false, placeholder: "Endereço", input_html: { class: "balloon-form-input margin-negative" } %>
       </div>
-
-      <div class="balloon-form hide-field hidden weather" id="input-meteo-balloon">
-        <%= f.input :weather, label: false, placeholder: "Buscar por cidade para obter previsão de tempo", input_html: { class: "balloon-form-input" } %>
-        <a href="#" id="weather" class="btn btn-primary">Pesquisar</a>
+    <% elsif f.object.weather.present? %>
+      <div class="balloon-form weather">
+        <%= f.input :weather, label: false, placeholder: "Buscar por cidade para obter previsão de tempo", input_html: { class: "balloon-form-input margin-negative" } %>
       </div>
-
-    <% else %>
-
-      <% if f.object.content.present? %>
-        <div class="balloon-form">
-          <%= f.input :content, label: false, placeholder: "Texto", input_html: { data: { emojiable: true }, class: "emoji-picker-container balloon-form-input-text" } %>
-          <%= f.input :link, label: false, placeholder: "Link para texto", input_html: { class: "balloon-form-input balloon-form-link" } %>
-        </div>
-      <% elsif f.object.balloon_img.present? %>
-        <div class="balloon-form">
-          <%= f.input :balloon_img, label: false %>
-          <%= f.input :balloon_img_cache, as: :hidden %>
-        </div>
-      <% elsif f.object.balloon_gif.present? %>
-        <div class="balloon-form">
-          <%= f.input :balloon_gif, label: false, placeholder: "Buscar um GIF", input_html: { class: "balloon-form-input gif-library" } %>
-        </div>
-      <% elsif f.object.address.present? %>
-        <div class="balloon-form">
-          <%= f.input :address, label: false, placeholder: "Endereço", input_html: { class: "balloon-form-input" } %>
-        </div>
-      <% elsif f.object.weather.present? %>
-        <div class="balloon-form weather">
-          <%= f.input :weather, label: false, placeholder: "Buscar por cidade para obter previsão de tempo", input_html: { class: "balloon-form-input" } %>
-          <a href="#" id="weather" class="btn btn-primary">Pesquisar</a>
-        </div>
     <% end %>
   <% end %>
 

@@ -34,7 +34,6 @@ $(function(){
       $(this).parent().parent().children("#input-youtube-balloon").removeClass("hidden");
     });
 
-
     function hideField(el) {
       $(el).parent().parent().children(".hide-field").addClass("hidden");
     }
