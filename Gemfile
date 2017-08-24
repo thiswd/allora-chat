@@ -43,6 +43,9 @@ gem 'geocoder'
 # Change URL
 gem 'friendly_id', '~> 5.1.0'
 
+# Select autofill
+gem 'select2-rails'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

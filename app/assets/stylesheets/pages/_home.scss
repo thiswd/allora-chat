@@ -30,7 +30,7 @@ h2 {
 .l-side {
   color: white;
   text-align: center;
-  height: 97vh;
+  height: calc(100vh - 45px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -39,7 +39,7 @@ h2 {
 }
 
 .r-side {
-  height: calc(100vh - 1px);
+  height: calc(100vh - 45px);
   background: white;
   // display: flex;
   align-items: center;
@@ -55,7 +55,7 @@ h2 {
 }
 
 #chatbox-home {
-  height: calc(100vh - 10px);
+  height: calc(100vh - 47px);
   width: auto;
   overflow-y: scroll;
   padding: 20px 100px 20px 100px;
