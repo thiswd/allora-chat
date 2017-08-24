@@ -17,6 +17,10 @@
     <%= f.simple_fields_for :balloons do |balloon| %>
       <%= render 'balloon_fields', f: balloon %>
     <% end %>
+    <div class="new-balloon-edit">
+
+    </div>
+    <%= link_to_add_association "<div class='form-flex btn btn-plus'><i class='fa fa-plus-circle plus-post' aria-hidden='true'></i><span class='plus-name'>Novo Balão</span></div>".html_safe, f, :balloons, 'data-association-insertion-node' => '.new-balloon-edit' %>
   </div>
     <%= f.submit 'Concluir', class: "btn btn-primary" %>
   <% end %>
