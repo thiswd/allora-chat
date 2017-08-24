@@ -49,7 +49,7 @@
 
     <div class="balloon-form hide-field hidden weather" id="input-meteo-balloon">
       <%= f.input :weather, label: false, placeholder: "Buscar por cidade para obter previsão de tempo", input_html: { class: "balloon-form-input-text" } %>
-      <a href="#" id="weather" class="btn btn-xs btn-default btn-block btn-search-weather">Pesquisar</a>
+      <%= link_to "Inserir previsão de tempo", "#", id: "weather", class: "btn btn-xs btn-default btn-block btn-search-weather" %>
     </div>
 
   <% else %>

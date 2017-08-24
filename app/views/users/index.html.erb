@@ -55,3 +55,15 @@
     </div>
   </div>
 </div>
+
+<% content_for(:js) do %>
+  <script>
+    $(function() {
+      $("#username").select2(
+        {
+          width: '200'
+        }
+      );
+    });
+  </script>
+<% end %>

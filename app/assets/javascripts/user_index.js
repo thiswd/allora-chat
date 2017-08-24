@@ -1,6 +1,6 @@
-$(function() {
-  $("#username").select2();
-});
+// $(function() {
+//   $("#username").select2();
+// });
 
 
 
