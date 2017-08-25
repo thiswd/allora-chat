@@ -7,6 +7,10 @@
 @import "../config/colors";
 @import "../config/fonts";
 
+.pagina-login {
+  height: calc(100vh - 94px);
+}
+
 #homebanner {
 
 body {
@@ -39,7 +43,7 @@ h2 {
 }
 
 .r-side {
-  height: calc(100vh - 45px);
+  height: calc(100vh - 94px);
   background: white;
   // display: flex;
   align-items: center;

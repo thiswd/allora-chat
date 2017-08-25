@@ -11,7 +11,6 @@
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
-  height: calc(100vh - 60px);
 }
 
 #modal-iframe {
@@ -85,6 +84,7 @@ iframe {
   display: flex;
   align-items: flex-end;
   flex-direction: column;
+
 }
 
 .new-click-more {
@@ -129,7 +129,7 @@ iframe {
 
   border-radius: 0 20px 20px 20px;
   padding: 10px 20px;
-  line-height: 125%;
+  line-height: 120%;
   text-decoration: none;
   display: inline-block;
   margin-bottom: 10px;
