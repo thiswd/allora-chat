@@ -31,7 +31,9 @@
         <% end %>
         <div>
           <div class="text-center btn-margin">
-            <a class="btn btn-xs new click-next btn-unclick">Olá, tudo bem?</a>
+
+            <a class="btn btn-xs new click-next">Olá, tudo bem?</a>
+
           </div>
         </div>
       </div>
@@ -60,8 +62,10 @@
             <div>
               <div class="text-center btn-margin hidden">
 
-                <a class="btn btn-xs new click-more btn-unclick"><%= content_with_emoji(post.option_more) %></a>
-                <a class="btn btn-xs new click-next btn-unclick"><%= content_with_emoji(post.option_next) %></a>
+
+                <a class="btn btn-xs new click-more"><%= content_with_emoji(post.option_more) %></a>
+                <a class="btn btn-xs new click-next"><%= content_with_emoji(post.option_next) %></a>
+
               </div>
             </div>
           </div>
@@ -100,7 +104,7 @@
                 <% elsif uniq_balloon.address.present? %>
 
                   <div class="balloon hidden animate-balloon">
-                    <%= link_to "#{uniq_balloon.address}", "http://www.google.com/maps/place/#{uniq_balloon.latitude}#{uniq_balloon.longitude}", target: "_blank" %>
+                    <%= link_to "#{uniq_balloon.address}", "http://www.google.com/maps/place/#{uniq_balloon.latitude},#{uniq_balloon.longitude}", target: "_blank" %>
 
                   </div>
                 <% elsif uniq_balloon.youtube.present? %>
@@ -117,9 +121,11 @@
                 <div class="text-center btn-margin hidden">
                   <% unless balloon[1] == post.balloons.last || balloon[0] == post.balloons.last %>
 
-                    <a class="btn btn-xs new click-more btn-unclick"><%= content_with_emoji(post.option_more) %></a>
+
+                    <a class="btn btn-xs new click-more"><%= content_with_emoji(post.option_more) %></a>
                   <% end %>
-                    <a class="btn btn-xs new click-next btn-unclick"><%= content_with_emoji(post.option_next) %></a>
+                    <a class="btn btn-xs new click-next"><%= content_with_emoji(post.option_next) %></a>
+
                 </div>
               </div>
           </div>
@@ -131,6 +137,9 @@
             <div>
               <div class="balloon hidden animate-balloon">
                 <p><%= content_with_emoji(@edition.farewell) %></p>
+              </div>
+              <div class="hidden text-center">
+                <%= link_to "Veja mais publicações", users_path, class: "btn btn-xs btn-margin new-click-other" %>
               </div>
             </div>
             <div>

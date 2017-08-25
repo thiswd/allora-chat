@@ -9,8 +9,22 @@
     <div class="hidden-sm hidden-xs">
 
       <div class="col-xs-12 col-sm-6 l-side" style="background-image: linear-gradient(-225deg, rgba(255,128,8,0.6) 0%, rgba(255,200,55,0.6) 50%), url(<%= check_user_photo %>);">
-
+        <div id="btn-edit" class="align-items">
+          <% if user_signed_in? %>
+            <% if current_user == @user %>
+              <p>
+                <%= link_to "Criar edição", new_edition_path, class: "btn btn-warning" %>
+              </p>
+              <p>
+                <% if @user.editions.present? %>
+                  <%= link_to "Editar última edição", edition_path(current_user.editions.last.id), class: "btn btn-warning" %>
+                <% end %>
+              </p>
+            <% end %>
+          <% end %>
+        </div>
         <div class="container" id="blog-card">
+
         <div class="tittle-user">
           <h1><%= @user.first_name.capitalize + " " + @user.last_name.capitalize %></h1>
         </div>

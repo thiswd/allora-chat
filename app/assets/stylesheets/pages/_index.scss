@@ -128,11 +128,12 @@
 
 .card.hovercard .info {
     padding: 4px 8px 10px;
+    margin-top: 5px;
 }
 
-.card.hovercard .info .title {
+.card.hovercard .info .card-title {
     margin-bottom: 4px;
-    font-size: 24px;
+    font-size: 15px;
     line-height: 1;
     color: #262626;
     vertical-align: middle;

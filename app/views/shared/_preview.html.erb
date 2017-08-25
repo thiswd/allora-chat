@@ -78,8 +78,13 @@
                 <% elsif balloon.address.present? %>
 
                   <div class="balloon ">
-                    <%= link_to "#{balloon.address}", "http://www.google.com/maps/place/#{balloon.latitude}#{balloon.longitude}" %>
+
+
+                 
+
+                    <%= link_to "#{balloon.address}", "http://www.google.com/maps/place/#{balloon.latitude},#{balloon.longitude}" %>
                       <p><%= balloon.address %></p>
+
                   </div>
                 <% elsif balloon.youtube.present? %>
                   <div class="balloon  balloon-video balloon-image" >

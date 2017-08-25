@@ -87,7 +87,18 @@ iframe {
 
 }
 
+
+.new-click-other {
+  background: $blue;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin: 5px 0;
+}
+
+
 .click-more {
+
   background: #FF8008;
   color: white;
   border-radius: 20px;
@@ -189,6 +200,7 @@ iframe {
   position: relative;
 }
 
+
 .preview-section {
   padding: 5px;
   border-bottom: 2px dashed #777777;
@@ -196,6 +208,4 @@ iframe {
   margin: 10px;
 }
 
-.btn-unclick {
-  text-decoration: none;
-}
+
