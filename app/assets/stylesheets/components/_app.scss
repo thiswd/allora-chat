@@ -5,7 +5,7 @@
 
 #app {
 
-  height: calc(100vh - 94px);
+  height: calc(100vh - 50px);
   width: 100%;
   // padding: 20px 100px 20px 100px;
   overflow-y: scroll;
@@ -106,7 +106,7 @@ iframe {
 
 .btn-margin {
   // margin: 20px 0; // Antiga versão
-  margin-top: 50px;
+  margin-top: 25px;
   margin-bottom: 25px;
 }
 
@@ -193,4 +193,8 @@ iframe {
   background-position: center;
   color: white;
   position: relative;
+}
+
+.btn-unclick {
+  text-decoration: none;
 }
