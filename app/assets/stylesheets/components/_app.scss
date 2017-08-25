@@ -87,7 +87,7 @@ iframe {
   flex-direction: column;
 }
 
-.new-click-more {
+.click-more {
   background: #FF8008;
   color: white;
   border-radius: 20px;
@@ -95,7 +95,7 @@ iframe {
   margin: 5px 0;
 }
 
-.new-click-next {
+.click-next {
   background: #FF8008;
   color: white;
   border-radius: 20px;
@@ -105,22 +105,11 @@ iframe {
 }
 
 .btn-margin {
-  // margin: 20px 0; // Antiga versão
-  margin-top: 50px;
+  margin-top: 25px;
   margin-bottom: 25px;
 }
 
 
-// Não tá sendo usada em nenhum lugar
-// .pic-border {
-//   border-radius: 0 20px 20px 20px;
-// }
-
-// .left {
-//   position: relative;
-//   transform: translateX(700px);
-//   transition: transform 0.5s cubic-bezier(0.52, 1.7, 0.79, 0.91);
-// }
 
 .balloon {
 
@@ -192,4 +181,11 @@ iframe {
   background-position: center;
   color: white;
   position: relative;
+}
+
+.preview-section {
+  padding: 5px;
+  border-bottom: 2px dashed #777777;
+  color: #777777;
+  margin: 10px;
 }
