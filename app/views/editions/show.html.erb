@@ -1,3 +1,6 @@
+<% content_for :meta_title, "#{@user.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @user.description %>
+<% content_for :meta_image, cloudinary_url(@user.photo.path) %>
 
 <div class="no-gutter user-page" >
     <div class="editionbanner col-xs-12 col-sm-6 l-side" style="background-image: linear-gradient(-225deg, rgba(213,228,200,0.98) 0%, rgba(213,215,215,0.8) 50%), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503347454/ceulimpo_anptvb.jpg');">

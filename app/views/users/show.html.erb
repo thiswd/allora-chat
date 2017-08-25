@@ -1,4 +1,6 @@
-
+<% content_for :meta_title, "#{@user.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @user.description %>
+<% content_for :meta_image, cloudinary_url(@user.photo.path) %>
 
 <div class="row">
 
