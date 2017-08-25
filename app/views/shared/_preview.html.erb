@@ -11,13 +11,13 @@
         </div>
         <% if @edition.greeting_img.present? %>
           <div>
-            <div class="balloon">
+            <div class="balloon balloon-image">
               <%= cl_image_tag @edition.greeting_img, height: 150 %>
             </div>
           </div>
         <% elsif @edition.greeting_gif.present? %>
           <div>
-            <div class="balloon">
+            <div class="balloon balloon-image">
               <%= image_tag @edition.greeting_gif, height: 150 %>
             </div>
           </div>
@@ -36,11 +36,11 @@
             </div>
             <div>
               <% if post.post_img.present? %>
-                <div class="balloon">
+                <div class="balloon balloon-image">
                   <%= cl_image_tag post.post_img, height: 150 %>
                 </div>
               <% elsif post.post_gif.present? %>
-                <div class="balloon">
+                <div class="balloon balloon-image">
                   <%= image_tag post.post_gif, height: 150 %>
                 </div>
               <% end %>
@@ -60,11 +60,11 @@
                     <% end %>
                   </div>
                 <% elsif balloon.balloon_img.present? %>
-                  <div class="balloon ">
+                  <div class="balloon balloon-image">
                     <%= cl_image_tag balloon.balloon_img, height: 150 %>
                   </div>
                 <% elsif balloon.balloon_gif.present? %>
-                  <div class="balloon ">
+                  <div class="balloon balloon-image">
                     <%= image_tag balloon.balloon_gif, height: 150 %>
                   </div>
                 <% elsif balloon.weather.present? %>
@@ -82,7 +82,7 @@
                       <p><%= balloon.address %></p>
                   </div>
                 <% elsif balloon.youtube.present? %>
-                  <div class="balloon  balloon-video" >
+                  <div class="balloon  balloon-video balloon-image" >
                     <div class="embed-responsive embed-responsive-16by9">
                       <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= balloon.youtube_embed %>"></iframe>
                     </div>
@@ -103,11 +103,11 @@
       </div>
     <div>
       <% if @edition.farewell_img.present? %>
-        <div class="balloon">
+        <div class="balloon balloon-image">
           <%= cl_image_tag @edition.farewell_img, height: 150 %>
         </div>
       <% elsif @edition.farewell_gif.present? %>
-        <div class="balloon">
+        <div class="balloon balloon-image">
           <%= image_tag @edition.farewell_gif, height: 150 %>
         </div>
       <% end %>

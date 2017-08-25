@@ -12,8 +12,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:username])
   end
 
-<<<<<<< HEAD
-=======
   # metodo abaixo faz com que o login vá para outra pagina (pagina do usuario)
   def after_sign_in_path_for(resource)
     user_path(current_user)
@@ -24,7 +22,6 @@ class ApplicationController < ActionController::Base
   { host: ENV["HOST"] || "localhost:3000" }
   end
 
->>>>>>> 0f6a2b9886fbdc5a4ba6f35d37250ed87dc72856
   include Pundit
 
   # Pundit: white-list approach.
