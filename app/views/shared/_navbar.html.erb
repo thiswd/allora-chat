@@ -41,11 +41,13 @@
                     <i class="fa fa-plus" aria-hidden="true"></i> <%= t(".edition", default: "Criar edição") %>
                   <% end %>
                 </li>
-                <li>
-                  <%= link_to edit_edition_path(current_user.editions.last.id) do %>
-                    <i class="fa fa-pencil" aria-hidden="true"></i>  <%= t(".index", default: "Editar última edition") %>
-                  <% end %>
-                </li>
+                <% if current_user.editions.present? %>
+                  <li>
+                    <%= link_to edit_edition_path(current_user.editions.last.id) do %>
+                      <i class="fa fa-pencil" aria-hidden="true"></i>  <%= t(".index", default: "Editar última edition") %>
+                    <% end %>
+                  </li>
+                <% end %>
                 <li>
                   <%= link_to edit_user_registration_path do %>
                     <i class="fa fa-user"></i> <%= t(".profile", default: "Perfil") %>
