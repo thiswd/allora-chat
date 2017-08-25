@@ -99,7 +99,7 @@
                 <% elsif uniq_balloon.address.present? %>
 
                   <div class="balloon hidden animate-balloon">
-                    <%= link_to "#{uniq_balloon.address}", "http://www.google.com/maps/place/#{uniq_balloon.latitude}#{uniq_balloon.longitude}", target: "_blank" %>
+                    <%= link_to "#{uniq_balloon.address}", "http://www.google.com/maps/place/#{uniq_balloon.latitude},#{uniq_balloon.longitude}", target: "_blank" %>
 
                   </div>
                 <% elsif uniq_balloon.youtube.present? %>
