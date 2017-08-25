@@ -11,41 +11,22 @@
 
 <!--Colocar um botão para a landing page do influencer -->
   <div class="col-xs-12 col-sm-6 r-side ">
-
     <div id="chatbox-home">
-
       <div class="balloons-box">
-
         <p class="headline balloon" id="headline">Olá :) Sou o Allora.chat! A sua <strong>newsletter interativa.</strong></p>
         <p class="headline balloon" id="headline-img"><%= cl_image_tag("http://res.cloudinary.com/dpg1ipkol/image/upload/c_scale,h_124/v1503412982/giphy-downsized_x14jla.gif", class: "balloon-image")%></p>
-
-
         <div class="text-center options">
           <a class="more btn btn-xs option" data-target="#screen">Curti! Me diga mais</a>
-          <a class="next btn btn-xs option" data-target="#jaConheco">Já conheço!</a>
-
         </div>
       </div>
-
-
       <div id="screen">
         <p class="balloon hidden">Aqui você encontra informações você <strong>precisa saber</strong>, resumidas por quem você confia</p>
-
-
-
         <p class="balloon hidden">Não perca <strong>tempo</strong> buscando informações relevantes em feeds de notícias cheios e repetitivos</p>
-
-
         <p class="balloon hidden">Leu e não se interessou pela manchete? Clique em 'Próximo'.<br> <strong>Veja como funciona</strong></p>
-
         <div class="text-center options hidden">
           <a class="next btn btn-xs option hidden" data-target="#headline"><%= link_to "Comece agora!", users_path, class: "btn btn-xs option" %></a>
         </div>
-
       </div>
-
-
-
     </div>
   </div>
 </div>
