@@ -115,7 +115,6 @@ iframe {
 
   background: #F4F4F4;
   max-width: 80%;
-
   border-radius: 0 20px 20px 20px;
   padding: 10px 20px;
   line-height: 125%;
@@ -123,10 +122,8 @@ iframe {
   display: inline-block;
 
   &-image {
-    background: white;
     border-radius: 0 20px 20px 20px;
-    padding: 5px;
-    margin-bottom: 12px;
+    padding: 7px;
   }
 
   &-right {
@@ -140,6 +137,14 @@ iframe {
   &-video {
     width: 80%;
     height: auto;
+  }
+
+  img {
+    border-radius: 0 20px 20px 20px;
+  }
+
+  iframe {
+    border-radius: 0 20px 20px 20px;
   }
 }
 
