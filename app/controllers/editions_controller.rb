@@ -18,7 +18,7 @@ class EditionsController < ApplicationController
     authorize @edition
 
     if params[:gif_search]
-      @giphys = Giphy.search( params[:gif_search], {limit: 24})
+      @giphys = Giphy.search( params[:gif_search], {limit: 32})
       respond_to do |format|
         format.js
       end

@@ -16,22 +16,20 @@
 }
 
 .mobile-influencer {
-  background-color: rgba(0, 0, 0, 0.35);
-  font-family: 'Pacifico', cursive;
-  padding: 0px;
-  width: 100%;
-  border-radius: 10px;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.35);
   height: 50px;
-  margin-right: 0px;
-  margin-left: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
 }
 
 .name-influencer {
   position: absolute;
   margin-left: 87px;
-  font-size: 15px;
-  margin-top: 15px;
+  font-size: 17px;
+  margin-top: 12px;
   color: white;
 }
 

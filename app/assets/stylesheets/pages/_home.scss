@@ -7,10 +7,6 @@
 @import "../config/colors";
 @import "../config/fonts";
 
-.pagina-login {
-  height: calc(100vh - 94px);
-}
-
 #homebanner {
 
 body {
@@ -40,11 +36,10 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .r-side {
-  height: calc(100vh - 94px);
+  height: calc(100vh - 45px);
   background: white;
   // display: flex;
   align-items: center;
@@ -56,7 +51,6 @@ h2 {
 .no-gutter > [class*='col-'] {
     padding-right:0;
     padding-left:0;
-
 }
 }
 
@@ -114,10 +108,3 @@ h2 {
   }
 
 }
-
-hr {
-  height:1px;
-  border-width:0;
-  background: #333 url(linha.jpg) center no-repeat;
-  }
-

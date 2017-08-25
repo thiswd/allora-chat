@@ -44,12 +44,12 @@
     </div>
 
     <div class="balloon-form hide-field hidden" id="input-map-balloon">
-      <%= f.input :address, label: false, placeholder: "Endereço", input_html: { class: "balloon-form-input margin-negative searchTextField" } %>
+      <%= f.input :address, label: false, placeholder: "Endereço", input_html: { class: "balloon-form-input margin-negative" } %>
     </div>
 
     <div class="balloon-form hide-field hidden weather" id="input-meteo-balloon">
       <%= f.input :weather, label: false, placeholder: "Buscar por cidade para obter previsão de tempo", input_html: { class: "balloon-form-input-text" } %>
-      <%= link_to "Inserir previsão de tempo", "#", id: "weather", class: "btn btn-xs btn-default btn-block btn-search-weather search" %>
+      <a href="#" id="weather" class="btn btn-xs btn-default btn-block btn-search-weather">Pesquisar</a>
     </div>
 
   <% else %>

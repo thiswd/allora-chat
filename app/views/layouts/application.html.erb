@@ -8,15 +8,19 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
+
   <body  data-spy="scroll" data-target=".dots" class='<%= controller_name %> <%= action_name %>'>
-   <% if action_name != "home" && (controller_name != "users" || action_name != "show")  %>
+
+   <% unless action_name == "home" %>
     <%= render 'shared/navbar' %>
-  <% end %>
+    <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
 
+   <% unless action_name == "user#show" %>
 
     <%= render 'shared/footer' %>
+    <% end %>
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsF74faHW7dUBOuCoV-8_GOl3utCe8eUE&libraries=places"></script>
 

@@ -5,12 +5,13 @@
 
 #app {
 
-  height: calc(100vh - 50px);
+  height: calc(100vh - 94px);
   width: 100%;
   // padding: 20px 100px 20px 100px;
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
+  height: calc(100vh - 60px);
 }
 
 #modal-iframe {
@@ -84,7 +85,6 @@ iframe {
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-
 }
 
 .new-click-more {
@@ -106,7 +106,7 @@ iframe {
 
 .btn-margin {
   // margin: 20px 0; // Antiga versão
-  margin-top: 25px;
+  margin-top: 50px;
   margin-bottom: 25px;
 }
 
@@ -129,10 +129,9 @@ iframe {
 
   border-radius: 0 20px 20px 20px;
   padding: 10px 20px;
-  line-height: 120%;
+  line-height: 125%;
   text-decoration: none;
   display: inline-block;
-  margin-bottom: 10px;
 
   &-image {
     background: white;
@@ -193,8 +192,4 @@ iframe {
   background-position: center;
   color: white;
   position: relative;
-}
-
-.btn-unclick {
-  text-decoration: none;
 }

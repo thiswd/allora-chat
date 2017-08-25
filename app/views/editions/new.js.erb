@@ -1,7 +1,7 @@
 <%
   image_gifs = ""
   @giphys.each do |gif|
-    image_gifs << image_tag(gif.fixed_height_downsampled_image.url, width: '200') if gif.fixed_height_downsampled_image.url.to_s[0, 4] == 'http'
+    image_gifs << image_tag(gif.fixed_height_downsampled_image.url, width: '200')
   end
 %>
 
