@@ -25,17 +25,6 @@
 
     <div class="col-xs-12 col-md-6">
       <%= render partial: "shared/app" %>
-      <div class="mobile-influencer hidden-md hidden-lg">
-
-        <% if @user.user_photo.blank? %>
-          <%= image_tag "http://res.cloudinary.com/dpg1ipkol/image/upload/v1503534898/user-placeholder_zskuvv.png", class: "avatar-influencer" %>
-        <% else %>
-          <%= image_tag @user.user_photo_url, class: "avatar-influencer" %>
-        <% end %>
-        <div class="name-influencer">
-        <p><strong><i>@<%= @user.first_name.capitalize + " " + @user.last_name.capitalize %></i></strong></p>
-        </div>
-      </div>
     </div>
 
   </div>
