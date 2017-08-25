@@ -3,42 +3,52 @@
 <% content_for :meta_image, cloudinary_url(@user.user_photo.path) %>
 
 <div class="no-gutter user-page" >
-    <div class="editionbanner col-xs-12 col-sm-6 l-side" style="background-image: linear-gradient(-225deg, rgba(213,228,200,0.98) 0%, rgba(213,215,215,0.8) 50%), url('http://res.cloudinary.com/dpg1ipkol/image/upload/v1503347454/ceulimpo_anptvb.jpg');">
-    <h1>Revisão final.</h1>
+  <div class="cont-banner">
+    <div class="editionbanner teste col-xs-12 col-sm-6 l-side" style="background-image: linear-gradient(-225deg, rgba(255,128,8,0.6) 0%, rgba(255,200,55,0.6) 50%), url('https://static.pexels.com/photos/9634/pink-hair-selfie-bun.jpg');">
+
+    <h1>Revise a sua edição
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </h1>
+
     <hr>
+
     <h4>
-      Informações da edition do dia <%= @edition.date.to_date.strftime("%d, %m, %Y")%>.
+      Edição do dia [<%= @edition.date.to_date.strftime("%d, %m, %Y")%>]
     </h4>
+
     <p>
-      Posts: <%= @edition.posts.count %>
+      N° de post: <%= @edition.posts.count %>
     </p>
     <% n = 0 %>
     <% @edition.posts.each do |post|%>
       <% n = n + post.balloons.count %>
     <% end %>
     <p>
-      Balloons: <%= n %>
+      N° de balão: <%= n %>
     </p>
+
     <hr>
     <h4>
-      Editar posts:
+      Editar Posts:
     </h4>
+
     <% @edition.posts.each_with_index do |post, index| %>
       <p>
-        <%= link_to "Editar POST  #{(index + 1).to_s}", edit_post_path(post), :class => "btn btn-post" %>
-        <%= " Título: " + post.headline %>
+        <%= link_to "Editar  #{(index + 1).to_s}", edit_post_path(post), :class => "btn  btn-warning btn-xs" %>
+        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        <i><%= post.headline %>...</i>
       </p>
     <% end %>
 
     <hr>
     <p>
-      <%= link_to "Nada que editar", user_path(@user), :class => "btn btn-post" %>
-
+      <%= link_to "Concluir", user_path(@user), :class => "btn btn-warning btn-sm btn-post" %>
     </p>
   </div>
 
   <div class="col-xs-12 col-sm-6 r-side">
     <%= render partial: "shared/preview" %>
+  </div>
   </div>
 
   </div>
