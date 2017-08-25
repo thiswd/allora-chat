@@ -87,6 +87,7 @@ iframe {
 
 }
 
+
 .new-click-other {
   background: $blue;
   color: white;
@@ -95,7 +96,9 @@ iframe {
   margin: 5px 0;
 }
 
-.new-click-more {
+
+.click-more {
+
   background: #FF8008;
   color: white;
   border-radius: 20px;
@@ -103,7 +106,7 @@ iframe {
   margin: 5px 0;
 }
 
-.new-click-next {
+.click-next {
   background: #FF8008;
   color: white;
   border-radius: 20px;
@@ -113,28 +116,16 @@ iframe {
 }
 
 .btn-margin {
-  // margin: 20px 0; // Antiga versão
   margin-top: 25px;
   margin-bottom: 25px;
 }
 
 
-// Não tá sendo usada em nenhum lugar
-// .pic-border {
-//   border-radius: 0 20px 20px 20px;
-// }
-
-// .left {
-//   position: relative;
-//   transform: translateX(700px);
-//   transition: transform 0.5s cubic-bezier(0.52, 1.7, 0.79, 0.91);
-// }
 
 .balloon {
 
   background: #F4F4F4;
   max-width: 80%;
-
   border-radius: 0 20px 20px 20px;
   padding: 10px 20px;
   line-height: 120%;
@@ -143,10 +134,8 @@ iframe {
   margin-bottom: 10px;
 
   &-image {
-    background: white;
     border-radius: 0 20px 20px 20px;
-    padding: 5px;
-    margin-bottom: 12px;
+    padding: 7px;
   }
 
   &-right {
@@ -160,6 +149,14 @@ iframe {
   &-video {
     width: 80%;
     height: auto;
+  }
+
+  img {
+    border-radius: 0 20px 20px 20px;
+  }
+
+  iframe {
+    border-radius: 0 20px 20px 20px;
   }
 }
 
@@ -202,4 +199,13 @@ iframe {
   color: white;
   position: relative;
 }
+
+
+.preview-section {
+  padding: 5px;
+  border-bottom: 2px dashed #777777;
+  color: #777777;
+  margin: 10px;
+}
+
 

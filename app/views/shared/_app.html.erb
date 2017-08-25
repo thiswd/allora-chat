@@ -31,7 +31,9 @@
         <% end %>
         <div>
           <div class="text-center btn-margin">
-            <a class="btn btn-xs new-click-next">Olá, tudo bem?</a>
+
+            <a class="btn btn-xs new click-next">Olá, tudo bem?</a>
+
           </div>
         </div>
       </div>
@@ -59,8 +61,11 @@
 
             <div>
               <div class="text-center btn-margin hidden">
-                <a class="btn btn-xs new-click-more"><%= content_with_emoji(post.option_more) %></a>
-                <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
+
+
+                <a class="btn btn-xs new click-more"><%= content_with_emoji(post.option_more) %></a>
+                <a class="btn btn-xs new click-next"><%= content_with_emoji(post.option_next) %></a>
+
               </div>
             </div>
           </div>
@@ -115,9 +120,12 @@
               <div>
                 <div class="text-center btn-margin hidden">
                   <% unless balloon[1] == post.balloons.last || balloon[0] == post.balloons.last %>
-                    <a class="btn btn-xs new-click-more"><%= content_with_emoji(post.option_more) %></a>
+
+
+                    <a class="btn btn-xs new click-more"><%= content_with_emoji(post.option_more) %></a>
                   <% end %>
-                    <a class="btn btn-xs new-click-next"><%= content_with_emoji(post.option_next) %></a>
+                    <a class="btn btn-xs new click-next"><%= content_with_emoji(post.option_next) %></a>
+
                 </div>
               </div>
           </div>

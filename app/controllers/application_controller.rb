@@ -17,6 +17,11 @@ class ApplicationController < ActionController::Base
     users_path
   end
 
+  # configuração dos metatags
+  def default_url_options
+  { host: ENV["HOST"] || "localhost:3000" }
+  end
+
   include Pundit
 
   # Pundit: white-list approach.

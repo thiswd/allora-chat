@@ -1,0 +1,6 @@
+# config/meta.yml
+
+meta_product_name: "Allora"
+meta_title: "Allora chat"
+meta_description: "A sua newsletter interativa"
+meta_image: "cover_square.png" # should exist in `app/assets/images/`
