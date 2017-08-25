@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
   # metodo abaixo faz com que o login vá para outra pagina (pagina do usuario)
   def after_sign_in_path_for(resource)
-    user_path(current_user)
+    users_path
   end
 
   include Pundit
