@@ -40,6 +40,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .r-side {
@@ -55,6 +56,7 @@ h2 {
 .no-gutter > [class*='col-'] {
     padding-right:0;
     padding-left:0;
+
 }
 }
 
@@ -112,3 +114,10 @@ h2 {
   }
 
 }
+
+hr {
+  height:1px;
+  border-width:0;
+  background: #333 url(linha.jpg) center no-repeat;
+  }
+
