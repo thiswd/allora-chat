@@ -1,12 +1,12 @@
 class Balloon < ApplicationRecord
   belongs_to :post
   mount_uploader :balloon_img, PhotoUploader
-
+  validates_length_of :content, :maximum => 260, :message => "menos que 260 caracteres, por favor ;)"
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
   def short_link
-    if self.link.size > 52
-      "#{self.link[0..25]}..."
+    if self.link.size > 27
+      "#{self.link[0..24]}..."
     else
       self.link
     end

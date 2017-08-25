@@ -1,12 +1,40 @@
-<div class="footer hidden-xs hidden-sm">
-  <div class="footer-links">
-    <a href="https://www.instagram.com/allora_lwsp/"><i class="fa fa-instagram"></i></a>
-    <a href="https://www.facebook.com/Allora-117205262272923/"><i class="fa fa-facebook"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-  </div>
-  <div class="footer-copyright">
-    Allora <i class="fa fa-heart"></i>
-  </div>
-</div>
 
+<% if controller_name == "users" && action_name == "show" %>
+    <div class="mobile-influencer hidden-md hidden-lg">
+      <% if @user.user_photo.blank? %>
+        <%= image_tag "http://res.cloudinary.com/dpg1ipkol/image/upload/v1503534898/user-placeholder_zskuvv.png", class: "avatar-influencer" %>
+      <% else %>
+        <%= image_tag @user.user_photo_url, class: "avatar-influencer" %>
+      <% end %>
+      <div class="name-influencer">
+        <p>
+          <strong><i>@<%= @user.first_name.capitalize + " " + @user.last_name.capitalize %></i></strong>
+        </p>
+      </div>
+      <div class="footer-copyright">
+        Allora <i class="fa fa-heart"></i>
+      </div>
+    </div>
+  <div class="footer hidden-xs hidden-sm">
+    <div class="footer-links">
+      <a href="https://www.instagram.com/allora_lwsp/"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.facebook.com/Allora-117205262272923/"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+    </div>
+    <div class="footer-copyright">
+      Allora <i class="fa fa-heart"></i>
+    </div>
+  </div>
+<% else %>
+  <div class="footer">
+    <div class="footer-links">
+      <a href="https://www.instagram.com/allora_lwsp/"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.facebook.com/Allora-117205262272923/"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+    </div>
+    <div class="footer-copyright">
+      Allora <i class="fa fa-heart"></i>
+    </div>
+  </div>
+<% end %>
 

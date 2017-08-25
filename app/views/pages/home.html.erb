@@ -4,49 +4,29 @@
   <div class="col-xs-12 col-sm-6 l-side" style="background-image: linear-gradient(-225deg, rgba(255,128,8,0.6) 0%, rgba(255,200,55,0.6) 50%), url('https://static.pexels.com/photos/9634/pink-hair-selfie-bun.jpg');">
     <div class="container">
       <h1>Allora</h1>
-      <h2>Se você é um influenciador e quer divulgar seu conteúdo</h2>
-      <%= link_to "Clique aqui", influencers_path, class: "btn btn-xs option" %>
+      <h2>A sua newsletter interativa.</h2>
+      <%= link_to "Clique aqui", users_path, class: "btn btn-md btn-warning option" %>
       </div>
   </div>
 
 <!--Colocar um botão para a landing page do influencer -->
   <div class="col-xs-12 col-sm-6 r-side ">
-
     <div id="chatbox-home">
-
       <div class="balloons-box">
-
-        <p class="headline balloon" id="headline">Olá :) ! Este é o Allora.chat! A sua <strong>newsletter interativa.</strong></p>
+        <p class="headline balloon" id="headline">Olá :) Sou o Allora.chat! A sua <strong>newsletter interativa.</strong></p>
         <p class="headline balloon" id="headline-img"><%= cl_image_tag("http://res.cloudinary.com/dpg1ipkol/image/upload/c_scale,h_124/v1503412982/giphy-downsized_x14jla.gif", class: "balloon-image")%></p>
-
-
         <div class="text-center options">
           <a class="more btn btn-xs option" data-target="#screen">Curti! Me diga mais</a>
-          <a class="next btn btn-xs option" data-target="#jaConheco">Já conheço!</a>
-
         </div>
       </div>
-
-
       <div id="screen">
-        <p class="balloon hidden">Aqui você encontra informações <strong>do tamanho ideal</strong>, com apenas o que você <strong>precisa saber</strong>, resumidas por quem você confia</p>
-
-        <p class="headline balloon hidden " id="headline-img"><%= cl_image_tag("http://res.cloudinary.com/dpg1ipkol/image/upload/c_scale,h_129/v1503426150/fakenews2_gt13v0.png", class: "balloon-image", link: "web.stanford.edu")%><br><small>"Estudo sugere que pessoas que acompanham <br>notícias por midias sociais tem mais propenção<br> à receber evidências distorcidas sobre os fatos."<br>web.stanford.edu</small></p>
-
+        <p class="balloon hidden">Aqui você encontra informações você <strong>precisa saber</strong>, resumidas por quem você confia</p>
         <p class="balloon hidden">Não perca <strong>tempo</strong> buscando informações relevantes em feeds de notícias cheios e repetitivos</p>
-
-        <p class="headline balloon hidden " id="headline-img"><%= cl_image_tag("http://res.cloudinary.com/dpg1ipkol/image/upload/c_scale,h_129/v1503430140/giphy-downsized_3_cysj6c.gif", class: "balloon-image")%></p>
-
-        <p class="balloon hidden">Leu e não se interessou pela manchete? Clique em 'Próximo' e veja a próxima publicação do seu influenciador.<br> <strong>Veja como funciona</strong></p>
-
+        <p class="balloon hidden">Leu e não se interessou pela manchete? Clique em 'Próximo'.<br> <strong>Veja como funciona</strong></p>
         <div class="text-center options hidden">
-          <a class="next btn btn-xs option hidden" data-target="#headline"><%= link_to "Vamos lá!", users_path, class: "btn btn-xs option" %></a>
+          <a class="next btn btn-xs option hidden" data-target="#headline"><%= link_to "Comece agora!", users_path, class: "btn btn-xs option" %></a>
         </div>
-
       </div>
-
-
-
     </div>
   </div>
 </div>
