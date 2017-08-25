@@ -15,7 +15,7 @@
               </p>
               <p>
                 <% if @user.editions.present? %>
-                  <%= link_to "Editar última edição", edit_edition_path(current_user.editions.last.id), class: "btn btn-warning" %>
+                  <%= link_to "Editar última edição", edition_path(current_user.editions.last.id), class: "btn btn-warning" %>
                 <% end %>
               </p>
             <% end %>
