@@ -32,13 +32,14 @@
     <% @edition.posts.each_with_index do |post, index| %>
       <p>
         <%= link_to "Editar  #{(index + 1).to_s}", edit_post_path(post), :class => "btn  btn-warning btn-xs" %>
-        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+
         <i><%= post.headline %>...</i>
+        <i class="fa fa-commenting-o" aria-hidden="true"></i>
       </p>
     <% end %>
 
     <hr>
-    <p>
+    <p class="text-center">
       <%= link_to "Concluir", user_path(@user), :class => "btn btn-warning btn-sm btn-post" %>
     </p>
   </div>

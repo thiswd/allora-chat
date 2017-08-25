@@ -3,38 +3,37 @@
 
 .editionbanner {
 
-
-body {
-  background: white;
-  text-align: center;
-}
-
-h1 {
-  font-size: 68px;
-  font-family: $logo-font;
-}
-
-h2 {
-    font-size: 22px;
-}
-
-.full-screen {
-  height: 100vh;
-}
-
-.l-side {
-  color: white;
-  text-align: center;
-  height: calc(100vh - 50px);
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 100vh;
   background-size: cover;
+  background: white;
 
 
-}}
+
+  h1 {
+    font-size: 68px;
+    font-family: $logo-font;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .full-screen {
+    height: 100vh;
+  }
+
+  .l-side {
+    color: white;
+    text-align: center;
+    height: calc(100vh - 50px);
+    /* if you have a 70px navbar => height: calc(100vh - 70px); */
+    background-size: cover !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+  }
+}
 
 .teste {
   background-size: cover;
