@@ -1,18 +1,24 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
 <div class="editionc container">
-  <div class="col-xs-12 col-sm-12 ">
-    <h1>Veja quem mais está por aqui...</h1>
-  </div>
-<br>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <h1>Veja quem mais está por aqui...</h1>
+    </div>
+    <br>
 
-  <form method="get" action="/users" id="search">
-    <%= select_tag :username, options_from_collection_for_select(User.all, :username, :username, params[:username]), include_blank: true, placeholder: "@username" %>
-    <button type="submit" id="submit" class="btn btn-xs btn-warning">
-      <i class="fa fa-search"></i>
-    </button>
-  <%= link_to "x", users_path %>
-  </form>
+    <div class="col-xs-12 col-md-6">
+      <form method="get" action="/users" id="search">
+        <%= select_tag :username, options_from_collection_for_select(User.all, :username, :username, params[:username]), include_blank: true, placeholder: "@username" %>
+        <button type="submit" id="submit" class="btn btn-xs btn-warning">
+          <i class="fa fa-search"></i>
+        </button>
+        <%= link_to users_path do%>
+          <i class="fa fa-times" aria-hidden="true"></i>
+        <% end %>
+      </form>
+    </div>
+  </div>
 
   <div class="users-infl container text-center">
     <% influencers = [] %>
