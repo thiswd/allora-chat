@@ -39,7 +39,6 @@ gem 'rails_emoji_picker'
 # Maps
 gem 'geocoder'
 
-
 # Change URL
 gem 'friendly_id', '~> 5.1.0'
 

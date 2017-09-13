@@ -98,7 +98,6 @@ iframe {
 
 
 .click-more {
-
   background: #FF8008;
   color: white;
   border-radius: 20px;
@@ -112,7 +111,6 @@ iframe {
   border-radius: 20px;
   padding: 10px 15px;
   margin: 5px 0;
-  text-decoration: none; // Tá funcionando?
 }
 
 .btn-margin {
@@ -121,9 +119,7 @@ iframe {
 }
 
 
-
 .balloon {
-
   background: #F4F4F4;
   max-width: 80%;
   border-radius: 0 20px 20px 20px;
@@ -149,6 +145,7 @@ iframe {
   &-video {
     width: 80%;
     height: auto;
+    padding: 7px;
   }
 
   img {
@@ -157,6 +154,10 @@ iframe {
 
   iframe {
     border-radius: 0 20px 20px 20px;
+  }
+
+  p {
+    margin: 0;
   }
 }
 
